@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#dff3f2"/>
+  <circle cx="600" cy="330" r="105" fill="#0f7f83" opacity="0.18"/>
+  <path d="M405 545c60-92 120-138 180-138s120 46 180 138" fill="none" stroke="#0f7f83" stroke-width="34" stroke-linecap="round"/>
+  <text x="600" y="660" text-anchor="middle" font-family="Arial, sans-serif" font-size="54" fill="#075f63">A Casa di Marco</text>
+</svg>

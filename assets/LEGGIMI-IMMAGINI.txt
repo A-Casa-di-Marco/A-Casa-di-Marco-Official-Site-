@@ -1,0 +1,12 @@
+Inserisci in questa cartella assets queste immagini, copiandole dalla cartella assets della GuestGuide:
+
+- garden-main.jpg
+- casa-1.jpg
+- casa-2.jpg
+- casa-3.jpg
+- casa-4.jpg
+- casa-5.jpg
+
+Puoi aggiungere anche altre foto e poi modificare la galleria in index.html.
+
+Per ora, se una foto manca, il sito mostra automaticamente placeholder.svg.
