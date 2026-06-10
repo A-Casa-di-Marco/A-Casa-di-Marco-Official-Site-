@@ -281,7 +281,6 @@ main {
 
 .highlight-card strong,
 .map-card h3,
-.calendar-placeholder h3,
 .request-card h3,
 .location-grid h3 {
   display: block;
@@ -350,24 +349,27 @@ main {
   height: 474px;
 }
 
-.calendar-placeholder {
-  min-height: 420px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  border: 2px dashed rgba(15, 127, 131, .3);
-  border-radius: 20px;
-  padding: 22px;
-  background: rgba(255, 255, 255, .58);
+.calendar-box {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 22px;
+  box-shadow: 0 10px 26px rgba(0, 70, 75, .10);
+  border: 1px solid rgba(15, 127, 131, .14);
+  background: #fff;
 }
 
-.calendar-frame {
+.calendar-box iframe {
   width: 100%;
-  min-height: 420px;
+  height: 620px;
+  display: block;
   border: 0;
-  border-radius: 20px;
-  background: #fff;
+}
+
+.calendar-note {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
 }
 
 .request-card {
@@ -509,6 +511,10 @@ main {
 
   .form-row {
     grid-template-columns: 1fr;
+  }
+
+  .calendar-box iframe {
+    height: 520px;
   }
 
   .hero-actions,
