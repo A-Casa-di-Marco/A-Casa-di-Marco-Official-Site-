@@ -1,0 +1,5 @@
+1) Carica index.html, style.css e script.js nella repository GitHub.
+2) Crea il progetto Google Apps Script e incolla google-apps-script.js.
+3) Pubblica Apps Script come app web: accesso Chiunque.
+4) Copia l URL /exec e inseriscilo in script.js al posto di INCOLLA_QUI_URL_APPS_SCRIPT.
+5) Commit e Push su GitHub Desktop.
