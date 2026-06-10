@@ -12,13 +12,16 @@ if (navToggle && navLinks) {
 }
 
 const currentYear = document.getElementById('currentYear');
+
 if (currentYear) {
   currentYear.textContent = new Date().getFullYear();
 }
 
 function formatItalianDate(dateValue) {
   if (!dateValue) return '';
+
   const date = new Date(dateValue + 'T12:00:00');
+
   return date.toLocaleDateString('it-IT', {
     day: '2-digit',
     month: '2-digit',
@@ -51,6 +54,7 @@ if (bookingRequestForm) {
     ].filter(Boolean).join('\n');
 
     const whatsappUrl = 'https://wa.me/393923064010?text=' + encodeURIComponent(text);
+
     window.open(whatsappUrl, '_blank');
   });
 }

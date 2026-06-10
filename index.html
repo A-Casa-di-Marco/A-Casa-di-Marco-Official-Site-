@@ -146,72 +146,81 @@
         <p>Controlla le date occupate aggiornate da Booking e Airbnb, poi inviaci una richiesta su WhatsApp. Ti confermeremo disponibilità e prezzo il prima possibile.</p>
       </div>
 
-      <div class="availability-grid">
-        <div class="calendar-card">
-          <div class="calendar-box">
-            <iframe
-              src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FRome&showPrint=0&src=NTg4YTRmOTQyZmUzNWNiY2U4Zjc3MmIwZjdmOGEyMjJhMGU2OTM3YTYxMmNhZjliY2RkYzU0YWNkMjBmYTE1ZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MmVqNWRqcDdocmQzOGxuM2Q1bzk5OWxuZXFsdm8yMzNAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&src=b2l1NnI2M2k1cWtmb3B0ZzQ4N2FyZDM2amdsYzBzNGRAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23a79b8e&color=%239e69af&color=%23616161"
-              frameborder="0"
-              scrolling="no"
-              loading="lazy">
-            </iframe>
+      <div class="calendar-panel">
+        <div class="calendar-topline">
+          <div>
+            <span class="mini-label">Date occupate</span>
+            <h3>Calendario disponibilità</h3>
           </div>
 
-          <p class="calendar-note">
-            Il calendario mostra le date occupate aggiornate da Booking e Airbnb. La disponibilità deve essere sempre confermata prima della prenotazione.
-          </p>
+          <a class="mini-whatsapp" href="https://wa.me/393923064010?text=Ciao%2C%20vorrei%20informazioni%20sulla%20disponibilit%C3%A0%20di%20A%20Casa%20di%20Marco." target="_blank" rel="noopener">
+            Chiedi conferma
+          </a>
         </div>
 
-        <form class="request-card" id="bookingRequestForm">
-          <h3>Richiedi disponibilità</h3>
+        <div class="calendar-box">
+          <iframe
+            src="https://calendar.google.com/calendar/embed?height=650&wkst=1&ctz=Europe%2FRome&showPrint=0&showTitle=0&showCalendars=0&showTabs=0&showTz=0&mode=MONTH&src=NTg4YTRmOTQyZmUzNWNiY2U4Zjc3MmIwZjdmOGEyMjJhMGU2OTM3YTYxMmNhZjliY2RkYzU0YWNkMjBmYTE1ZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MmVqNWRqcDdocmQzOGxuM2Q1bzk5OWxuZXFsdm8yMzNAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&src=b2l1NnI2M2k1cWtmb3B0ZzQ4N2FyZDM2amdsYzBzNGRAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%230f7f83&color=%23caa75d&color=%237f8c8d"
+            frameborder="0"
+            scrolling="no"
+            loading="lazy">
+          </iframe>
+        </div>
 
-          <label for="guestName">Nome</label>
-          <input id="guestName" type="text" placeholder="Il tuo nome" required>
-
-          <div class="form-row">
-            <div>
-              <label for="checkin">Check-in</label>
-              <input id="checkin" type="date" required>
-            </div>
-
-            <div>
-              <label for="checkout">Check-out</label>
-              <input id="checkout" type="date" required>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div>
-              <label for="guests">Ospiti</label>
-              <select id="guests" required>
-                <option value="1">1 ospite</option>
-                <option value="2">2 ospiti</option>
-                <option value="3">3 ospiti</option>
-                <option value="4">4 ospiti</option>
-                <option value="5">5 ospiti</option>
-                <option value="5 + culla">5 ospiti + culla</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="source">Dove ci hai trovati?</label>
-              <select id="source">
-                <option value="Instagram">Instagram</option>
-                <option value="Facebook">Facebook</option>
-                <option value="Google">Google</option>
-                <option value="Passaparola">Passaparola</option>
-                <option value="Altro">Altro</option>
-              </select>
-            </div>
-          </div>
-
-          <label for="message">Messaggio</label>
-          <textarea id="message" rows="4" placeholder="Scrivi eventuali richieste particolari"></textarea>
-
-          <button type="submit" class="btn primary full">Invia richiesta su WhatsApp</button>
-          <p class="small-note">La richiesta non è una prenotazione automatica: ti confermeremo noi disponibilità e prezzo.</p>
-        </form>
+        <p class="calendar-note">
+          Il calendario indica le date già occupate. Gli aggiornamenti da Booking e Airbnb possono non essere immediati: la disponibilità deve essere sempre confermata prima della prenotazione.
+        </p>
       </div>
+
+      <form class="request-card" id="bookingRequestForm">
+        <h3>Richiedi disponibilità</h3>
+
+        <label for="guestName">Nome</label>
+        <input id="guestName" type="text" placeholder="Il tuo nome" required>
+
+        <div class="form-row">
+          <div>
+            <label for="checkin">Check-in</label>
+            <input id="checkin" type="date" required>
+          </div>
+
+          <div>
+            <label for="checkout">Check-out</label>
+            <input id="checkout" type="date" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="guests">Ospiti</label>
+            <select id="guests" required>
+              <option value="1">1 ospite</option>
+              <option value="2">2 ospiti</option>
+              <option value="3">3 ospiti</option>
+              <option value="4">4 ospiti</option>
+              <option value="5">5 ospiti</option>
+              <option value="5 + culla">5 ospiti + culla</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="source">Dove ci hai trovati?</label>
+            <select id="source">
+              <option value="Instagram">Instagram</option>
+              <option value="Facebook">Facebook</option>
+              <option value="Google">Google</option>
+              <option value="Passaparola">Passaparola</option>
+              <option value="Altro">Altro</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="message">Messaggio</label>
+        <textarea id="message" rows="4" placeholder="Scrivi eventuali richieste particolari"></textarea>
+
+        <button type="submit" class="btn primary full">Invia richiesta su WhatsApp</button>
+        <p class="small-note">La richiesta non è una prenotazione automatica: ti confermeremo noi disponibilità e prezzo.</p>
+      </form>
     </section>
 
     <section class="section location-section" id="posizione">
