@@ -14,7 +14,11 @@ if (navToggle && navLinks) {
 const currentYear = document.getElementById('currentYear');
 if (currentYear) currentYear.textContent = new Date().getFullYear();
 
-const monthNames = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+const monthNames = [
+  'Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno',
+  'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'
+];
+
 const calendarGrid = document.getElementById('calendarGrid');
 const calendarTitle = document.getElementById('calendarTitle');
 const calendarStatus = document.getElementById('calendarStatus');
@@ -27,8 +31,10 @@ const checkoutInput = document.getElementById('checkout');
 let occupiedDates = new Set(FALLBACK_OCCUPIED_DATES);
 let selectedStart = '';
 let selectedEnd = '';
+
 const today = new Date();
 today.setHours(0, 0, 0, 0);
+
 let visibleMonth = new Date(today.getFullYear(), today.getMonth(), 1);
 
 function toYMD(date) {
@@ -71,8 +77,10 @@ function renderCalendar() {
   if (!calendarGrid || !calendarTitle) return;
 
   calendarGrid.innerHTML = '';
+
   const year = visibleMonth.getFullYear();
   const month = visibleMonth.getMonth();
+
   calendarTitle.textContent = `${monthNames[month]} ${year}`;
 
   const first = new Date(year, month, 1);
@@ -94,9 +102,17 @@ function renderCalendar() {
     const cell = document.createElement('button');
     cell.type = 'button';
     cell.className = 'day-cell ' + (isPast ? 'past' : isBusy ? 'busy' : 'free');
-    if (ymd === selectedStart || ymd === selectedEnd) cell.classList.add('selected');
+
+    if (ymd === selectedStart || ymd === selectedEnd) {
+      cell.classList.add('selected');
+    }
+
     cell.disabled = isPast || isBusy;
-    cell.innerHTML = `<span class="day-number">${day}</span><span class="day-state">${isPast ? 'Passata' : isBusy ? 'Occupata' : 'Libera'}</span>`;
+    cell.innerHTML = `
+      <span class="day-number">${day}</span>
+      <span class="day-state">${isPast ? 'Passata' : isBusy ? 'Occupata' : 'Libera'}</span>
+    `;
+
     cell.addEventListener('click', () => selectDate(ymd));
     calendarGrid.appendChild(cell);
   }
@@ -106,20 +122,34 @@ function selectDate(ymd) {
   if (!selectedStart || (selectedStart && selectedEnd)) {
     selectedStart = ymd;
     selectedEnd = '';
+
     if (checkinInput) checkinInput.value = ymd;
     if (checkoutInput) checkoutInput.value = '';
-    if (calendarStatus) calendarStatus.textContent = 'Check-in selezionato. Ora scegli una data di check-out libera.';
+
+    if (calendarStatus) {
+      calendarStatus.textContent = 'Check-in selezionato. Ora scegli una data di check-out libera.';
+    }
   } else {
     if (ymd <= selectedStart) {
       selectedStart = ymd;
+
       if (checkinInput) checkinInput.value = ymd;
-      if (calendarStatus) calendarStatus.textContent = 'Check-in aggiornato. Ora scegli una data di check-out successiva.';
+
+      if (calendarStatus) {
+        calendarStatus.textContent = 'Check-in aggiornato. Ora scegli una data di check-out successiva.';
+      }
     } else if (hasBusyDateBetween(selectedStart, ymd)) {
-      if (calendarStatus) calendarStatus.textContent = 'Tra le date selezionate ci sono giorni occupati. Scegli un periodo senza date occupate.';
+      if (calendarStatus) {
+        calendarStatus.textContent = 'Tra le date selezionate ci sono giorni occupati. Scegli un periodo senza date occupate.';
+      }
     } else {
       selectedEnd = ymd;
+
       if (checkoutInput) checkoutInput.value = ymd;
-      if (calendarStatus) calendarStatus.textContent = `Periodo selezionato: ${formatItalianDate(selectedStart)} - ${formatItalianDate(selectedEnd)}.`;
+
+      if (calendarStatus) {
+        calendarStatus.textContent = `Periodo selezionato: ${formatItalianDate(selectedStart)} - ${formatItalianDate(selectedEnd)}.`;
+      }
     }
   }
 
@@ -128,28 +158,37 @@ function selectDate(ymd) {
 
 function loadAvailability() {
   if (!CALENDAR_FEED_URL || CALENDAR_FEED_URL.includes('INCOLLA_QUI')) {
-    if (calendarStatus) calendarStatus.textContent = 'Calendario dimostrativo: collega Apps Script per leggere automaticamente Booking e Airbnb.';
+    if (calendarStatus) {
+      calendarStatus.textContent = 'Calendario dimostrativo: collega Apps Script per leggere automaticamente Booking e Airbnb.';
+    }
     renderCalendar();
     return;
   }
 
   const callbackName = 'calendarCallback_' + Date.now();
+  const script = document.createElement('script');
 
   window[callbackName] = function(data) {
     const list = Array.isArray(data.occupied) ? data.occupied : [];
     occupiedDates = new Set(list);
-    if (calendarStatus) calendarStatus.textContent = `Disponibilità aggiornata. Date occupate caricate: ${list.length}.`;
+
+    if (calendarStatus) {
+      calendarStatus.textContent = `Disponibilità aggiornata. Date occupate caricate: ${list.length}.`;
+    }
+
     renderCalendar();
     delete window[callbackName];
     script.remove();
   };
 
-  const script = document.createElement('script');
   script.src = CALENDAR_FEED_URL + (CALENDAR_FEED_URL.includes('?') ? '&' : '?') + 'callback=' + callbackName;
   script.onerror = function() {
-    if (calendarStatus) calendarStatus.textContent = 'Non riesco a caricare il calendario. Riprova più tardi o scrivici su WhatsApp.';
+    if (calendarStatus) {
+      calendarStatus.textContent = 'Non riesco a caricare il calendario. Riprova più tardi o scrivici su WhatsApp.';
+    }
     renderCalendar();
   };
+
   document.body.appendChild(script);
 }
 
@@ -174,7 +213,17 @@ if (todayBtn) {
   });
 }
 
+/* ---------------------------
+   MODULO OSPITI + BAMBINI
+   massimo 6 persone totali
+---------------------------- */
+
+const MAX_TOTAL_GUESTS = 6;
+const MAX_COTS = 1;
+
+const adultsSelect = document.getElementById('adults');
 const childrenCountSelect = document.getElementById('childrenCount');
+const guestLimitNote = document.getElementById('guestLimitNote');
 const childrenBox = document.getElementById('childrenBox');
 const childrenAges = document.getElementById('childrenAges');
 const cotBox = document.getElementById('cotBox');
@@ -183,18 +232,69 @@ const cotRequest = document.getElementById('cotRequest');
 function buildAgeOptions() {
   let html = '<option value="0">0 anni</option>';
   html += '<option value="1">1 anno</option>';
+
   for (let i = 2; i <= 17; i++) {
     html += `<option value="${i}">${i} anni</option>`;
   }
+
   return html;
+}
+
+function updateGuestLimitNote() {
+  if (!guestLimitNote || !adultsSelect || !childrenCountSelect) return;
+
+  const adults = Number(adultsSelect.value);
+  const children = Number(childrenCountSelect.value);
+  const total = adults + children;
+  const remainingChildren = Math.max(0, MAX_TOTAL_GUESTS - adults);
+
+  guestLimitNote.textContent =
+    `Massimo ${MAX_TOTAL_GUESTS} persone totali, bambini inclusi. ` +
+    `Con ${adults} ${adults === 1 ? 'adulto' : 'adulti'} puoi aggiungere al massimo ` +
+    `${remainingChildren} ${remainingChildren === 1 ? 'bambino' : 'bambini'}. ` +
+    `Totale selezionato: ${total}/${MAX_TOTAL_GUESTS}.`;
+}
+
+function updateChildrenCountOptions() {
+  if (!adultsSelect || !childrenCountSelect) return;
+
+  const adults = Number(adultsSelect.value);
+  const maxChildren = Math.max(0, MAX_TOTAL_GUESTS - adults);
+  const currentValue = Math.min(Number(childrenCountSelect.value || 0), maxChildren);
+
+  childrenCountSelect.innerHTML = '';
+
+  for (let i = 0; i <= maxChildren; i++) {
+    const option = document.createElement('option');
+    option.value = String(i);
+
+    if (i === 0) {
+      option.textContent = 'Nessun bambino';
+    } else if (i === 1) {
+      option.textContent = '1 bambino';
+    } else {
+      option.textContent = `${i} bambini`;
+    }
+
+    if (i === currentValue) option.selected = true;
+    childrenCountSelect.appendChild(option);
+  }
+
+  renderChildrenAges();
+  updateGuestLimitNote();
 }
 
 function updateCotVisibility() {
   if (!childrenAges || !cotBox) return;
+
   const ageSelects = Array.from(childrenAges.querySelectorAll('.child-age-select'));
   const hasSmallChild = ageSelects.some((select) => Number(select.value) <= 3);
+
   cotBox.classList.toggle('hidden', !hasSmallChild);
-  if (!hasSmallChild && cotRequest) cotRequest.checked = false;
+
+  if (!hasSmallChild && cotRequest) {
+    cotRequest.checked = false;
+  }
 }
 
 function renderChildrenAges() {
@@ -205,8 +305,11 @@ function renderChildrenAges() {
 
   if (count <= 0) {
     childrenBox.classList.add('hidden');
+
     if (cotBox) cotBox.classList.add('hidden');
     if (cotRequest) cotRequest.checked = false;
+
+    updateGuestLimitNote();
     return;
   }
 
@@ -228,12 +331,18 @@ function renderChildrenAges() {
   });
 
   updateCotVisibility();
+  updateGuestLimitNote();
+}
+
+if (adultsSelect) {
+  adultsSelect.addEventListener('change', updateChildrenCountOptions);
 }
 
 if (childrenCountSelect) {
   childrenCountSelect.addEventListener('change', renderChildrenAges);
-  renderChildrenAges();
 }
+
+updateChildrenCountOptions();
 
 const bookingRequestForm = document.getElementById('bookingRequestForm');
 
@@ -244,15 +353,30 @@ if (bookingRequestForm) {
     const name = document.getElementById('guestName').value.trim();
     const checkin = document.getElementById('checkin').value;
     const checkout = document.getElementById('checkout').value;
-    const adults = document.getElementById('adults').value;
-    const childrenCount = document.getElementById('childrenCount').value;
+    const adults = Number(document.getElementById('adults').value);
+    const childrenCount = Number(document.getElementById('childrenCount').value);
     const source = document.getElementById('source').value;
     const breakfastInterest = document.getElementById('breakfastInterest').value;
     const message = document.getElementById('message').value.trim();
 
+    const totalGuests = adults + childrenCount;
+
+    if (totalGuests > MAX_TOTAL_GUESTS) {
+      alert(`La richiesta può essere inviata per massimo ${MAX_TOTAL_GUESTS} persone totali, bambini inclusi.`);
+      return;
+    }
+
     const ageSelects = Array.from(document.querySelectorAll('.child-age-select'));
-    const childrenAgesText = ageSelects.map((select, index) => `Bambino ${index + 1}: ${select.value} anni`).join(', ');
-    const cotText = cotRequest && cotRequest.checked ? 'Sì, richiedo la culla se disponibile' : 'No';
+    const childrenAgesText = ageSelects
+      .map((select, index) => `Bambino ${index + 1}: ${select.value} anni`)
+      .join(', ');
+
+    const hasSmallChild = ageSelects.some((select) => Number(select.value) <= 3);
+    const cotText = hasSmallChild
+      ? (cotRequest && cotRequest.checked
+          ? `Sì, richiedo ${MAX_COTS} culla se disponibile`
+          : 'No')
+      : 'Non necessaria';
 
     const text = [
       'Ciao, vorrei richiedere disponibilità per A Casa di Marco.',
@@ -262,8 +386,9 @@ if (bookingRequestForm) {
       'Check-out: ' + formatItalianDate(checkout),
       'Adulti: ' + adults,
       'Bambini: ' + childrenCount,
+      'Totale ospiti: ' + totalGuests + '/' + MAX_TOTAL_GUESTS,
       childrenAgesText ? 'Età bambini: ' + childrenAgesText : '',
-      Number(childrenCount) > 0 ? 'Culla: ' + cotText : '',
+      childrenCount > 0 ? 'Culla: ' + cotText : '',
       'Colazione: ' + breakfastInterest,
       'Vi ho trovati tramite: ' + source,
       message ? 'Richieste: ' + message : ''

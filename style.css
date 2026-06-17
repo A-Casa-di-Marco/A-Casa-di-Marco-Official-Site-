@@ -183,3 +183,438 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   .day-state { display: none; }
   .review-score-card strong { font-size: 34px; }
 }
+
+
+/* ==========================================================
+   OTTIMIZZAZIONE MOBILE + GRIGLIE COMPATTE
+   ========================================================== */
+
+.guest-limit-note {
+  margin-top: -2px;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+  background: rgba(255,255,255,.58);
+  border: 1px solid rgba(15,127,131,.12);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+@media (max-width: 860px) {
+  body {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  main {
+    width: min(100% - 16px, 1120px);
+    padding-top: 18px;
+  }
+
+  .section {
+    padding: 18px;
+    margin: 16px 0;
+    border-radius: 20px;
+  }
+
+  .section-heading {
+    margin-bottom: 16px;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(28px, 8vw, 38px);
+  }
+
+  .section-heading p {
+    font-size: 14px;
+  }
+
+  .section-kicker,
+  .eyebrow {
+    font-size: 10px;
+    padding: 6px 11px;
+  }
+
+  .hero {
+    min-height: 72vh;
+    padding: 105px 14px 34px;
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 14vw, 62px);
+  }
+
+  .hero-text {
+    max-width: 100%;
+    font-size: 15px;
+    margin: 12px 0 18px;
+  }
+
+  .hero-badges {
+    gap: 7px;
+    margin-top: 16px;
+  }
+
+  .hero-badges span {
+    font-size: 11px;
+    padding: 7px 10px;
+  }
+
+  .btn {
+    min-height: 44px;
+    padding: 11px 15px;
+    font-size: 13px;
+  }
+
+  .stats-grid,
+  .features-grid,
+  .sleep-grid,
+  .info-grid,
+  .review-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .feature-card,
+  .sleep-card,
+  .info-card,
+  .stat-card,
+  .review-score-card {
+    padding: 13px;
+    border-radius: 17px;
+  }
+
+  .feature-card span,
+  .sleep-card span,
+  .info-card span {
+    font-size: 24px;
+  }
+
+  .feature-card h3,
+  .sleep-card h3,
+  .info-card h3 {
+    font-size: 18px;
+    margin: 7px 0 5px;
+    line-height: 1.14;
+  }
+
+  .feature-card p,
+  .sleep-card p,
+  .info-card p,
+  .stat-card p,
+  .review-score-card p {
+    font-size: 12px;
+    line-height: 1.42;
+  }
+
+  .stat-value {
+    font-size: 22px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .intro-grid,
+  .location-grid {
+    gap: 12px;
+  }
+
+  .intro-grid p {
+    font-size: 14px;
+  }
+
+  .highlight-card,
+  .map-card,
+  .request-card {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .highlight-card strong,
+  .map-card h3,
+  .request-card h3,
+  .location-grid h3 {
+    font-size: 21px;
+  }
+
+  .highlight-card li,
+  .clean-list li {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .custom-calendar-card {
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .calendar-head {
+    grid-template-columns: 42px 1fr 42px;
+    gap: 8px;
+  }
+
+  .calendar-nav-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 26px;
+  }
+
+  .calendar-title-wrap h3 {
+    font-size: 24px;
+  }
+
+  .calendar-status {
+    font-size: 12px;
+    padding: 10px 11px;
+  }
+
+  .calendar-tools {
+    margin: 12px 0;
+    gap: 8px;
+  }
+
+  .chip-btn {
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  .calendar-legend {
+    font-size: 11px;
+    gap: 8px;
+  }
+
+  .weekday-row,
+  .calendar-grid {
+    gap: 4px;
+  }
+
+  .weekday-row {
+    font-size: 10px;
+  }
+
+  .day-cell {
+    min-height: 50px;
+    border-radius: 11px;
+    padding: 6px 4px;
+    text-align: center;
+  }
+
+  .day-number {
+    font-size: 14px;
+  }
+
+  .day-state {
+    display: none;
+  }
+
+  .calendar-note,
+  .small-note,
+  .guest-limit-note {
+    font-size: 12px;
+  }
+
+  .request-card input,
+  .request-card select,
+  .request-card textarea {
+    font-size: 13px;
+    padding: 10px 11px;
+    border-radius: 13px;
+  }
+
+  .request-card label {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .children-ages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-grid img,
+  .gallery-grid img:first-child {
+    height: 150px;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-card {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .review-card p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav {
+    top: 8px;
+    width: calc(100% - 16px);
+    padding: 9px 10px;
+  }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+  }
+
+  .brand span:last-child {
+    font-size: 13px;
+  }
+
+  .nav-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .hero {
+    min-height: 66vh;
+    padding-top: 92px;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .hero-actions {
+    gap: 9px;
+  }
+
+  .hero-badges {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-badges span {
+    text-align: center;
+  }
+
+  .section {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .section-heading h2 {
+    font-size: 30px;
+  }
+
+  .stats-grid,
+  .features-grid,
+  .sleep-grid,
+  .info-grid,
+  .review-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .feature-card,
+  .sleep-card,
+  .info-card,
+  .stat-card,
+  .review-score-card {
+    padding: 11px;
+    border-radius: 15px;
+  }
+
+  .feature-card span,
+  .sleep-card span,
+  .info-card span {
+    font-size: 22px;
+  }
+
+  .feature-card h3,
+  .sleep-card h3,
+  .info-card h3 {
+    font-size: 16px;
+  }
+
+  .feature-card p,
+  .sleep-card p,
+  .info-card p,
+  .stat-card p,
+  .review-score-card p {
+    font-size: 11.5px;
+  }
+
+  .review-score-card strong {
+    font-size: 28px;
+  }
+
+  .custom-calendar-card {
+    padding: 10px;
+  }
+
+  .calendar-head {
+    grid-template-columns: 36px 1fr 36px;
+  }
+
+  .calendar-nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 23px;
+  }
+
+  .calendar-title-wrap h3 {
+    font-size: 21px;
+  }
+
+  .mini-label {
+    font-size: 9px;
+  }
+
+  .day-cell {
+    min-height: 42px;
+    border-radius: 9px;
+    padding: 5px 2px;
+  }
+
+  .day-number {
+    font-size: 13px;
+  }
+
+  .form-row,
+  .children-ages {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img,
+  .gallery-grid img:first-child {
+    height: 126px;
+  }
+
+  .floating-whatsapp {
+    width: 52px;
+    height: 52px;
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .feature-card h3,
+  .sleep-card h3,
+  .info-card h3 {
+    font-size: 15px;
+  }
+
+  .feature-card p,
+  .sleep-card p,
+  .info-card p {
+    font-size: 11px;
+  }
+
+  .day-cell {
+    min-height: 38px;
+  }
+}
