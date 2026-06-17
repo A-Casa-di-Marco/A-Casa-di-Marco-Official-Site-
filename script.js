@@ -14,6 +14,19 @@ if (navToggle && navLinks) {
 const currentYear = document.getElementById('currentYear');
 if (currentYear) currentYear.textContent = new Date().getFullYear();
 
+
+/* HERO CAROSELLO FOTO */
+const heroSlides = Array.from(document.querySelectorAll('.hero-slide'));
+let heroSlideIndex = 0;
+
+if (heroSlides.length > 1) {
+  setInterval(() => {
+    heroSlides[heroSlideIndex].classList.remove('active');
+    heroSlideIndex = (heroSlideIndex + 1) % heroSlides.length;
+    heroSlides[heroSlideIndex].classList.add('active');
+  }, 6500);
+}
+
 const monthNames = [
   'Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno',
   'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'
