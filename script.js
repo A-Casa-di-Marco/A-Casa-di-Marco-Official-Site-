@@ -1,4 +1,4 @@
-const CALENDAR_FEED_URL = 'INCOLLA_QUI_URL_APPS_SCRIPT';
+const CALENDAR_FEED_URL = 'https://script.google.com/macros/s/AKfycbzaikXcMmx1sPsPkQw3Id2Wa31qeMNIfA1IpqDV-KPW4eA5ViM8P8SkXEYbdpEqFZ5o/exec';
 const FALLBACK_OCCUPIED_DATES = [];
 
 const navToggle = document.getElementById('navToggle');
