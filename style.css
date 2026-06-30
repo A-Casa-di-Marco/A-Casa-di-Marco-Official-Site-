@@ -64,6 +64,28 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 .highlight-card ul, .clean-list { list-style: none; display: grid; gap: 10px; }
 .highlight-card li, .clean-list li { background: rgba(255,255,255,.72); border-radius: 14px; padding: 10px 12px; }
 
+.guide-section { background: linear-gradient(135deg, #ffffff 0%, var(--ottanio-soft) 58%, #fff8e8 100%); overflow: hidden; }
+.guide-layout { display: grid; grid-template-columns: 1.05fr .95fr; gap: 26px; align-items: center; }
+.guide-copy h2 { margin-top: 12px; font-size: clamp(36px, 5vw, 58px); }
+.guide-copy p { color: var(--muted); font-size: 17px; margin-top: 12px; max-width: 680px; }
+.guide-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 22px; }
+.guide-actions span { color: var(--ottanio-dark); font-size: 13px; font-weight: 800; max-width: 280px; }
+.guide-preview { display: flex; justify-content: center; }
+.phone-mockup { width: min(100%, 360px); border-radius: 34px; padding: 14px; background: #173b43; box-shadow: 0 22px 52px rgba(0,70,75,.24); transform: rotate(2deg); }
+.phone-top { width: 90px; height: 5px; margin: 0 auto 12px; border-radius: 999px; background: rgba(255,255,255,.55); }
+.guide-app { background: #fbfbf8; border-radius: 24px; padding: 18px; min-height: 430px; }
+.guide-label { display: inline-flex; padding: 6px 10px; border-radius: 999px; background: var(--ottanio-soft); color: var(--ottanio-dark); font-size: 10px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.guide-app h3 { font-size: 34px; margin: 12px 0; }
+.guide-search { border: 1px solid rgba(15,127,131,.18); background: #fff; border-radius: 16px; padding: 11px 12px; color: var(--muted); font-size: 12px; font-weight: 700; }
+.guide-preview-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 14px; }
+.guide-preview-grid article { background: #fff; border: 1px solid rgba(15,127,131,.12); border-radius: 16px; padding: 12px; min-height: 104px; }
+.guide-preview-grid span { display: block; font-size: 24px; margin-bottom: 8px; }
+.guide-preview-grid strong { display: block; color: var(--ottanio-dark); font-size: 13px; line-height: 1.25; }
+.guide-preview-grid p { color: var(--muted); font-size: 11px; margin-top: 3px; line-height: 1.35; }
+.locked-tip { display: flex; gap: 10px; align-items: flex-start; margin-top: 14px; padding: 12px; border-radius: 16px; background: var(--sand); color: var(--ottanio-dark); }
+.locked-tip span { font-size: 20px; }
+.locked-tip p { font-size: 12px; line-height: 1.45; margin: 0; color: var(--ottanio-dark); font-weight: 700; }
+
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .stat-card { background: linear-gradient(180deg, var(--ottanio-soft), #fff); border-radius: 24px; padding: 22px; text-align: center; border: 1px solid rgba(15,127,131,.12); }
 .stat-value { display: block; color: var(--ottanio-dark); font-weight: 900; font-size: 28px; }
@@ -158,6 +180,13 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   main { width: min(100% - 20px, 1120px); }
   .section { padding: 22px; border-radius: 24px; }
   .intro-grid, .location-grid, .features-grid, .form-row, .review-summary-grid { grid-template-columns: 1fr; }
+  .guide-layout { grid-template-columns: 1fr; gap: 18px; }
+  .guide-copy p { font-size: 14px; }
+  .guide-actions { align-items: stretch; }
+  .guide-actions .btn { width: 100%; }
+  .guide-actions span { max-width: none; text-align: center; }
+  .phone-mockup { max-width: 320px; transform: none; }
+  .guide-app { min-height: auto; }
   .gallery-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .gallery-grid img, .gallery-grid img:first-child { height: 180px; grid-row: auto; }
   .hero-actions, .contact-actions-main { flex-direction: column; }
@@ -511,6 +540,52 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 
   .section-heading h2 {
     font-size: 30px;
+  }
+
+  .guide-copy h2 {
+    font-size: 31px;
+  }
+
+  .guide-copy p {
+    font-size: 13px;
+  }
+
+  .phone-mockup {
+    max-width: 100%;
+    padding: 10px;
+    border-radius: 28px;
+  }
+
+  .guide-app {
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .guide-app h3 {
+    font-size: 26px;
+  }
+
+  .guide-preview-grid {
+    gap: 8px;
+  }
+
+  .guide-preview-grid article {
+    padding: 10px;
+    min-height: 94px;
+    border-radius: 14px;
+  }
+
+  .guide-preview-grid span {
+    font-size: 21px;
+  }
+
+  .guide-preview-grid strong {
+    font-size: 12px;
+  }
+
+  .guide-preview-grid p,
+  .locked-tip p {
+    font-size: 10.5px;
   }
 
   .stats-grid,
