@@ -102,10 +102,10 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 .stat-label { color: var(--gold); font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 .stat-card p { margin-top: 8px; color: var(--muted); font-size: 13px; }
 
-.features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.feature-card, .sleep-card, .info-card { background: var(--ottanio-soft); border-radius: 24px; padding: 22px; box-shadow: 0 10px 26px rgba(0,80,85,.08); }
-.feature-card span, .sleep-card span, .info-card span { font-size: 32px; }
-.feature-card h3, .sleep-card h3, .info-card h3 { font-size: 24px; margin: 12px 0 8px; }
+.features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.feature-card, .sleep-card, .info-card { background: var(--ottanio-soft); border-radius: 20px; padding: 16px; box-shadow: 0 8px 20px rgba(0,80,85,.07); }
+.feature-card span, .sleep-card span, .info-card span { font-size: 28px; }
+.feature-card h3, .sleep-card h3, .info-card h3 { font-size: 22px; margin: 8px 0 4px; }
 .feature-card p, .sleep-card p, .info-card p { color: var(--muted); font-size: 14px; }
 .sleep-grid, .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .sleep-card { background: var(--sand); }
@@ -156,6 +156,8 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 .checkbox-line input { width: auto; margin-top: 3px; }
 
 .location-grid article:first-child { background: var(--ottanio-soft); border-radius: 24px; padding: 22px; }
+.map-embed { width: 100%; overflow: hidden; border-radius: 18px; border: 1px solid rgba(15,127,131,.16); background: #fff; margin: 10px 0 12px; aspect-ratio: 16 / 10; box-shadow: 0 8px 20px rgba(0,80,85,.08); }
+.map-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
 .review-summary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 16px; }
 .review-score-card { border-radius: 24px; padding: 24px; text-align: center; color: #fff; }
 .review-score-card.airbnb { background: var(--ottanio); }
@@ -754,5 +756,97 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 
   .hero-slide {
     object-position: center center;
+  }
+}
+
+/* ==========================================================
+   VERSIONE PIU PULITA: TESTI BREVI, SERVIZI COMPATTI, MAPPA
+   ========================================================== */
+
+.intro-grid p,
+.calm-copy p,
+.guide-copy p {
+  max-width: 660px;
+}
+
+#servizi .section-heading {
+  margin-bottom: 18px;
+}
+
+#servizi .section-heading p {
+  font-weight: 700;
+  color: var(--ottanio-dark);
+}
+
+#servizi .feature-card {
+  min-height: 124px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#servizi .feature-card h3 {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+#servizi .feature-card p {
+  line-height: 1.35;
+}
+
+.map-card p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 860px) {
+  .intro-grid p,
+  .calm-copy p,
+  .guide-copy p {
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+
+  #servizi .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  #servizi .feature-card {
+    min-height: 96px;
+    padding: 11px;
+    border-radius: 15px;
+  }
+
+  #servizi .feature-card span {
+    font-size: 21px;
+    line-height: 1;
+  }
+
+  #servizi .feature-card h3 {
+    font-size: 13.5px;
+    margin: 6px 0 3px;
+  }
+
+  #servizi .feature-card p {
+    font-size: 11px;
+    line-height: 1.28;
+  }
+
+  .map-embed {
+    aspect-ratio: 4 / 3;
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  #servizi .feature-card {
+    min-height: 88px;
+  }
+
+  #servizi .feature-card h3 {
+    font-size: 13px;
   }
 }
