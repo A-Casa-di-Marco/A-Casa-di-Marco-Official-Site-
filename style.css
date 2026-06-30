@@ -64,6 +64,16 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 .highlight-card ul, .clean-list { list-style: none; display: grid; gap: 10px; }
 .highlight-card li, .clean-list li { background: rgba(255,255,255,.72); border-radius: 14px; padding: 10px 12px; }
 
+.calm-section { background: linear-gradient(135deg, #ffffff 0%, #fff8e8 48%, var(--ottanio-soft) 100%); overflow: hidden; }
+.calm-layout { display: grid; grid-template-columns: 1.05fr .95fr; gap: 24px; align-items: center; }
+.calm-copy h2 { margin-top: 12px; font-size: clamp(36px, 5vw, 58px); }
+.calm-copy p { color: var(--muted); font-size: 17px; margin-top: 12px; max-width: 700px; }
+.calm-points { display: grid; gap: 12px; }
+.calm-points article { display: grid; grid-template-columns: 48px 1fr; gap: 6px 12px; align-items: start; background: rgba(255,255,255,.74); border: 1px solid rgba(15,127,131,.14); border-radius: 22px; padding: 18px; box-shadow: 0 10px 26px rgba(0,80,85,.08); }
+.calm-points span { grid-row: span 2; width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--ottanio); color: #fff; font-size: 24px; }
+.calm-points strong { color: var(--ottanio-dark); font-size: 20px; line-height: 1.2; }
+.calm-points p { color: var(--muted); font-size: 14px; line-height: 1.45; }
+
 .guide-section { background: linear-gradient(135deg, #ffffff 0%, var(--ottanio-soft) 58%, #fff8e8 100%); overflow: hidden; }
 .guide-layout { display: grid; grid-template-columns: 1.05fr .95fr; gap: 26px; align-items: center; }
 .guide-copy h2 { margin-top: 12px; font-size: clamp(36px, 5vw, 58px); }
@@ -179,7 +189,14 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   .hero { min-height: 82vh; padding: 120px 14px 46px; }
   main { width: min(100% - 20px, 1120px); }
   .section { padding: 22px; border-radius: 24px; }
-  .intro-grid, .location-grid, .features-grid, .form-row, .review-summary-grid { grid-template-columns: 1fr; }
+  .intro-grid, .location-grid, .form-row, .review-summary-grid { grid-template-columns: 1fr; }
+  .calm-layout { grid-template-columns: 1fr; gap: 16px; }
+  .calm-copy p { font-size: 14px; }
+  .calm-points { gap: 10px; }
+  .calm-points article { grid-template-columns: 40px 1fr; padding: 14px; border-radius: 18px; }
+  .calm-points span { width: 40px; height: 40px; font-size: 20px; }
+  .calm-points strong { font-size: 17px; }
+  .calm-points p { font-size: 12px; }
   .guide-layout { grid-template-columns: 1fr; gap: 18px; }
   .guide-copy p { font-size: 14px; }
   .guide-actions { align-items: stretch; }
@@ -284,6 +301,10 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
     margin: 12px 0 18px;
   }
 
+  .calm-copy h2 {
+    font-size: clamp(29px, 8vw, 39px);
+  }
+
   .hero-badges {
     gap: 7px;
     margin-top: 16px;
@@ -316,6 +337,10 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   .review-score-card {
     padding: 13px;
     border-radius: 17px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .feature-card span,
