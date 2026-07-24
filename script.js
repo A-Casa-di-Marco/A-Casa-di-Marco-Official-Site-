@@ -413,3 +413,112 @@ if (bookingRequestForm) {
 
 renderCalendar();
 loadAvailability();
+
+/* ---------------------------
+   LIGHTBOX GALLERIA FOTO
+---------------------------- */
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxCounter = document.getElementById('lightboxCounter');
+const lightboxClose = document.querySelector('.lightbox-close');
+const lightboxPrev = document.querySelector('.lightbox-prev');
+const lightboxNext = document.querySelector('.lightbox-next');
+
+const galleryTriggers = Array.from(document.querySelectorAll('.gallery-trigger img'));
+let lightboxIndex = 0;
+let touchStartX = 0;
+let touchEndX = 0;
+
+function openLightbox(index) {
+  if (!lightbox || !lightboxImg || galleryTriggers.length === 0) return;
+
+  lightboxIndex = index;
+  lightboxImg.src = galleryTriggers[lightboxIndex].src;
+  lightboxImg.alt = galleryTriggers[lightboxIndex].alt;
+  updateCounter();
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  if (!lightbox) return;
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+function showPrev() {
+  if (galleryTriggers.length === 0) return;
+  lightboxIndex = (lightboxIndex - 1 + galleryTriggers.length) % galleryTriggers.length;
+  lightboxImg.src = galleryTriggers[lightboxIndex].src;
+  lightboxImg.alt = galleryTriggers[lightboxIndex].alt;
+  updateCounter();
+}
+
+function showNext() {
+  if (galleryTriggers.length === 0) return;
+  lightboxIndex = (lightboxIndex + 1) % galleryTriggers.length;
+  lightboxImg.src = galleryTriggers[lightboxIndex].src;
+  lightboxImg.alt = galleryTriggers[lightboxIndex].alt;
+  updateCounter();
+}
+
+function updateCounter() {
+  if (!lightboxCounter) return;
+  lightboxCounter.textContent = (lightboxIndex + 1) + ' / ' + galleryTriggers.length;
+}
+
+galleryTriggers.forEach(function(img, index) {
+  img.parentElement.addEventListener('click', function(e) {
+    e.preventDefault();
+    openLightbox(index);
+  });
+});
+
+if (lightboxClose) {
+  lightboxClose.addEventListener('click', closeLightbox);
+}
+
+if (lightboxPrev) {
+  lightboxPrev.addEventListener('click', function(e) {
+    e.stopPropagation();
+    showPrev();
+  });
+}
+
+if (lightboxNext) {
+  lightboxNext.addEventListener('click', function(e) {
+    e.stopPropagation();
+    showNext();
+  });
+}
+
+if (lightbox) {
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+}
+
+document.addEventListener('keydown', function(e) {
+  if (!lightbox || !lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') showPrev();
+  if (e.key === 'ArrowRight') showNext();
+});
+
+if (lightbox) {
+  lightbox.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    var delta = touchStartX - touchEndX;
+    if (Math.abs(delta) > 50) {
+      if (delta > 0) showNext();
+      else showPrev();
+    }
+  }, { passive: true });
+}

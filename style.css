@@ -112,8 +112,13 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 .info-card { background: #fff; border: 1px solid rgba(15,127,131,.12); }
 
 .gallery-grid { display: grid; grid-template-columns: 1.3fr .7fr .7fr; gap: 14px; }
+.gallery-trigger { border: 0; padding: 0; background: none; cursor: pointer; border-radius: 22px; overflow: hidden; position: relative; }
+.gallery-trigger::after { content: "🔍"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; background: rgba(0,0,0,.34); color: #fff; opacity: 0; transition: opacity .25s ease; pointer-events: none; }
+.gallery-trigger:hover::after, .gallery-trigger:focus-visible::after { opacity: 1; }
 .gallery-grid img { width: 100%; height: 230px; object-fit: cover; border-radius: 22px; box-shadow: 0 12px 28px rgba(0,70,75,.12); }
-.gallery-grid img:first-child { grid-row: span 2; height: 474px; }
+.gallery-grid .gallery-trigger img { border-radius: 0; box-shadow: none; }
+.gallery-grid button:first-child { grid-row: span 2; }
+.gallery-grid button:first-child img { height: 474px; }
 
 .availability-section { background: linear-gradient(180deg,#ffffff,#fffaf0); }
 .custom-calendar-card { background: var(--ottanio-soft); border-radius: 28px; padding: 22px; margin-bottom: 22px; box-shadow: 0 12px 30px rgba(0,70,75,.08); }
@@ -206,7 +211,8 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   .phone-mockup { max-width: 320px; transform: none; }
   .guide-app { min-height: auto; }
   .gallery-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-  .gallery-grid img, .gallery-grid img:first-child { height: 180px; grid-row: auto; }
+  .gallery-grid img, .gallery-grid button:first-child img { height: 180px; }
+  .gallery-grid button:first-child { grid-row: auto; }
   .hero-actions, .contact-actions-main { flex-direction: column; }
   .hero-actions .btn, .contact-actions-main .btn { width: 100%; }
   .calendar-head { grid-template-columns: 46px 1fr 46px; }
@@ -221,7 +227,7 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 @media (max-width: 520px) {
   .brand span:last-child { font-size: 14px; }
   .section-heading h2 { font-size: 34px; }
-  .gallery-grid img, .gallery-grid img:first-child { height: 145px; }
+  .gallery-grid img, .gallery-grid button:first-child img { height: 145px; }
   .feature-card, .highlight-card, .map-card, .request-card, .sleep-card, .info-card { padding: 18px; border-radius: 20px; }
   .custom-calendar-card { padding: 14px; border-radius: 22px; }
   .calendar-title-wrap h3 { font-size: 26px; }
@@ -252,8 +258,8 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 
 @media (max-width: 860px) {
   body {
-    font-size: 14px;
-    line-height: 1.55;
+    font-size: 13px;
+    line-height: 1.50;
   }
 
   main {
@@ -272,11 +278,11 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   }
 
   .section-heading h2 {
-    font-size: clamp(28px, 8vw, 38px);
+    font-size: clamp(24px, 6vw, 32px);
   }
 
   .section-heading p {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .section-kicker,
@@ -286,7 +292,7 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   }
 
   .calm-copy h2 {
-    font-size: clamp(29px, 8vw, 39px);
+    font-size: clamp(24px, 6vw, 32px);
   }
 
   .btn {
@@ -470,7 +476,7 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   }
 
   .gallery-grid img,
-  .gallery-grid img:first-child {
+  .gallery-grid button:first-child img {
     height: 150px;
   }
 
@@ -516,11 +522,11 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   }
 
   .section-heading h2 {
-    font-size: 30px;
+    font-size: 26px;
   }
 
   .guide-copy h2 {
-    font-size: 31px;
+    font-size: 27px;
   }
 
   .guide-copy p {
@@ -645,7 +651,7 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   }
 
   .gallery-grid img,
-  .gallery-grid img:first-child {
+  .gallery-grid button:first-child img {
     height: 126px;
   }
 
@@ -702,25 +708,25 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   }
 
   .hero h1 {
-    font-size: clamp(44px, 12vw, 62px);
+    font-size: clamp(32px, 10vw, 48px);
     text-shadow: 0 6px 22px rgba(0,0,0,.40);
   }
 
   .hero-text {
     max-width: 100%;
-    font-size: 14px;
-    margin: 12px 0 18px;
+    font-size: 13px;
+    margin: 10px 0 16px;
     text-shadow: 0 3px 14px rgba(0,0,0,.40);
   }
 
   .hero-badges {
-    gap: 7px;
-    margin-top: 16px;
+    gap: 6px;
+    margin-top: 14px;
   }
 
   .hero-badges span {
-    font-size: 11px;
-    padding: 7px 10px;
+    font-size: 10px;
+    padding: 6px 9px;
   }
 }
 
@@ -739,29 +745,29 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   }
 
   .hero h1 {
-    font-size: 42px;
+    font-size: 30px;
   }
 
   .hero-text {
-    font-size: 13px;
-    margin: 10px 0 16px;
+    font-size: 12px;
+    margin: 8px 0 14px;
   }
 
   .hero-actions {
-    gap: 8px;
+    gap: 7px;
   }
 
   .hero-badges {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 6px;
-    margin-top: 14px;
+    gap: 5px;
+    margin-top: 12px;
   }
 
   .hero-badges span {
     text-align: center;
-    font-size: 10px;
-    padding: 6px 8px;
+    font-size: 9px;
+    padding: 5px 7px;
   }
 
   .hero-slide {
@@ -775,16 +781,16 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   }
 
   .hero h1 {
-    font-size: 34px;
+    font-size: 26px;
   }
 
   .hero-text {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .hero-badges {
-    gap: 5px;
-    margin-top: 12px;
+    gap: 4px;
+    margin-top: 10px;
   }
 
   .hero-badges span {
@@ -882,5 +888,138 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 
   #servizi .feature-card h3 {
     font-size: 13px;
+  }
+}
+
+/* ==========================================================
+   LIGHTBOX GALLERIA FOTO
+   ========================================================== */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0,0,0,.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lightbox.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-img {
+  max-width: 92vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 201;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,.18);
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  transition: background .2s;
+}
+
+.lightbox-close:hover {
+  background: rgba(255,255,255,.30);
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  z-index: 201;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 60px;
+  border: 0;
+  background: rgba(255,255,255,.14);
+  color: #fff;
+  font-size: 40px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  transition: background .2s;
+  border-radius: 10px;
+}
+
+.lightbox-prev { left: 10px; }
+.lightbox-next { right: 10px; }
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(255,255,255,.28);
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,.75);
+  font-size: 13px;
+  font-weight: 700;
+  background: rgba(0,0,0,.50);
+  padding: 6px 14px;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+@media (max-width: 520px) {
+  .lightbox-prev,
+  .lightbox-next {
+    width: 40px;
+    height: 48px;
+    font-size: 34px;
+  }
+
+  .lightbox-prev { left: 4px; }
+  .lightbox-next { right: 4px; }
+
+  .lightbox-close {
+    top: 8px;
+    right: 8px;
+    width: 38px;
+    height: 38px;
+    font-size: 24px;
+  }
+
+  .lightbox-counter {
+    bottom: 12px;
+    font-size: 11px;
+    padding: 5px 11px;
+  }
+
+  .lightbox-img {
+    max-width: 96vw;
+    max-height: 80vh;
+    border-radius: 8px;
   }
 }

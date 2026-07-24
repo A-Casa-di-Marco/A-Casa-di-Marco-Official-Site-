@@ -257,12 +257,12 @@
       </div>
 
       <div class="gallery-grid">
-        <img src="assets/garden-main.jpg" alt="Giardino di A Casa di Marco" onerror="this.src='assets/placeholder.svg'">
-        <img src="assets/casa-1.jpg" alt="Camera matrimoniale" onerror="this.src='assets/placeholder.svg'">
-        <img src="assets/casa-2.jpg" alt="Soggiorno" onerror="this.src='assets/placeholder.svg'">
-        <img src="assets/casa-5.jpg" alt="Cucina" onerror="this.src='assets/placeholder.svg'">
-        <img src="assets/casa-3.jpg" alt="Seconda camera" onerror="this.src='assets/placeholder.svg'">
-        <img src="assets/casa-4.jpg" alt="Bagno" onerror="this.src='assets/placeholder.svg'">
+        <button class="gallery-trigger"><img src="assets/garden-main.jpg" alt="Giardino di A Casa di Marco" onerror="this.src='assets/placeholder.svg'"></button>
+        <button class="gallery-trigger"><img src="assets/casa-1.jpg" alt="Camera matrimoniale" onerror="this.src='assets/placeholder.svg'"></button>
+        <button class="gallery-trigger"><img src="assets/casa-2.jpg" alt="Soggiorno" onerror="this.src='assets/placeholder.svg'"></button>
+        <button class="gallery-trigger"><img src="assets/casa-5.jpg" alt="Cucina" onerror="this.src='assets/placeholder.svg'"></button>
+        <button class="gallery-trigger"><img src="assets/casa-3.jpg" alt="Seconda camera" onerror="this.src='assets/placeholder.svg'"></button>
+        <button class="gallery-trigger"><img src="assets/casa-4.jpg" alt="Bagno" onerror="this.src='assets/placeholder.svg'"></button>
       </div>
     </section>
 
@@ -496,6 +496,14 @@
   </footer>
 
   <a class="floating-whatsapp" href="https://wa.me/393923064010?text=Ciao%2C%20vorrei%20informazioni%20per%20un%20soggiorno%20ad%20A%20Casa%20di%20Marco." target="_blank" rel="noopener" aria-label="Scrivi su WhatsApp">💬</a>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Chiudi">&times;</button>
+    <button class="lightbox-prev" aria-label="Precedente">&lsaquo;</button>
+    <button class="lightbox-next" aria-label="Successiva">&rsaquo;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+    <span class="lightbox-counter" id="lightboxCounter"></span>
+  </div>
 
   <script src="script.js"></script>
 </body>
