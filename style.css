@@ -742,38 +742,69 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   .hero {
     min-height: 100vh;
     min-height: 100dvh;
-    padding: 60px 14px 34px;
+    padding: 80px 20px 60px;
     margin: 0;
-    align-items: flex-end;
+    align-items: center;
   }
 
   .hero::after {
     background: linear-gradient(180deg,
-      rgba(0, 80, 85, .08) 0%,
-      rgba(0, 80, 85, .18) 40%,
-      rgba(0, 80, 85, .65) 100%);
+      rgba(0, 80, 85, .12) 0%,
+      rgba(0, 80, 85, .30) 50%,
+      rgba(0, 80, 85, .55) 100%);
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero .eyebrow {
+    display: inline-flex;
+    margin-bottom: 14px;
+    font-size: 11px;
   }
 
   .hero h1 {
-    font-size: clamp(32px, 10vw, 48px);
-    text-shadow: 0 6px 22px rgba(0,0,0,.40);
+    font-size: clamp(40px, 11vw, 56px);
+    text-shadow: 0 6px 24px rgba(0,0,0,.36);
+    margin-bottom: 6px;
   }
 
-  .hero-text {
-    max-width: 100%;
-    font-size: 13px;
-    margin: 10px 0 16px;
-    text-shadow: 0 3px 14px rgba(0,0,0,.40);
+  .hero-actions {
+    justify-content: center;
+    margin-top: 22px;
+    gap: 10px;
+  }
+
+  .hero-actions .btn {
+    min-height: 48px;
+    padding: 13px 24px;
+    font-size: 14px;
   }
 
   .hero-badges {
-    gap: 6px;
-    margin-top: 14px;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
   }
 
   .hero-badges span {
-    font-size: 10px;
-    padding: 6px 9px;
+    font-size: 11px;
+    padding: 7px 11px;
+  }
+
+  .hero-badges span .material-symbols-outlined {
+    font-size: 15px;
+  }
+
+  .scroll-hint {
+    bottom: 18px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .scroll-hint .material-symbols-outlined {
+    font-size: 20px;
   }
 }
 
@@ -781,68 +812,95 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   .hero {
     min-height: 100vh;
     min-height: 100dvh;
-    padding: 52px 12px 26px;
+    padding: 70px 16px 50px;
   }
 
   .hero::after {
     background: linear-gradient(180deg,
-      rgba(0, 80, 85, .06) 0%,
-      rgba(0, 80, 85, .20) 38%,
-      rgba(0, 80, 85, .68) 100%);
+      rgba(0, 80, 85, .10) 0%,
+      rgba(0, 80, 85, .28) 50%,
+      rgba(0, 80, 85, .58) 100%);
+  }
+
+  .hero .eyebrow {
+    font-size: 10px;
+    margin-bottom: 12px;
   }
 
   .hero h1 {
-    font-size: 30px;
-  }
-
-  .hero-text {
-    font-size: 12px;
-    margin: 8px 0 14px;
+    font-size: 38px;
   }
 
   .hero-actions {
-    gap: 7px;
+    margin-top: 18px;
+    gap: 8px;
+  }
+
+  .hero-actions .btn {
+    min-height: 46px;
+    padding: 12px 20px;
+    font-size: 13px;
   }
 
   .hero-badges {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 5px;
-    margin-top: 12px;
+    gap: 6px;
+    margin-top: 16px;
   }
 
   .hero-badges span {
     text-align: center;
-    font-size: 9px;
-    padding: 5px 7px;
+    font-size: 10px;
+    padding: 7px 10px;
+  }
+
+  .hero-badges span .material-symbols-outlined {
+    font-size: 14px;
   }
 
   .hero-slide {
     object-position: center center;
   }
+
+  .scroll-hint {
+    bottom: 14px;
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @media (max-width: 380px) {
   .hero {
-    padding: 46px 10px 22px;
+    padding: 60px 12px 42px;
   }
 
   .hero h1 {
-    font-size: 26px;
+    font-size: 32px;
   }
 
-  .hero-text {
-    font-size: 11px;
+  .hero-actions {
+    margin-top: 16px;
+  }
+
+  .hero-actions .btn {
+    min-height: 42px;
+    padding: 11px 18px;
+    font-size: 13px;
   }
 
   .hero-badges {
-    gap: 4px;
-    margin-top: 10px;
+    gap: 5px;
+    margin-top: 14px;
   }
 
   .hero-badges span {
     font-size: 9px;
-    padding: 5px 7px;
+    padding: 6px 8px;
+  }
+
+  .hero-badges span .material-symbols-outlined {
+    font-size: 13px;
   }
 }
 
