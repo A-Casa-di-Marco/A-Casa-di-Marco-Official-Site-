@@ -61,17 +61,14 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 .section-heading h2 { margin-top: 12px; font-size: clamp(34px, 5vw, 56px); }
 .section-heading p { color: var(--muted); margin-top: 10px; }
 
-.intro-grid, .location-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 20px; align-items: start; }
-.intro-grid p { color: var(--muted); font-size: 17px; margin-bottom: 12px; }
+.welcome-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; align-items: start; }
+.welcome-grid p { color: var(--muted); font-size: 17px; margin-bottom: 12px; }
+.welcome-section { background: linear-gradient(135deg, #ffffff 0%, #fff8e8 48%, var(--ottanio-soft) 100%); }
 .highlight-card, .map-card, .request-card { background: var(--ottanio-soft); border-radius: 24px; padding: 22px; }
 .highlight-card strong, .map-card h3, .request-card h3, .location-grid h3 { display: block; color: var(--ottanio-dark); font-size: 25px; margin-bottom: 10px; }
 .highlight-card ul, .clean-list { list-style: none; display: grid; gap: 10px; }
 .highlight-card li, .clean-list li { background: rgba(255,255,255,.72); border-radius: 14px; padding: 10px 12px; }
 
-.calm-section { background: linear-gradient(135deg, #ffffff 0%, #fff8e8 48%, var(--ottanio-soft) 100%); overflow: hidden; }
-.calm-layout { display: grid; grid-template-columns: 1.05fr .95fr; gap: 24px; align-items: center; }
-.calm-copy h2 { margin-top: 12px; font-size: clamp(36px, 5vw, 58px); }
-.calm-copy p { color: var(--muted); font-size: 17px; margin-top: 12px; max-width: 700px; }
 .calm-points { display: grid; gap: 12px; }
 .calm-points article { display: grid; grid-template-columns: 48px 1fr; gap: 6px 12px; align-items: start; background: rgba(255,255,255,.74); border: 1px solid rgba(15,127,131,.14); border-radius: 22px; padding: 18px; box-shadow: 0 10px 26px rgba(0,80,85,.08); }
 .calm-points span { grid-row: span 2; width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--ottanio); color: #fff; font-size: 24px; }
@@ -99,12 +96,6 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 .locked-tip { display: flex; gap: 10px; align-items: flex-start; margin-top: 14px; padding: 12px; border-radius: 16px; background: var(--sand); color: var(--ottanio-dark); }
 .locked-tip span { font-size: 20px; }
 .locked-tip p { font-size: 12px; line-height: 1.45; margin: 0; color: var(--ottanio-dark); font-weight: 700; }
-
-.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-.stat-card { background: linear-gradient(180deg, var(--ottanio-soft), #fff); border-radius: 24px; padding: 22px; text-align: center; border: 1px solid rgba(15,127,131,.12); }
-.stat-value { display: block; color: var(--ottanio-dark); font-weight: 900; font-size: 28px; }
-.stat-label { color: var(--gold); font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
-.stat-card p { margin-top: 8px; color: var(--muted); font-size: 13px; }
 
 .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .feature-card, .sleep-card, .info-card { background: var(--ottanio-soft); border-radius: 20px; padding: 16px; box-shadow: 0 8px 20px rgba(0,80,85,.07); }
@@ -228,7 +219,6 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 
 @media (max-width: 980px) {
   .features-grid { grid-template-columns: repeat(2, 1fr); }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .sleep-grid, .info-grid, .reviews-grid { grid-template-columns: 1fr; }
 }
 
@@ -240,9 +230,7 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   .nav-links a { text-align: center; font-size: 14px; }
   main { width: min(100% - 20px, 1120px); }
   .section { padding: 22px; border-radius: 24px; }
-  .intro-grid, .location-grid, .form-row, .review-summary-grid { grid-template-columns: 1fr; }
-  .calm-layout { grid-template-columns: 1fr; gap: 16px; }
-  .calm-copy p { font-size: 14px; }
+  .welcome-grid, .location-grid, .form-row, .review-summary-grid { grid-template-columns: 1fr; }
   .calm-points { gap: 10px; }
   .calm-points article { grid-template-columns: 40px 1fr; padding: 14px; border-radius: 18px; }
   .calm-points span { width: 40px; height: 40px; font-size: 20px; }
@@ -336,17 +324,12 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
     padding: 6px 11px;
   }
 
-  .calm-copy h2 {
-    font-size: clamp(24px, 6vw, 32px);
-  }
-
   .btn {
     min-height: 44px;
     padding: 11px 15px;
     font-size: 13px;
   }
 
-  .stats-grid,
   .features-grid,
   .sleep-grid,
   .info-grid,
@@ -358,7 +341,6 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   .feature-card,
   .sleep-card,
   .info-card,
-  .stat-card,
   .review-score-card {
     padding: 13px;
     border-radius: 17px;
@@ -385,27 +367,14 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   .feature-card p,
   .sleep-card p,
   .info-card p,
-  .stat-card p,
   .review-score-card p {
     font-size: 12px;
     line-height: 1.42;
   }
 
-  .stat-value {
-    font-size: 22px;
-  }
-
-  .stat-label {
-    font-size: 10px;
-  }
-
-  .intro-grid,
+  .welcome-grid,
   .location-grid {
     gap: 12px;
-  }
-
-  .intro-grid p {
-    font-size: 14px;
   }
 
   .highlight-card,
@@ -617,7 +586,6 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
     font-size: 10.5px;
   }
 
-  .stats-grid,
   .features-grid,
   .sleep-grid,
   .info-grid,
@@ -629,7 +597,6 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   .feature-card,
   .sleep-card,
   .info-card,
-  .stat-card,
   .review-score-card {
     padding: 11px;
     border-radius: 15px;
@@ -650,7 +617,6 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   .feature-card p,
   .sleep-card p,
   .info-card p,
-  .stat-card p,
   .review-score-card p {
     font-size: 11.5px;
   }
@@ -908,8 +874,6 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
    VERSIONE PIU PULITA: TESTI BREVI, SERVIZI COMPATTI, MAPPA
    ========================================================== */
 
-.intro-grid p,
-.calm-copy p,
 .guide-copy p {
   max-width: 660px;
 }
@@ -947,8 +911,6 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 }
 
 @media (max-width: 860px) {
-  .intro-grid p,
-  .calm-copy p,
   .guide-copy p {
     font-size: 13.5px;
     line-height: 1.45;
