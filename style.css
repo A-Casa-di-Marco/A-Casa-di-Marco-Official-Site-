@@ -61,87 +61,17 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 .section-heading h2 { margin-top: 12px; font-size: clamp(34px, 5vw, 56px); }
 .section-heading p { color: var(--muted); margin-top: 10px; }
 
-.welcome-section { background: linear-gradient(135deg, #ffffff 0%, #fff8e8 48%, var(--ottanio-soft) 100%); }
-
-.welcome-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-
-.welcome-card {
-  background: #fff;
-  border-radius: 24px;
-  padding: 30px;
-  border: 1px solid rgba(15,127,131,.12);
-  box-shadow: 0 12px 32px rgba(0,70,75,.08);
-}
-
-.welcome-icon {
-  width: 52px;
-  height: 52px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 16px;
-  background: var(--ottanio-soft);
-  color: var(--ottanio-dark);
-  margin-bottom: 18px;
-}
-.welcome-icon .material-symbols-outlined { font-size: 28px; }
-
-.welcome-card h3 {
-  font-family: 'Poppins', system-ui, sans-serif;
-  font-weight: 800;
-  font-size: 22px;
-  color: var(--ottanio-dark);
-  margin-bottom: 10px;
-  line-height: 1.2;
-}
-
-.welcome-card > p {
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.55;
-}
-
-.welcome-benefits { display: grid; gap: 14px; margin-top: 6px; }
-
-.welcome-benefit {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: 10px;
-  align-items: start;
-}
-
-.welcome-benefit > span {
-  width: 40px;
-  height: 40px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  background: var(--ottanio-soft);
-  color: var(--ottanio-dark);
-}
-.welcome-benefit > span .material-symbols-outlined { font-size: 22px; }
-
-.welcome-benefit strong {
-  display: block;
-  color: var(--ottanio-dark);
-  font-size: 15px;
-  font-weight: 800;
-  line-height: 1.25;
-}
-
-.welcome-benefit p {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.4;
-  margin: 2px 0 0;
-}
-
+.intro-grid, .location-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 20px; align-items: start; }
+.intro-grid p { color: var(--muted); font-size: 17px; margin-bottom: 12px; }
 .highlight-card, .map-card, .request-card { background: var(--ottanio-soft); border-radius: 24px; padding: 22px; }
 .highlight-card strong, .map-card h3, .request-card h3, .location-grid h3 { display: block; color: var(--ottanio-dark); font-size: 25px; margin-bottom: 10px; }
 .highlight-card ul, .clean-list { list-style: none; display: grid; gap: 10px; }
 .highlight-card li, .clean-list li { background: rgba(255,255,255,.72); border-radius: 14px; padding: 10px 12px; }
 
+.calm-section { background: linear-gradient(135deg, #ffffff 0%, #fff8e8 48%, var(--ottanio-soft) 100%); overflow: hidden; }
+.calm-layout { display: grid; grid-template-columns: 1.05fr .95fr; gap: 24px; align-items: center; }
+.calm-copy h2 { margin-top: 12px; font-size: clamp(36px, 5vw, 58px); }
+.calm-copy p { color: var(--muted); font-size: 17px; margin-top: 12px; max-width: 700px; }
 .calm-points { display: grid; gap: 12px; }
 .calm-points article { display: grid; grid-template-columns: 48px 1fr; gap: 6px 12px; align-items: start; background: rgba(255,255,255,.74); border: 1px solid rgba(15,127,131,.14); border-radius: 22px; padding: 18px; box-shadow: 0 10px 26px rgba(0,80,85,.08); }
 .calm-points span { grid-row: span 2; width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--ottanio); color: #fff; font-size: 24px; }
@@ -303,7 +233,9 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   .nav-links a { text-align: center; font-size: 14px; }
   main { width: min(100% - 20px, 1120px); }
   .section { padding: 22px; border-radius: 24px; }
-  .welcome-grid, .location-grid, .form-row, .review-summary-grid { grid-template-columns: 1fr; }
+  .intro-grid, .location-grid, .form-row, .review-summary-grid { grid-template-columns: 1fr; }
+  .calm-layout { grid-template-columns: 1fr; gap: 16px; }
+  .calm-copy p { font-size: 14px; }
   .calm-points { gap: 10px; }
   .calm-points article { grid-template-columns: 40px 1fr; padding: 14px; border-radius: 18px; }
   .calm-points span { width: 40px; height: 40px; font-size: 20px; }
@@ -397,6 +329,10 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
     padding: 6px 11px;
   }
 
+  .calm-copy h2 {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+
   .btn {
     min-height: 44px;
     padding: 11px 15px;
@@ -445,40 +381,14 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
     line-height: 1.42;
   }
 
-  .welcome-grid,
+  .intro-grid,
   .location-grid {
     gap: 12px;
   }
 
-  .welcome-card {
-    padding: 22px;
-    border-radius: 20px;
+  .intro-grid p {
+    font-size: 14px;
   }
-
-  .welcome-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 14px;
-    margin-bottom: 14px;
-  }
-  .welcome-icon .material-symbols-outlined { font-size: 24px; }
-
-  .welcome-card h3 { font-size: 19px; }
-
-  .welcome-card > p { font-size: 13px; }
-
-  .welcome-benefits { gap: 12px; }
-
-  .welcome-benefit > span {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-  }
-  .welcome-benefit > span .material-symbols-outlined { font-size: 20px; }
-
-  .welcome-benefit strong { font-size: 14px; }
-
-  .welcome-benefit p { font-size: 12px; }
 
   .highlight-card,
   .map-card,
@@ -777,32 +687,6 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
     bottom: 14px;
   }
   .floating-whatsapp .material-symbols-outlined { font-size: 24px; }
-
-  .welcome-card {
-    padding: 18px;
-    border-radius: 18px;
-  }
-
-  .welcome-icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 12px;
-  }
-  .welcome-icon .material-symbols-outlined { font-size: 22px; }
-
-  .welcome-card h3 { font-size: 17px; }
-
-  .welcome-card > p { font-size: 12px; }
-
-  .welcome-benefit > span {
-    width: 32px;
-    height: 32px;
-  }
-  .welcome-benefit > span .material-symbols-outlined { font-size: 18px; }
-
-  .welcome-benefit strong { font-size: 13px; }
-
-  .welcome-benefit p { font-size: 11px; }
 }
 
 @media (max-width: 380px) {
@@ -1003,6 +887,8 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
    VERSIONE PIU PULITA: TESTI BREVI, SERVIZI COMPATTI, MAPPA
    ========================================================== */
 
+.intro-grid p,
+.calm-copy p,
 .guide-copy p {
   max-width: 660px;
 }
@@ -1040,6 +926,8 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 }
 
 @media (max-width: 860px) {
+  .intro-grid p,
+  .calm-copy p,
   .guide-copy p {
     font-size: 13.5px;
     line-height: 1.45;
