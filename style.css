@@ -188,7 +188,6 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   .nav-links { display: none; position: absolute; top: 62px; left: 0; right: 0; flex-direction: column; align-items: stretch; background: rgba(255,255,255,.98); border-radius: 24px; padding: 12px; box-shadow: 0 12px 30px rgba(0,70,75,.14); }
   .nav-links.show { display: flex; }
   .nav-links a { text-align: center; font-size: 14px; }
-  .hero { min-height: 82vh; padding: 120px 14px 46px; }
   main { width: min(100% - 20px, 1120px); }
   .section { padding: 22px; border-radius: 24px; }
   .intro-grid, .location-grid, .form-row, .review-summary-grid { grid-template-columns: 1fr; }
@@ -221,8 +220,6 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 
 @media (max-width: 520px) {
   .brand span:last-child { font-size: 14px; }
-  .hero h1 { font-size: 58px; }
-  .hero-text { font-size: 16px; }
   .section-heading h2 { font-size: 34px; }
   .gallery-grid img, .gallery-grid img:first-child { height: 145px; }
   .feature-card, .highlight-card, .map-card, .request-card, .sleep-card, .info-card { padding: 18px; border-radius: 20px; }
@@ -288,33 +285,8 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
     padding: 6px 11px;
   }
 
-  .hero {
-    min-height: 72vh;
-    padding: 105px 14px 34px;
-  }
-
-  .hero h1 {
-    font-size: clamp(44px, 14vw, 62px);
-  }
-
-  .hero-text {
-    max-width: 100%;
-    font-size: 15px;
-    margin: 12px 0 18px;
-  }
-
   .calm-copy h2 {
     font-size: clamp(29px, 8vw, 39px);
-  }
-
-  .hero-badges {
-    gap: 7px;
-    margin-top: 16px;
-  }
-
-  .hero-badges span {
-    font-size: 11px;
-    padding: 7px 10px;
   }
 
   .btn {
@@ -538,28 +510,6 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
     font-size: 20px;
   }
 
-  .hero {
-    min-height: 66vh;
-    padding-top: 92px;
-  }
-
-  .hero h1 {
-    font-size: 45px;
-  }
-
-  .hero-actions {
-    gap: 9px;
-  }
-
-  .hero-badges {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .hero-badges span {
-    text-align: center;
-  }
-
   .section {
     padding: 14px;
     border-radius: 18px;
@@ -727,7 +677,7 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 
 
 /* ==========================================================
-   HERO CAROSELLO + FIX STRISCIA VERDE MOBILE
+   HERO CAROSELLO - FULLSCREEN MOBILE
    ========================================================== */
 
 @media (max-width: 860px) {
@@ -737,25 +687,109 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   }
 
   .hero {
-    min-height: 74vh;
-    padding: 100px 14px 34px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 60px 14px 34px;
     margin: 0;
+    align-items: flex-end;
   }
 
   .hero::after {
-    background: linear-gradient(180deg, rgba(0, 80, 85, .16), rgba(0, 80, 85, .74));
+    background: linear-gradient(180deg,
+      rgba(0, 80, 85, .08) 0%,
+      rgba(0, 80, 85, .18) 40%,
+      rgba(0, 80, 85, .65) 100%);
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 12vw, 62px);
+    text-shadow: 0 6px 22px rgba(0,0,0,.40);
+  }
+
+  .hero-text {
+    max-width: 100%;
+    font-size: 14px;
+    margin: 12px 0 18px;
+    text-shadow: 0 3px 14px rgba(0,0,0,.40);
+  }
+
+  .hero-badges {
+    gap: 7px;
+    margin-top: 16px;
+  }
+
+  .hero-badges span {
+    font-size: 11px;
+    padding: 7px 10px;
   }
 }
 
 @media (max-width: 520px) {
   .hero {
-    min-height: 70vh;
-    padding-top: 88px;
-    padding-bottom: 30px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 52px 12px 26px;
+  }
+
+  .hero::after {
+    background: linear-gradient(180deg,
+      rgba(0, 80, 85, .06) 0%,
+      rgba(0, 80, 85, .20) 38%,
+      rgba(0, 80, 85, .68) 100%);
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-text {
+    font-size: 13px;
+    margin: 10px 0 16px;
+  }
+
+  .hero-actions {
+    gap: 8px;
+  }
+
+  .hero-badges {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  .hero-badges span {
+    text-align: center;
+    font-size: 10px;
+    padding: 6px 8px;
   }
 
   .hero-slide {
     object-position: center center;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero {
+    padding: 46px 10px 22px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero-text {
+    font-size: 12px;
+  }
+
+  .hero-badges {
+    gap: 5px;
+    margin-top: 12px;
+  }
+
+  .hero-badges span {
+    font-size: 9px;
+    padding: 5px 7px;
   }
 }
 
