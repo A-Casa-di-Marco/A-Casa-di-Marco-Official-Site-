@@ -72,37 +72,56 @@
   </header>
 
   <main>
-    <section class="section calm-section refuge-calm-section" id="casa">
-      <div class="calm-layout refuge-calm-layout">
-        <div class="calm-copy refuge-copy">
-          <span class="section-kicker">Benvenuti</span>
-          <h2>Freschi, tranquilli, lontani dal caos</h2>
-          <p><strong>A Casa di Marco</strong> è il vostro rifugio a Salerno: un intero alloggio con giardino privato, parcheggio interno e spazi comodi fino a 6 persone.</p>
-          <p>Dopo mare, centro e Costiera, qui si rientra in un posto più calmo, fresco e riservato: ideale per respirare, riposare e dormire meglio.</p>
+    <section class="section intro-section" id="casa">
+      <div class="section-heading">
+        <span class="section-kicker">Benvenuti</span>
+        <h2>Il vostro rifugio a Salerno</h2>
+      </div>
 
-          <div class="refuge-chips" aria-label="Informazioni principali sulla casa">
-            <span><span class="material-symbols-outlined">home</span> Intero alloggio</span>
-            <span><span class="material-symbols-outlined">groups</span> Fino a 6 ospiti</span>
-            <span><span class="material-symbols-outlined">bed</span> 2 camere · 4 letti</span>
-            <span><span class="material-symbols-outlined">child_care</span> Culla su richiesta</span>
-          </div>
+      <div class="intro-grid">
+        <div>
+          <p><strong>A Casa di Marco</strong> è un intero alloggio a Salerno, in una zona tranquilla e residenziale.</p>
+          <p>Giardino privato, parcheggio interno, cucina, Wi-Fi e spazi comodi per famiglie e gruppi fino a 6 persone.</p>
+          <p>Una base pratica per Salerno e Costiera, con la calma giusta quando si rientra.</p>
         </div>
 
-        <div class="calm-points" aria-label="Punti forti della casa">
+        <div class="highlight-card">
+          <strong>In breve</strong>
+          <ul>
+            <li>Intero alloggio con ingresso indipendente</li>
+            <li>Fino a 6 ospiti</li>
+            <li>2 camere da letto</li>
+            <li>4 letti e 1 bagno</li>
+            <li>Culla disponibile su richiesta</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section calm-section" id="relax">
+      <div class="calm-layout">
+        <div class="calm-copy">
+          <span class="section-kicker">Relax dopo il mare</span>
+          <h2>Freschi, tranquilli, lontani dal caos</h2>
+          <p>Dopo mare, centro e Costiera, qui si rientra in un posto più calmo, fresco e riservato.</p>
+          <p>Gli ospiti apprezzano privacy, silenzio e giardino: l’ideale per dormire bene e ripartire con più energia.</p>
+        </div>
+
+        <div class="calm-points" aria-label="Punti forti per il relax">
           <article>
             <span><span class="material-symbols-outlined">bedtime</span></span>
             <strong>Si dorme meglio</strong>
-            <p>Zona tranquilla, lontana dal caos serale e dal caldo più pesante.</p>
+            <p>Zona più silenziosa, ideale per riposare.</p>
           </article>
           <article>
             <span><span class="material-symbols-outlined">park</span></span>
-            <strong>Giardino privato</strong>
-            <p>Uno spazio esterno solo per voi, perfetto per staccare davvero.</p>
+            <strong>Aria e spazio esterno</strong>
+            <p>Giardino e veranda per staccare davvero.</p>
           </article>
           <article>
             <span><span class="material-symbols-outlined">lock</span></span>
-            <strong>Privacy e calma</strong>
-            <p>Ingresso indipendente e atmosfera riservata al rientro.</p>
+            <strong>Privacy</strong>
+            <p>Ingresso indipendente e spazi riservati.</p>
           </article>
         </div>
       </div>
@@ -184,31 +203,85 @@
       </div>
     </section>
 
-    <section class="section sleep-section">
+    <section class="section sleep-section" id="spazi">
       <div class="section-heading centered">
         <span class="section-kicker">Spazi</span>
-        <h2>Dove dormirai</h2>
-        <p>Ambienti semplici e funzionali, pensati per famiglie e piccoli gruppi.</p>
+        <h2>Dove dormirai e vivrai la casa</h2>
+        <p>Camere, bagno e cucina: clicca su ogni spazio per vedere foto e dettagli.</p>
       </div>
 
-      <div class="sleep-grid">
-        <article class="sleep-card">
-          <span><span class="material-symbols-outlined">king_bed</span></span>
-          <h3>Camera da letto 1</h3>
-          <p>1 letto matrimoniale e possibilità di culla per bambini piccoli.</p>
-        </article>
-        <article class="sleep-card">
-          <span><span class="material-symbols-outlined">single_bed</span></span>
-          <h3>Camera da letto 2</h3>
-          <p>Letto singolo, letto a castello e letto basso.</p>
-        </article>
-        <article class="sleep-card">
-          <span><span class="material-symbols-outlined">shower</span></span>
-          <h3>Bagno</h3>
-          <p>Bagno funzionale con lavatrice nell’alloggio.</p>
-        </article>
+      <div class="spaces-grid">
+        <button class="space-card" type="button" data-space="camera1" aria-label="Apri dettagli Camera matrimoniale">
+          <img src="assets/casa-1.jpg" alt="Camera matrimoniale" onerror="this.src='assets/placeholder.svg'">
+          <div class="space-card-content">
+            <span class="space-icon"><span class="material-symbols-outlined">king_bed</span></span>
+            <h3>Camera matrimoniale</h3>
+            <p><strong>1 letto matrimoniale</strong> · fino a 2 persone.</p>
+            <div class="space-tags">
+              <span>2 posti letto</span>
+              <span>Culla su richiesta</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="space-card" type="button" data-space="camera2" aria-label="Apri dettagli Camera 2">
+          <img src="assets/casa-3.jpg" alt="Seconda camera" onerror="this.src='assets/placeholder.svg'">
+          <div class="space-card-content">
+            <span class="space-icon"><span class="material-symbols-outlined">single_bed</span></span>
+            <h3>Camera 2</h3>
+            <p><strong>Futon piazza e mezzo</strong>, lettino singolo e letto rialzato.</p>
+            <div class="space-tags">
+              <span>4 posti letto</span>
+              <span>Ideale per famiglie</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="space-card" type="button" data-space="bagno" aria-label="Apri dettagli Bagno">
+          <img src="assets/casa-4.jpg" alt="Bagno" onerror="this.src='assets/placeholder.svg'">
+          <div class="space-card-content">
+            <span class="space-icon"><span class="material-symbols-outlined">shower</span></span>
+            <h3>Bagno</h3>
+            <p>Bagno pratico con servizi essenziali e lavatrice nell’alloggio.</p>
+            <div class="space-tags">
+              <span>Doccia</span>
+              <span>Lavatrice</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="space-card" type="button" data-space="cucina" aria-label="Apri dettagli Cucina">
+          <img src="assets/casa-5.jpg" alt="Cucina" onerror="this.src='assets/placeholder.svg'">
+          <div class="space-card-content">
+            <span class="space-icon"><span class="material-symbols-outlined">cooking</span></span>
+            <h3>Cucina</h3>
+            <p>Cucina attrezzata per colazioni, pasti semplici e soggiorni più lunghi.</p>
+            <div class="space-tags">
+              <span>Attrezzata</span>
+              <span>Caffè</span>
+            </div>
+          </div>
+        </button>
       </div>
     </section>
+
+    <div class="space-modal" id="spaceModal" aria-hidden="true">
+      <div class="space-dialog" role="dialog" aria-modal="true" aria-labelledby="spaceModalTitle">
+        <button class="space-modal-close" type="button" aria-label="Chiudi">&times;</button>
+        <div class="space-modal-gallery">
+          <button class="space-modal-nav prev" type="button" aria-label="Foto precedente">&lsaquo;</button>
+          <img id="spaceModalImg" src="" alt="">
+          <button class="space-modal-nav next" type="button" aria-label="Foto successiva">&rsaquo;</button>
+          <span class="space-modal-counter" id="spaceModalCounter">1 / 1</span>
+        </div>
+        <div class="space-modal-content">
+          <span class="section-kicker" id="spaceModalKicker">Spazio</span>
+          <h3 id="spaceModalTitle">Dettagli spazio</h3>
+          <p id="spaceModalDesc"></p>
+          <div class="space-modal-list" id="spaceModalList"></div>
+        </div>
+      </div>
+    </div>
 
     <section class="section photo-section" id="foto">
       <div class="section-heading centered">
