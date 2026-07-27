@@ -1130,10 +1130,9 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 }
 
 
-/* SPAZI INTERATTIVI - versione corretta */
-.spaces-section {
-  background: linear-gradient(135deg, #ffffff 0%, #fff8e8 50%, var(--ottanio-soft) 100%);
-  overflow: hidden;
+/* SEZIONE SPAZI INTERATTIVA */
+.sleep-section {
+  background: linear-gradient(135deg, #ffffff 0%, #fff8e8 56%, var(--ottanio-soft) 100%);
 }
 
 .spaces-grid {
@@ -1144,85 +1143,75 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 
 .space-card {
   border: 0;
+  padding: 0;
   background: #fff;
   border-radius: 24px;
   overflow: hidden;
   cursor: pointer;
   text-align: left;
-  box-shadow: 0 12px 28px rgba(0, 70, 75, .12);
+  box-shadow: 0 10px 26px rgba(0,80,85,.10);
   transition: transform .18s ease, box-shadow .18s ease;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', system-ui, sans-serif;
   color: var(--text);
-  position: relative;
 }
 
 .space-card:hover,
 .space-card:focus-visible {
   transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(0, 70, 75, .18);
+  box-shadow: 0 16px 34px rgba(0,80,85,.16);
   outline: none;
-}
-
-.space-card::after {
-  content: "Apri foto e dettagli";
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(255, 255, 255, .94);
-  color: var(--ottanio-dark);
-  border-radius: 999px;
-  padding: 6px 10px;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: .02em;
 }
 
 .space-card img {
   width: 100%;
-  height: 170px;
+  height: 155px;
   object-fit: cover;
 }
 
-.space-card-body {
-  padding: 15px;
+.space-card-content {
+  padding: 16px;
 }
 
 .space-icon {
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: var(--ottanio);
-  color: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 8px;
+  background: var(--ottanio);
+  color: #fff;
+  margin-bottom: 10px;
 }
 
 .space-icon .material-symbols-outlined {
-  font-size: 22px;
+  font-size: 23px;
 }
 
 .space-card h3 {
-  font-size: 23px;
-  margin: 0 0 5px;
-  color: var(--ottanio-dark);
+  font-size: 24px;
+  margin: 0 0 6px;
 }
 
 .space-card p {
-  color: var(--text);
+  color: var(--muted);
   font-size: 13px;
-  line-height: 1.35;
-  margin: 0;
+  line-height: 1.45;
 }
 
-.space-card small {
+.space-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.space-tags span {
   display: inline-flex;
-  margin-top: 9px;
-  color: var(--ottanio-dark);
-  background: var(--ottanio-soft);
   border-radius: 999px;
-  padding: 5px 9px;
+  padding: 6px 9px;
+  background: var(--ottanio-soft);
+  color: var(--ottanio-dark);
   font-size: 11px;
   font-weight: 900;
 }
@@ -1230,12 +1219,12 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
 .space-modal {
   position: fixed;
   inset: 0;
-  z-index: 120;
+  z-index: 2000;
   display: none;
   align-items: center;
   justify-content: center;
   padding: 18px;
-  background: rgba(6, 38, 42, .72);
+  background: rgba(9, 42, 46, .72);
   backdrop-filter: blur(8px);
 }
 
@@ -1243,15 +1232,15 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   display: flex;
 }
 
-.space-modal-dialog {
-  width: min(1040px, 100%);
+.space-dialog {
+  width: min(960px, 100%);
   max-height: min(92vh, 820px);
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1.1fr .9fr;
+  grid-template-columns: 1.05fr .95fr;
   background: #fff;
   border-radius: 30px;
-  box-shadow: 0 28px 80px rgba(0, 0, 0, .28);
+  box-shadow: 0 28px 80px rgba(0,0,0,.32);
   position: relative;
 }
 
@@ -1259,29 +1248,28 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   position: absolute;
   top: 12px;
   right: 12px;
-  z-index: 5;
   width: 42px;
   height: 42px;
   border: 0;
   border-radius: 50%;
-  background: #fff;
+  background: rgba(255,255,255,.92);
   color: var(--ottanio-dark);
-  font-size: 28px;
+  font-size: 30px;
   line-height: 1;
   cursor: pointer;
-  box-shadow: 0 10px 24px rgba(0,70,75,.14);
+  z-index: 3;
 }
 
 .space-modal-gallery {
-  min-height: 560px;
-  background: #0f7f83;
+  min-height: 500px;
   position: relative;
+  background: var(--ottanio-soft);
 }
 
 .space-modal-gallery img {
   width: 100%;
   height: 100%;
-  min-height: 560px;
+  min-height: 500px;
   object-fit: cover;
 }
 
@@ -1290,109 +1278,89 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
   top: 50%;
   transform: translateY(-50%);
   width: 44px;
-  height: 44px;
+  height: 54px;
   border: 0;
-  border-radius: 50%;
-  background: rgba(255,255,255,.92);
+  border-radius: 999px;
+  background: rgba(255,255,255,.90);
   color: var(--ottanio-dark);
-  font-size: 32px;
+  font-size: 38px;
   cursor: pointer;
-  box-shadow: 0 10px 24px rgba(0,0,0,.16);
+  z-index: 2;
 }
 
-.space-modal-nav.prev { left: 12px; }
-.space-modal-nav.next { right: 12px; }
+.space-modal-nav.prev { left: 10px; }
+.space-modal-nav.next { right: 10px; }
 
-.space-modal-count {
+.space-modal-counter {
   position: absolute;
-  left: 14px;
+  left: 50%;
   bottom: 14px;
-  background: rgba(255,255,255,.92);
-  color: var(--ottanio-dark);
+  transform: translateX(-50%);
+  background: rgba(0,0,0,.55);
+  color: #fff;
   border-radius: 999px;
-  padding: 7px 11px;
+  padding: 6px 13px;
   font-size: 12px;
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .space-modal-content {
   padding: 34px;
-  overflow-y: auto;
+  overflow: auto;
 }
 
-.space-modal-content h2 {
-  font-size: clamp(34px, 4vw, 50px);
-  margin: 12px 0 10px;
+.space-modal-content h3 {
+  font-size: clamp(34px, 4vw, 52px);
+  margin: 14px 0 12px;
 }
 
 .space-modal-content p {
   color: var(--muted);
-  font-size: 15px;
+  font-size: 16px;
+  margin-bottom: 16px;
 }
 
-.space-detail-grid {
+.space-modal-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  margin-top: 18px;
 }
 
-.space-detail-item {
+.space-modal-list div {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
   background: var(--ottanio-soft);
   border-radius: 16px;
-  padding: 13px;
-}
-
-.space-detail-item strong {
-  display: block;
-  color: var(--ottanio-dark);
-  font-size: 13px;
-  margin-bottom: 3px;
-}
-
-.space-detail-item span {
+  padding: 12px;
   color: var(--text);
-  font-size: 13px;
+  font-size: 14px;
 }
 
-.space-services {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 18px;
-}
-
-.space-service-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border-radius: 999px;
-  background: var(--sand);
+.space-modal-list .material-symbols-outlined {
   color: var(--ottanio-dark);
-  padding: 8px 11px;
-  font-size: 12px;
-  font-weight: 900;
+  font-size: 21px;
+  flex: 0 0 auto;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 920px) {
   .spaces-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .space-modal-dialog {
+  .space-dialog {
     grid-template-columns: 1fr;
-    overflow-y: auto;
+    overflow: auto;
   }
 
   .space-modal-gallery,
   .space-modal-gallery img {
-    min-height: 340px;
-    height: 340px;
+    min-height: 310px;
+    height: 310px;
   }
 }
 
 @media (max-width: 520px) {
-  .spaces-section .section-heading p {
+  .sleep-section .section-heading p {
     font-size: 13px;
   }
 
@@ -1404,75 +1372,67 @@ main { width: min(1160px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 70
     border-radius: 18px;
   }
 
-  .space-card::after {
-    content: "Dettagli";
-    top: 8px;
-    right: 8px;
-    font-size: 9px;
-    padding: 5px 7px;
-  }
-
   .space-card img {
     height: 112px;
   }
 
-  .space-card-body {
+  .space-card-content {
     padding: 11px;
   }
 
   .space-icon {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 6px;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 7px;
   }
 
   .space-icon .material-symbols-outlined {
-    font-size: 18px;
+    font-size: 19px;
   }
 
   .space-card h3 {
     font-size: 17px;
+    line-height: 1.2;
   }
 
   .space-card p {
     font-size: 11px;
   }
 
-  .space-card small {
+  .space-tags span {
     font-size: 10px;
-    padding: 4px 7px;
+    padding: 5px 7px;
   }
 
   .space-modal {
     padding: 10px;
   }
 
-  .space-modal-dialog {
+  .space-dialog {
     border-radius: 22px;
-    max-height: 92vh;
+    max-height: 94vh;
   }
 
   .space-modal-gallery,
   .space-modal-gallery img {
-    min-height: 245px;
-    height: 245px;
+    min-height: 260px;
+    height: 260px;
   }
 
   .space-modal-content {
-    padding: 20px;
+    padding: 22px;
   }
 
-  .space-modal-content h2 {
-    font-size: 31px;
+  .space-modal-content h3 {
+    font-size: 34px;
   }
 
-  .space-detail-grid {
-    grid-template-columns: 1fr;
+  .space-modal-content p {
+    font-size: 14px;
   }
 
-  .space-modal-nav {
-    width: 38px;
-    height: 38px;
-    font-size: 28px;
+  .space-modal-list div {
+    font-size: 13px;
+    padding: 10px;
   }
 }
