@@ -525,103 +525,121 @@ if (lightbox) {
 
 
 /* ---------------------------
-   SEZIONE SPAZI INTERATTIVA
+   SPAZI INTERATTIVI
 ---------------------------- */
 const spaceData = {
   camera1: {
-    kicker: 'Camera matrimoniale',
+    kicker: 'Camera 1',
     title: 'Camera matrimoniale',
-    desc: 'Una camera pensata per due persone, semplice e confortevole. Su richiesta è possibile aggiungere una culla per bambini piccoli, se disponibile.',
-    photos: ['assets/casa-1.jpg', 'assets/casa-6.jpg', 'assets/casa-7.jpg'],
-    items: [
-      ['king_bed', '1 letto matrimoniale: può ospitare 2 persone.'],
-      ['child_care', 'Culla su richiesta: 1 disponibile, ideale per bambini piccoli.'],
-      ['nights_stay', 'Ambiente tranquillo per riposare dopo una giornata fuori.']
-    ]
+    desc: 'La camera principale ha un letto matrimoniale che può ospitare fino a 2 persone. Su richiesta è possibile aggiungere 1 culla per bambini piccoli, se disponibile.',
+    images: ['assets/casa-1.jpg', 'assets/casa-6.jpg', 'assets/casa-7.jpg'],
+    details: [
+      ['Posti letto', '2 persone'],
+      ['Letto', '1 matrimoniale'],
+      ['Culla', 'Su richiesta, 1 disponibile'],
+      ['Ideale per', 'Coppia o genitori con bimbo piccolo']
+    ],
+    services: ['Letto matrimoniale', 'Biancheria inclusa', 'Culla su richiesta', 'Ambiente tranquillo']
   },
   camera2: {
-    kicker: 'Seconda camera',
-    title: 'Camera 2 · fino a 4 posti letto',
-    desc: 'La seconda camera è più flessibile ed è adatta a bambini, ragazzi o piccoli gruppi. I posti letto sono distribuiti tra futon, lettino singolo e letto rialzato.',
-    photos: ['assets/casa-3.jpg', 'assets/casa-8.jpg', 'assets/casa-9.jpg'],
-    items: [
-      ['bed', 'Futon piazza e mezzo: può ospitare fino a 2 persone.'],
-      ['single_bed', 'Lettino singolo: 1 posto letto.'],
-      ['bedroom_child', 'Letto rialzato a castello: 1 posto letto.'],
-      ['family_restroom', 'Soluzione comoda per famiglie o gruppi fino a 6 ospiti totali.']
-    ]
+    kicker: 'Camera 2',
+    title: 'Seconda camera',
+    desc: 'Una camera flessibile per famiglie o gruppi: futon da una piazza e mezzo, lettino singolo e letto rialzato a castello.',
+    images: ['assets/casa-3.jpg', 'assets/casa-8.jpg', 'assets/casa-9.jpg'],
+    details: [
+      ['Posti letto', 'Fino a 4 persone'],
+      ['Futon', 'Piazza e mezzo · fino a 2 persone'],
+      ['Lettino singolo', '1 persona'],
+      ['Letto rialzato', '1 persona']
+    ],
+    services: ['Futon', 'Letto singolo', 'Letto rialzato', 'Perfetta per bambini o amici']
   },
   bagno: {
     kicker: 'Bagno',
-    title: 'Bagno funzionale',
-    desc: 'Bagno pratico e organizzato, con i servizi utili per il soggiorno e la lavatrice a disposizione degli ospiti.',
-    photos: ['assets/casa-4.jpg', 'assets/manuale-lavatrice-comandi.jpg', 'assets/manuale-lavatrice-programmi.jpg'],
-    items: [
-      ['shower', 'Doccia e servizi essenziali.'],
-      ['local_laundry_service', 'Lavatrice disponibile nell’alloggio.'],
-      ['cleaning_services', 'Ideale anche per soggiorni di più giorni.']
-    ]
+    title: 'Bagno con lavatrice',
+    desc: 'Bagno funzionale con tutto il necessario per il soggiorno. La lavatrice è utile soprattutto per soggiorni di più giorni o per famiglie.',
+    images: ['assets/casa-4.jpg', 'assets/manuale-lavatrice-comandi.jpg', 'assets/manuale-lavatrice-programmi.jpg'],
+    details: [
+      ['Servizi', 'Doccia e sanitari'],
+      ['Lavatrice', 'Disponibile in casa'],
+      ['Utilità', 'Comodo per soggiorni lunghi'],
+      ['Dotazioni', 'Essenziali per il bagno']
+    ],
+    services: ['Doccia', 'Lavatrice', 'Asciugamani', 'Prodotti essenziali']
   },
   cucina: {
     kicker: 'Cucina',
     title: 'Cucina attrezzata',
-    desc: 'Una cucina utile per colazioni, pasti semplici e soggiorni più lunghi. Perfetta se preferite avere autonomia durante la vacanza.',
-    photos: ['assets/casa-5.jpg', 'assets/dining-garden.jpg', 'assets/manuale-moka.jpg'],
-    items: [
-      ['cooking', 'Cucina attrezzata per preparare pasti e colazioni.'],
-      ['coffee', 'Macchina caffè e moka.'],
-      ['restaurant', 'Tavolo e spazio per mangiare in casa.'],
-      ['kitchen', 'Utile per famiglie e soggiorni di più giorni.']
-    ]
+    desc: 'Cucina pratica per colazioni, pasti semplici e momenti in casa. Ideale se viaggiate con bambini o preferite non mangiare sempre fuori.',
+    images: ['assets/casa-5.jpg', 'assets/manuale-moka.jpg', 'assets/dining-garden.jpg'],
+    details: [
+      ['Uso', 'Colazioni e pasti semplici'],
+      ['Caffè', 'Moka e macchina espresso'],
+      ['Dotazioni', 'Stoviglie e utensili'],
+      ['Extra', 'Possibilità di mangiare anche in giardino']
+    ],
+    services: ['Cucina attrezzata', 'Moka', 'Caffè espresso', 'Frigo', 'Stoviglie']
   }
 };
 
 const spaceModal = document.getElementById('spaceModal');
+const spaceModalClose = document.getElementById('spaceModalClose');
 const spaceModalImg = document.getElementById('spaceModalImg');
-const spaceModalCounter = document.getElementById('spaceModalCounter');
+const spaceModalCount = document.getElementById('spaceModalCount');
 const spaceModalKicker = document.getElementById('spaceModalKicker');
 const spaceModalTitle = document.getElementById('spaceModalTitle');
 const spaceModalDesc = document.getElementById('spaceModalDesc');
-const spaceModalList = document.getElementById('spaceModalList');
-const spaceModalClose = document.querySelector('.space-modal-close');
-const spaceModalPrev = document.querySelector('.space-modal-nav.prev');
-const spaceModalNext = document.querySelector('.space-modal-nav.next');
+const spaceDetailGrid = document.getElementById('spaceDetailGrid');
+const spaceServices = document.getElementById('spaceServices');
+const spacePrev = document.getElementById('spacePrev');
+const spaceNext = document.getElementById('spaceNext');
 
-let currentSpaceKey = '';
-let currentSpacePhotoIndex = 0;
+let activeSpace = null;
+let activeSpaceImageIndex = 0;
 
-function showSpacePhoto() {
-  const item = spaceData[currentSpaceKey];
-  if (!item || !spaceModalImg) return;
+function getActiveSpaceImages() {
+  if (!activeSpace || !spaceData[activeSpace]) return [];
+  return spaceData[activeSpace].images;
+}
 
-  const photos = item.photos || [];
-  const src = photos[currentSpacePhotoIndex] || 'assets/placeholder.svg';
+function renderActiveSpaceImage() {
+  if (!spaceModalImg || !activeSpace) return;
+  const images = getActiveSpaceImages();
+  if (!images.length) return;
+
+  const src = images[activeSpaceImageIndex];
   spaceModalImg.src = src;
-  spaceModalImg.alt = item.title;
+  spaceModalImg.alt = spaceData[activeSpace].title;
 
-  if (spaceModalCounter) {
-    spaceModalCounter.textContent = (currentSpacePhotoIndex + 1) + ' / ' + photos.length;
+  if (spaceModalCount) {
+    spaceModalCount.textContent = (activeSpaceImageIndex + 1) + ' / ' + images.length;
   }
 }
 
 function openSpaceModal(spaceKey) {
-  const item = spaceData[spaceKey];
-  if (!item || !spaceModal) return;
+  const data = spaceData[spaceKey];
+  if (!data || !spaceModal) return;
 
-  currentSpaceKey = spaceKey;
-  currentSpacePhotoIndex = 0;
+  activeSpace = spaceKey;
+  activeSpaceImageIndex = 0;
 
-  if (spaceModalKicker) spaceModalKicker.textContent = item.kicker;
-  if (spaceModalTitle) spaceModalTitle.textContent = item.title;
-  if (spaceModalDesc) spaceModalDesc.textContent = item.desc;
+  if (spaceModalKicker) spaceModalKicker.textContent = data.kicker;
+  if (spaceModalTitle) spaceModalTitle.textContent = data.title;
+  if (spaceModalDesc) spaceModalDesc.textContent = data.desc;
 
-  if (spaceModalList) {
-    spaceModalList.innerHTML = item.items.map(([icon, text]) => `
-      <div><span class="material-symbols-outlined">${icon}</span><span>${text}</span></div>
-    `).join('');
+  if (spaceDetailGrid) {
+    spaceDetailGrid.innerHTML = data.details.map(function(item) {
+      return '<div class="space-detail-item"><strong>' + item[0] + '</strong><span>' + item[1] + '</span></div>';
+    }).join('');
   }
 
-  showSpacePhoto();
+  if (spaceServices) {
+    spaceServices.innerHTML = data.services.map(function(service) {
+      return '<span class="space-service-chip">' + service + '</span>';
+    }).join('');
+  }
+
+  renderActiveSpaceImage();
   spaceModal.classList.add('open');
   spaceModal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
@@ -634,37 +652,31 @@ function closeSpaceModal() {
   document.body.style.overflow = '';
 }
 
-function nextSpacePhoto() {
-  const item = spaceData[currentSpaceKey];
-  if (!item || !item.photos.length) return;
-  currentSpacePhotoIndex = (currentSpacePhotoIndex + 1) % item.photos.length;
-  showSpacePhoto();
+function showSpaceImage(direction) {
+  const images = getActiveSpaceImages();
+  if (!images.length) return;
+  activeSpaceImageIndex = (activeSpaceImageIndex + direction + images.length) % images.length;
+  renderActiveSpaceImage();
 }
 
-function prevSpacePhoto() {
-  const item = spaceData[currentSpaceKey];
-  if (!item || !item.photos.length) return;
-  currentSpacePhotoIndex = (currentSpacePhotoIndex - 1 + item.photos.length) % item.photos.length;
-  showSpacePhoto();
-}
-
-document.querySelectorAll('.space-card').forEach((card) => {
-  card.addEventListener('click', () => openSpaceModal(card.dataset.space));
+document.querySelectorAll('.space-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    openSpaceModal(card.dataset.space);
+  });
 });
 
 if (spaceModalClose) spaceModalClose.addEventListener('click', closeSpaceModal);
-if (spaceModalNext) spaceModalNext.addEventListener('click', nextSpacePhoto);
-if (spaceModalPrev) spaceModalPrev.addEventListener('click', prevSpacePhoto);
-
+if (spacePrev) spacePrev.addEventListener('click', function(e) { e.stopPropagation(); showSpaceImage(-1); });
+if (spaceNext) spaceNext.addEventListener('click', function(e) { e.stopPropagation(); showSpaceImage(1); });
 if (spaceModal) {
-  spaceModal.addEventListener('click', (event) => {
-    if (event.target === spaceModal) closeSpaceModal();
+  spaceModal.addEventListener('click', function(e) {
+    if (e.target === spaceModal) closeSpaceModal();
   });
 }
 
-document.addEventListener('keydown', (event) => {
+document.addEventListener('keydown', function(e) {
   if (!spaceModal || !spaceModal.classList.contains('open')) return;
-  if (event.key === 'Escape') closeSpaceModal();
-  if (event.key === 'ArrowLeft') prevSpacePhoto();
-  if (event.key === 'ArrowRight') nextSpacePhoto();
+  if (e.key === 'Escape') closeSpaceModal();
+  if (e.key === 'ArrowLeft') showSpaceImage(-1);
+  if (e.key === 'ArrowRight') showSpaceImage(1);
 });
