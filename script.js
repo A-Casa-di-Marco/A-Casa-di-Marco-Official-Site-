@@ -555,7 +555,7 @@ const spaceData = {
     kicker: 'Bagno',
     title: 'Bagno funzionale',
     desc: 'Bagno pratico e organizzato, con i servizi utili per il soggiorno e la lavatrice a disposizione degli ospiti.',
-    photos: ['assets/bagno-1.jpg'],
+    photos: ['assets/bagno-1.jpg', 'assets/bagno-2.jpg', 'assets/bagno-3.jpg'],
     items: [
       ['shower', 'Doccia e servizi essenziali.'],
       ['local_laundry_service', 'Lavatrice disponibile nell’alloggio.'],
@@ -566,7 +566,7 @@ const spaceData = {
     kicker: 'Cucina',
     title: 'Cucina attrezzata',
     desc: 'Una cucina utile per colazioni, pasti semplici e soggiorni più lunghi. Perfetta se preferite avere autonomia durante la vacanza.',
-    photos: ['assets/cucina-1.jpg'],
+    photos: ['assets/cucina-1.jpg', 'assets/cucina-2.jpg', 'assets/cucina-3.jpg', 'assets/cucina-4.jpg', 'assets/cucina-5.jpg'],
     items: [
       ['cooking', 'Cucina attrezzata per preparare pasti e colazioni.'],
       ['coffee', 'Macchina caffè e moka.'],
