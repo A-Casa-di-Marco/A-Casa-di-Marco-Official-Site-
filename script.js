@@ -532,7 +532,7 @@ const spaceData = {
     kicker: 'Camera matrimoniale',
     title: 'Camera matrimoniale',
     desc: 'Una camera pensata per due persone, semplice e confortevole. Su richiesta è possibile aggiungere una culla per bambini piccoli, se disponibile.',
-    photos: ['assets/casa-1.jpg', 'assets/casa-6.jpg', 'assets/casa-7.jpg'],
+    photos: ['assets/camera-matrimoniale-1.jpg', 'assets/camera-matrimoniale-2.jpg', 'assets/camera-matrimoniale-3.jpg'],
     items: [
       ['king_bed', '1 letto matrimoniale: può ospitare 2 persone.'],
       ['child_care', 'Culla su richiesta: 1 disponibile, ideale per bambini piccoli.'],
@@ -543,7 +543,7 @@ const spaceData = {
     kicker: 'Seconda camera',
     title: 'Camera 2 · fino a 4 posti letto',
     desc: 'La seconda camera è più flessibile ed è adatta a bambini, ragazzi o piccoli gruppi. I posti letto sono distribuiti tra futon, lettino singolo e letto rialzato.',
-    photos: ['assets/casa-3.jpg', 'assets/casa-8.jpg', 'assets/casa-9.jpg'],
+    photos: ['assets/camera-2-1.jpg', 'assets/camera-2-2.jpg', 'assets/camera-2-3.jpg'],
     items: [
       ['bed', 'Futon piazza e mezzo: può ospitare fino a 2 persone.'],
       ['single_bed', 'Lettino singolo: 1 posto letto.'],
@@ -555,7 +555,7 @@ const spaceData = {
     kicker: 'Bagno',
     title: 'Bagno funzionale',
     desc: 'Bagno pratico e organizzato, con i servizi utili per il soggiorno e la lavatrice a disposizione degli ospiti.',
-    photos: ['assets/casa-4.jpg', 'assets/manuale-lavatrice-comandi.jpg', 'assets/manuale-lavatrice-programmi.jpg'],
+    photos: ['assets/bagno-1.jpg'],
     items: [
       ['shower', 'Doccia e servizi essenziali.'],
       ['local_laundry_service', 'Lavatrice disponibile nell’alloggio.'],
@@ -566,7 +566,7 @@ const spaceData = {
     kicker: 'Cucina',
     title: 'Cucina attrezzata',
     desc: 'Una cucina utile per colazioni, pasti semplici e soggiorni più lunghi. Perfetta se preferite avere autonomia durante la vacanza.',
-    photos: ['assets/casa-5.jpg', 'assets/dining-garden.jpg', 'assets/manuale-moka.jpg'],
+    photos: ['assets/cucina-1.jpg'],
     items: [
       ['cooking', 'Cucina attrezzata per preparare pasti e colazioni.'],
       ['coffee', 'Macchina caffè e moka.'],
