@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A Casa di Marco · Garden Cottage Escape a Salerno</title>
   <meta name="description" content="A Casa di Marco è una casa vacanze a Salerno con giardino privato, parcheggio gratuito e guida digitale esclusiva con consigli locali per vivere Salerno durante il soggiorno." />
-  <meta name="theme-color" content="#0f7f83" />
+  <meta name="theme-color" content="#22331f" />
   <meta property="og:title" content="A Casa di Marco · Garden Cottage Escape a Salerno" />
   <meta property="og:description" content="Casa vacanze a Salerno con giardino privato, parcheggio gratuito e ambienti accoglienti per famiglie, coppie e gruppi." />
   <meta property="og:type" content="website" />
@@ -13,7 +13,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -93,29 +93,34 @@
             <span><span class="material-symbols-outlined">shower</span> 1 bagno</span>
             <span><span class="material-symbols-outlined">child_care</span> 1 culla su richiesta</span>
           </div>
+
+          <div class="calm-points" aria-label="Punti forti per il relax">
+            <article>
+              <span><span class="material-symbols-outlined">bedtime</span></span>
+              <strong>Si dorme meglio</strong>
+              <p>Zona più silenziosa, perfetta per riposare dopo il caldo.</p>
+            </article>
+            <article>
+              <span><span class="material-symbols-outlined">park</span></span>
+              <strong>Giardino privato</strong>
+              <p>Uno spazio esterno riservato per staccare davvero.</p>
+            </article>
+            <article>
+              <span><span class="material-symbols-outlined">lock</span></span>
+              <strong>Privacy</strong>
+              <p>Ingresso indipendente, calma e spazi tutti per voi.</p>
+            </article>
+          </div>
         </div>
 
-        <div class="calm-points" aria-label="Punti forti per il relax">
-          <article>
-            <span><span class="material-symbols-outlined">bedtime</span></span>
-            <strong>Si dorme meglio</strong>
-            <p>Zona più silenziosa, perfetta per riposare dopo il caldo.</p>
-          </article>
-          <article>
-            <span><span class="material-symbols-outlined">park</span></span>
-            <strong>Giardino privato</strong>
-            <p>Uno spazio esterno riservato per staccare davvero.</p>
-          </article>
-          <article>
-            <span><span class="material-symbols-outlined">lock</span></span>
-            <strong>Privacy</strong>
-            <p>Ingresso indipendente, calma e spazi tutti per voi.</p>
-          </article>
-        </div>
+        <figure class="calm-photo">
+          <img src="assets/giardino-2.jpg" alt="Il giardino privato di A Casa di Marco" onerror="this.src='assets/placeholder.svg'">
+        </figure>
       </div>
     </section>
 
     <section class="section guide-section" id="guida">
+      <div class="wrap">
       <div class="guide-layout">
         <div class="guide-copy">
           <span class="section-kicker">Inclusa nel soggiorno</span>
@@ -166,6 +171,7 @@
           </div>
         </div>
       </div>
+      </div>
     </section>
 
     <section class="section" id="servizi">
@@ -192,6 +198,7 @@
     </section>
 
     <section class="section sleep-section" id="spazi">
+      <div class="wrap">
       <div class="section-heading centered">
         <span class="section-kicker">Spazi</span>
         <h2>Dove dormirai e vivrai la casa</h2>
@@ -251,6 +258,7 @@
           </div>
         </button>
       </div>
+      </div>
     </section>
 
     <div class="space-modal" id="spaceModal" aria-hidden="true">
@@ -294,13 +302,14 @@
     </section>
 
     <section class="section availability-section" id="disponibilita">
-      <div class="section-heading centered">
-        <span class="section-kicker">Calendario</span>
-        <h2>Disponibilità e richiesta soggiorno</h2>
-        <p>Consulta le date libere e occupate. Puoi scorrere i mesi e selezionare una data libera per compilare più velocemente la richiesta.</p>
-      </div>
+      <div class="availability-layout">
+        <div class="availability-head">
+          <span class="section-kicker">Disponibilità</span>
+          <h2>Quando vorresti venire?</h2>
+          <p>Consulta le date libere e occupate, seleziona una data nel calendario e invia la richiesta.</p>
+        </div>
 
-      <div class="custom-calendar-card">
+        <div class="custom-calendar-card">
         <div class="calendar-head">
           <button type="button" class="calendar-nav-btn" id="prevMonth" aria-label="Mese precedente">‹</button>
           <div class="calendar-title-wrap">
@@ -330,18 +339,16 @@
       </div>
 
       <form class="request-card" id="bookingRequestForm">
-        <h3>Richiedi disponibilità</h3>
-
         <label for="guestName">Nome</label>
         <input id="guestName" type="text" placeholder="Il tuo nome" required>
 
         <div class="form-row">
           <div>
-            <label for="checkin">Check-in</label>
+            <label for="checkin">Arrivo</label>
             <input id="checkin" type="date" required>
           </div>
           <div>
-            <label for="checkout">Check-out</label>
+            <label for="checkout">Partenza</label>
             <input id="checkout" type="date" required>
           </div>
         </div>
@@ -409,6 +416,7 @@
         <button type="submit" class="btn primary full">Invia richiesta su WhatsApp</button>
         <p class="small-note">La richiesta non è una prenotazione automatica: ti confermeremo noi disponibilità e prezzo. La tassa di soggiorno non è inclusa.</p>
       </form>
+      </div>
     </section>
 
     <section class="section info-section">
@@ -418,7 +426,7 @@
       </div>
 
       <div class="info-grid">
-        <article class="info-card"><span><span class="material-symbols-outlined">schedule</span></span><h3>Check-in e check-out</h3><p>Check-in indicativo dalle 15:00 alle 22:00. Check-out entro le 10:00.</p></article>
+        <article class="info-card"><span><span class="material-symbols-outlined">schedule</span></span><h3>Arrivo e partenza</h3><p>Arrivo indicativo dalle 15:00 alle 22:00. Partenza entro le 10:00.</p></article>
         <article class="info-card"><span><span class="material-symbols-outlined">groups</span></span><h3>Capienza</h3><p>Massimo 6 ospiti. La culla è disponibile su richiesta e secondo disponibilità.</p></article>
         <article class="info-card"><span><span class="material-symbols-outlined">bakery_dining</span></span><h3>Colazione</h3><p>La colazione non è inclusa nel prezzo, ma può essere richiesta con supplemento tramite bar convenzionato.</p></article>
         <article class="info-card"><span><span class="material-symbols-outlined">receipt_long</span></span><h3>Tassa di soggiorno</h3><p>Comune di Salerno: 3,00 € a notte per persona. I bambini sotto i 12 anni non pagano.</p></article>
@@ -455,6 +463,53 @@
           </div>
           <p>La posizione precisa viene confermata agli ospiti prima dell’arrivo.</p>
           <a class="btn secondary full" href="https://www.google.com/maps/search/?api=1&query=Salerno%20Via%20Brignano%20Inferiore%2069" target="_blank" rel="noopener">Apri zona su Google Maps</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section around-section" id="intorno">
+      <div class="section-heading centered">
+        <span class="section-kicker">Intorno a Salerno</span>
+        <h2>Tra città, costa e storia.</h2>
+        <p>Dalla città alla costa, dai templi greci ai borghi della Costiera.</p>
+      </div>
+
+      <div class="around-grid">
+        <article class="around-item">
+          <span class="around-num">01</span>
+          <h3>Centro storico e lungomare</h3>
+          <p>Il cuore di Salerno: via dei Mercanti, la cattedrale e il lungomare tra caffè, ristoranti e passeggiate.</p>
+          <span class="around-time"><span class="material-symbols-outlined">directions_car</span> [TEMPO DA CONFERMARE] in auto</span>
+        </article>
+        <article class="around-item">
+          <span class="around-num">02</span>
+          <h3>Vietri sul Mare</h3>
+          <p>La porta della Costiera, famosa per le ceramiche colorate e il centro storico affacciato sul mare.</p>
+          <span class="around-time"><span class="material-symbols-outlined">directions_car</span> [TEMPO DA CONFERMARE] in auto</span>
+        </article>
+        <article class="around-item">
+          <span class="around-num">03</span>
+          <h3>Costiera Amalfitana</h3>
+          <p>Amalfi e Ravello, con i borghi sospesi tra montagna e mare, raggiungibili in auto.</p>
+          <span class="around-time"><span class="material-symbols-outlined">directions_car</span> [TEMPO DA CONFERMARE] in auto</span>
+        </article>
+        <article class="around-item">
+          <span class="around-num">04</span>
+          <h3>Paestum</h3>
+          <p>I templi greci meglio conservati d'Italia e il museo archeologico, nella piana del Sele.</p>
+          <span class="around-time"><span class="material-symbols-outlined">directions_car</span> [TEMPO DA CONFERMARE] in auto</span>
+        </article>
+        <article class="around-item">
+          <span class="around-num">05</span>
+          <h3>Pompei</h3>
+          <p>L'area archeologica sepolta dall'eruzione del 79 d.C.: case, botteghe e affreschi ancora leggibili.</p>
+          <span class="around-time"><span class="material-symbols-outlined">directions_car</span> [TEMPO DA CONFERMARE] in auto</span>
+        </article>
+        <article class="around-item">
+          <span class="around-num">06</span>
+          <h3>Cilento</h3>
+          <p>Costa selvatica, paesi in pietra e Parco Nazionale: l'alternativa più tranquilla alla Costiera.</p>
+          <span class="around-time"><span class="material-symbols-outlined">directions_car</span> [TEMPO DA CONFERMARE] in auto</span>
         </article>
       </div>
     </section>

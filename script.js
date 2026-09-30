@@ -140,7 +140,7 @@ function selectDate(ymd) {
     if (checkoutInput) checkoutInput.value = '';
 
     if (calendarStatus) {
-      calendarStatus.textContent = 'Check-in selezionato. Ora scegli una data di check-out libera.';
+      calendarStatus.textContent = 'Arrivo selezionato. Ora scegli una data di partenza libera.';
     }
   } else {
     if (ymd <= selectedStart) {
@@ -149,7 +149,7 @@ function selectDate(ymd) {
       if (checkinInput) checkinInput.value = ymd;
 
       if (calendarStatus) {
-        calendarStatus.textContent = 'Check-in aggiornato. Ora scegli una data di check-out successiva.';
+        calendarStatus.textContent = 'Arrivo aggiornato. Ora scegli una data di partenza successiva.';
       }
     } else if (hasBusyDateBetween(selectedStart, ymd)) {
       if (calendarStatus) {
@@ -395,8 +395,8 @@ if (bookingRequestForm) {
       'Ciao, vorrei richiedere disponibilità per A Casa di Marco.',
       '',
       'Nome: ' + name,
-      'Check-in: ' + formatItalianDate(checkin),
-      'Check-out: ' + formatItalianDate(checkout),
+      'Arrivo: ' + formatItalianDate(checkin),
+      'Partenza: ' + formatItalianDate(checkout),
       'Adulti: ' + adults,
       'Bambini: ' + childrenCount,
       'Totale ospiti: ' + totalGuests + '/' + MAX_TOTAL_GUESTS,
