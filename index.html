@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A Casa di Marco · Garden Cottage Escape a Salerno</title>
-  <meta name="description" content="A Casa di Marco è una casa vacanze a Salerno con giardino privato, parcheggio gratuito e guida digitale esclusiva con consigli locali per vivere Salerno durante il soggiorno." />
+  <title data-i18n="doc.title">A Casa di Marco · Garden Cottage Escape a Salerno</title>
+  <meta name="description" data-i18n-content="doc.desc" content="A Casa di Marco è una casa vacanze a Salerno con giardino privato, parcheggio gratuito e guida digitale esclusiva con consigli locali per vivere Salerno durante il soggiorno." />
   <meta name="theme-color" content="#22331f" />
   <meta property="og:title" content="A Casa di Marco · Garden Cottage Escape a Salerno" />
   <meta property="og:description" content="Casa vacanze a Salerno con giardino privato, parcheggio gratuito e ambienti accoglienti per famiglie, coppie e gruppi." />
@@ -26,18 +26,24 @@
         <span>A Casa di Marco</span>
       </a>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Apri menu"><span class="material-symbols-outlined">menu</span></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Apri menu" data-i18n-aria="nav.menu"><span class="material-symbols-outlined">menu</span></button>
 
       <div class="nav-links" id="navLinks">
-        <a href="#casa">La casa</a>
-        <a href="#guida">Guida digitale</a>
-        <a href="#servizi">Servizi</a>
-        <a href="#foto">Foto</a>
-        <a href="#disponibilita">Disponibilità</a>
-        <a href="#posizione">Dove siamo</a>
-        <a href="#recensioni">Recensioni</a>
-        <a href="#contatti" class="nav-cta">Prenota</a>
+        <a href="#casa" data-i18n="nav.casa">La casa</a>
+        <a href="#guida" data-i18n="nav.guida">Guida digitale</a>
+        <a href="#servizi" data-i18n="nav.servizi">Servizi</a>
+        <a href="#foto" data-i18n="nav.foto">Foto</a>
+        <a href="#disponibilita" data-i18n="nav.disp">Disponibilità</a>
+        <a href="#posizione" data-i18n="nav.dove">Dove siamo</a>
+        <a href="#recensioni" data-i18n="nav.rec">Recensioni</a>
+        <a href="#contatti" class="nav-cta" data-i18n="nav.prenota">Prenota</a>
       </div>
+
+      <button class="lang-switch" id="langSwitch" type="button" aria-label="Passa all’inglese" aria-pressed="false">
+        <span class="lang-knob" aria-hidden="true"></span>
+        <span class="lang-opt" data-lang-opt="it">IT</span>
+        <span class="lang-opt" data-lang-opt="en">EN</span>
+      </button>
     </nav>
 
     <section class="hero">
@@ -47,10 +53,10 @@
         <img class="hero-slide" src="assets/giardino-3.jpg" alt="">
         <img class="hero-slide" src="assets/giardino-4.jpg" alt="">
         <img class="hero-slide" src="assets/camera-matrimoniale-1.jpg" alt="">
-        <img class="hero-slide" src="assets/soggiorno-1.jpg" alt="">
-        <img class="hero-slide" src="assets/soggiorno-2.jpg" alt="">
-        <img class="hero-slide" src="assets/soggiorno-3.jpg" alt="">
-        <img class="hero-slide" src="assets/soggiorno-4.jpg" alt="">
+        <img class="hero-slide" src="assets/veranda-9.jpg" alt="">
+        <img class="hero-slide" src="assets/giardino-1.jpg" alt="">
+        <img class="hero-slide" src="assets/veranda-1.jpg" alt="">
+        <img class="hero-slide" src="assets/veranda-10.jpg" alt="">
         <img class="hero-slide" src="assets/cucina-1.jpg" alt="">
         <img class="hero-slide" src="assets/camera-2-1.jpg" alt="">
       </div>
@@ -59,19 +65,19 @@
         <h1>A Casa di Marco</h1>
 
         <div class="hero-actions">
-          <a class="btn primary" href="#disponibilita">Verifica disponibilità</a>
-          <a class="btn secondary" href="https://wa.me/393923064010?text=Ciao%2C%20vorrei%20informazioni%20per%20un%20soggiorno%20ad%20A%20Casa%20di%20Marco." target="_blank" rel="noopener">Scrivici su WhatsApp</a>
+          <a class="btn primary" href="#disponibilita" data-i18n="hero.cta1">Verifica disponibilità</a>
+          <a class="btn secondary" href="https://wa.me/393923064010?text=Ciao%2C%20vorrei%20informazioni%20per%20un%20soggiorno%20ad%20A%20Casa%20di%20Marco." target="_blank" rel="noopener" data-i18n="hero.cta2">Scrivici su WhatsApp</a>
         </div>
 
-        <div class="hero-badges" aria-label="Punti forti della struttura">
-          <span><span class="material-symbols-outlined">yard</span> Giardino privato</span>
-          <span><span class="material-symbols-outlined">nights_stay</span> Fresco e tranquillo</span>
-          <span><span class="material-symbols-outlined">directions_car</span> Parcheggio gratuito</span>
-          <span><span class="material-symbols-outlined">book_online</span> Guida digitale inclusa</span>
+        <div class="hero-badges" aria-label="Punti forti della struttura" data-i18n-aria="hero.badgesAria">
+          <span data-i18n="hero.b1"><span class="material-symbols-outlined">yard</span> Giardino privato</span>
+          <span data-i18n="hero.b2"><span class="material-symbols-outlined">nights_stay</span> Fresco e tranquillo</span>
+          <span data-i18n="hero.b3"><span class="material-symbols-outlined">directions_car</span> Parcheggio gratuito</span>
+          <span data-i18n="hero.b4"><span class="material-symbols-outlined">book_online</span> Guida digitale inclusa</span>
         </div>
       </div>
 
-      <a class="scroll-hint" href="#casa" aria-label="Scorri per continuare">
+      <a class="scroll-hint" href="#casa" aria-label="Scorri per continuare" data-i18n-aria="hero.scrollAria">
         <span class="material-symbols-outlined">keyboard_arrow_down</span>
       </a>
     </section>
@@ -81,34 +87,34 @@
     <section class="section calm-section refuge-section" id="casa">
       <div class="calm-layout refuge-layout">
         <div class="calm-copy">
-          <span class="section-kicker">Benvenuti</span>
-          <h2>Freschi, tranquilli, lontani dal caos</h2>
-          <p><strong>A Casa di Marco</strong> è il vostro rifugio a Salerno: un intero alloggio con giardino privato, parcheggio interno e spazi comodi fino a 6 persone.</p>
-          <p>Dopo mare, centro e Costiera, qui si rientra in un posto più calmo, fresco e riservato: ideale per respirare, dormire bene e ripartire con più energia.</p>
+          <span class="section-kicker" data-i18n="home.kicker">Benvenuti</span>
+          <h2 data-i18n="home.h2">Freschi, tranquilli, lontani dal caos</h2>
+          <p data-i18n="home.p1"><strong>A Casa di Marco</strong> è il vostro rifugio a Salerno: un intero alloggio con giardino privato, parcheggio interno e spazi comodi fino a 6 persone.</p>
+          <p data-i18n="home.p2">Dopo mare, centro e Costiera, qui si rientra in un posto più calmo, fresco e riservato: ideale per respirare, dormire bene e ripartire con più energia.</p>
 
-          <div class="refuge-chips" aria-label="Informazioni principali sulla casa">
-            <span><span class="material-symbols-outlined">cottage</span> Intero alloggio</span>
-            <span><span class="material-symbols-outlined">groups</span> Fino a 6 ospiti</span>
-            <span><span class="material-symbols-outlined">bed</span> 2 camere · 4 letti</span>
-            <span><span class="material-symbols-outlined">shower</span> 1 bagno</span>
-            <span><span class="material-symbols-outlined">child_care</span> 1 culla su richiesta</span>
+          <div class="refuge-chips" aria-label="Informazioni principali sulla casa" data-i18n-aria="home.chipsAria">
+            <span data-i18n="home.ch1"><span class="material-symbols-outlined">cottage</span> Intero alloggio</span>
+            <span data-i18n="home.ch2"><span class="material-symbols-outlined">groups</span> Fino a 6 ospiti</span>
+            <span data-i18n="home.ch3"><span class="material-symbols-outlined">bed</span> 2 camere · 4 letti</span>
+            <span data-i18n="home.ch4"><span class="material-symbols-outlined">shower</span> 1 bagno</span>
+            <span data-i18n="home.ch5"><span class="material-symbols-outlined">child_care</span> 1 culla su richiesta</span>
           </div>
 
-          <div class="calm-points" aria-label="Punti forti per il relax">
+          <div class="calm-points" aria-label="Punti forti per il relax" data-i18n-aria="home.pointsAria">
             <article>
               <span><span class="material-symbols-outlined">bedtime</span></span>
-              <strong>Si dorme meglio</strong>
-              <p>Zona più silenziosa, perfetta per riposare dopo il caldo.</p>
+              <strong data-i18n="home.pt1s">Si dorme meglio</strong>
+              <p data-i18n="home.pt1p">Zona più silenziosa, perfetta per riposare dopo il caldo.</p>
             </article>
             <article>
               <span><span class="material-symbols-outlined">park</span></span>
-              <strong>Giardino privato</strong>
-              <p>Uno spazio esterno riservato per staccare davvero.</p>
+              <strong data-i18n="home.pt2s">Giardino privato</strong>
+              <p data-i18n="home.pt2p">Uno spazio esterno riservato per staccare davvero.</p>
             </article>
             <article>
               <span><span class="material-symbols-outlined">lock</span></span>
-              <strong>Privacy</strong>
-              <p>Ingresso indipendente, calma e spazi tutti per voi.</p>
+              <strong data-i18n="home.pt3s">Privacy</strong>
+              <p data-i18n="home.pt3p">Ingresso indipendente, calma e spazi tutti per voi.</p>
             </article>
           </div>
         </div>
@@ -123,49 +129,49 @@
       <div class="wrap">
       <div class="guide-layout">
         <div class="guide-copy">
-          <span class="section-kicker">Inclusa nel soggiorno</span>
-          <h2>La tua guida digitale per vivere Salerno</h2>
-          <p>Una guida digitale con consigli locali, luoghi da vedere, ristoranti, spiagge e info pratiche.</p>
-          <p>Tutto a portata di telefono, senza perdere tempo tra mille ricerche.</p>
+          <span class="section-kicker" data-i18n="guide.kicker">Inclusa nel soggiorno</span>
+          <h2 data-i18n="guide.h2">La tua guida digitale per vivere Salerno</h2>
+          <p data-i18n="guide.p1">Una guida digitale con consigli locali, luoghi da vedere, ristoranti, spiagge e info pratiche.</p>
+          <p data-i18n="guide.p2">Tutto a portata di telefono, senza perdere tempo tra mille ricerche.</p>
 
           <div class="guide-actions">
-            <a class="btn primary" href="#disponibilita">Richiedi disponibilità</a>
-            <span>Anteprima riservata: la guida completa viene inviata agli ospiti.</span>
+            <a class="btn primary" href="#disponibilita" data-i18n="guide.cta">Richiedi disponibilità</a>
+            <span data-i18n="guide.note">Anteprima riservata: la guida completa viene inviata agli ospiti.</span>
           </div>
         </div>
 
-        <div class="guide-preview" aria-label="Anteprima della guida digitale">
+        <div class="guide-preview" aria-label="Anteprima della guida digitale" data-i18n-aria="guide.previewAria">
           <div class="phone-mockup">
             <div class="phone-top"></div>
             <div class="guide-app">
               <span class="guide-label">A Casa di Marco</span>
-              <h3>Guida di Salerno</h3>
-              <div class="guide-search">Cerca: ristoranti, spiagge, itinerari...</div>
+              <h3 data-i18n="guide.h3">Guida di Salerno</h3>
+              <div class="guide-search" data-i18n="guide.search">Cerca: ristoranti, spiagge, itinerari...</div>
               <div class="guide-preview-grid">
                 <article>
                   <span><span class="material-symbols-outlined">restaurant</span></span>
-                  <strong>Dove mangiare</strong>
-                  <p>Consigli selezionati</p>
+                  <strong data-i18n="guide.a1h">Dove mangiare</strong>
+                  <p data-i18n="guide.a1p">Consigli selezionati</p>
                 </article>
                 <article>
                   <span><span class="material-symbols-outlined">account_balance</span></span>
-                  <strong>Cosa vedere</strong>
-                  <p>Angoli speciali</p>
+                  <strong data-i18n="guide.a2h">Cosa vedere</strong>
+                  <p data-i18n="guide.a2p">Angoli speciali</p>
                 </article>
                 <article>
                   <span><span class="material-symbols-outlined">beach_access</span></span>
-                  <strong>Mare e dintorni</strong>
-                  <p>Idee per la giornata</p>
+                  <strong data-i18n="guide.a3h">Mare e dintorni</strong>
+                  <p data-i18n="guide.a3p">Idee per la giornata</p>
                 </article>
                 <article>
                   <span><span class="material-symbols-outlined">directions_bus</span></span>
-                  <strong>Muoversi</strong>
-                  <p>Info pratiche</p>
+                  <strong data-i18n="guide.a4h">Muoversi</strong>
+                  <p data-i18n="guide.a4p">Info pratiche</p>
                 </article>
               </div>
               <div class="locked-tip">
                 <span><span class="material-symbols-outlined">lock</span></span>
-                <p>La lista completa con mappe, consigli e itinerari viene condivisa dopo la prenotazione.</p>
+                <p data-i18n="guide.locked">La lista completa con mappe, consigli e itinerari viene condivisa dopo la prenotazione.</p>
               </div>
             </div>
           </div>
@@ -177,83 +183,109 @@
     <section class="section" id="servizi">
       <div class="section-heading centered">
         <span class="section-kicker">Comfort</span>
-        <h2>Servizi e dotazioni</h2>
-        <p>Le cose importanti, subito chiare.</p>
+        <h2 data-i18n="svc.h2">Servizi e dotazioni</h2>
+        <p data-i18n="svc.p">Le cose importanti, subito chiare.</p>
       </div>
 
       <div class="features-grid">
-        <article class="feature-card"><span><span class="material-symbols-outlined">yard</span></span><h3>Giardino privato</h3><p>Spazio esterno esclusivo.</p></article>
-        <article class="feature-card"><span><span class="material-symbols-outlined">directions_car</span></span><h3>Parcheggio</h3><p>Interno e gratuito.</p></article>
-        <article class="feature-card"><span><span class="material-symbols-outlined">cooking</span></span><h3>Cucina</h3><p>Attrezzata per pasti e colazioni.</p></article>
-        <article class="feature-card"><span><span class="material-symbols-outlined">coffee</span></span><h3>Caffè</h3><p>Espresso e moka.</p></article>
-        <article class="feature-card"><span><span class="material-symbols-outlined">wifi</span></span><h3>Wi-Fi</h3><p>Connessione inclusa.</p></article>
-        <article class="feature-card"><span><span class="material-symbols-outlined">ac_unit</span></span><h3>Clima</h3><p>Comfort nei mesi caldi.</p></article>
-        <article class="feature-card"><span><span class="material-symbols-outlined">local_laundry_service</span></span><h3>Lavatrice</h3><p>Utile per più giorni.</p></article>
-        <article class="feature-card"><span><span class="material-symbols-outlined">tv</span></span><h3>TV</h3><p>Per momenti di relax.</p></article>
-        <article class="feature-card"><span><span class="material-symbols-outlined">child_care</span></span><h3>Culla</h3><p>Su richiesta, 1 disponibile.</p></article>
-        <article class="feature-card"><span><span class="material-symbols-outlined">vpn_key</span></span><h3>Privacy</h3><p>Ingresso indipendente.</p></article>
-        <article class="feature-card"><span><span class="material-symbols-outlined">book_online</span></span><h3>Guida digitale</h3><p>Consigli locali inclusi.</p></article>
-        <article class="feature-card"><span><span class="material-symbols-outlined">bakery_dining</span></span><h3>Colazione</h3><p>Su richiesta.</p></article>
+        <article class="feature-card"><span><span class="material-symbols-outlined">yard</span></span><h3 data-i18n="svc.f1h">Giardino privato</h3><p data-i18n="svc.f1p">Spazio esterno esclusivo.</p></article>
+        <article class="feature-card"><span><span class="material-symbols-outlined">directions_car</span></span><h3 data-i18n="svc.f2h">Parcheggio</h3><p data-i18n="svc.f2p">Interno e gratuito.</p></article>
+        <article class="feature-card"><span><span class="material-symbols-outlined">cooking</span></span><h3 data-i18n="svc.f3h">Cucina</h3><p data-i18n="svc.f3p">Attrezzata per pasti e colazioni.</p></article>
+        <article class="feature-card"><span><span class="material-symbols-outlined">coffee</span></span><h3 data-i18n="svc.f4h">Caffè</h3><p data-i18n="svc.f4p">Espresso e moka.</p></article>
+        <article class="feature-card"><span><span class="material-symbols-outlined">wifi</span></span><h3 data-i18n="svc.f5h">Wi-Fi</h3><p data-i18n="svc.f5p">Connessione inclusa.</p></article>
+        <article class="feature-card"><span><span class="material-symbols-outlined">ac_unit</span></span><h3 data-i18n="svc.f6h">Clima</h3><p data-i18n="svc.f6p">Comfort nei mesi caldi.</p></article>
+        <article class="feature-card"><span><span class="material-symbols-outlined">local_laundry_service</span></span><h3 data-i18n="svc.f7h">Lavatrice</h3><p data-i18n="svc.f7p">Utile per più giorni.</p></article>
+        <article class="feature-card"><span><span class="material-symbols-outlined">tv</span></span><h3 data-i18n="svc.f8h">TV</h3><p data-i18n="svc.f8p">Per momenti di relax.</p></article>
+        <article class="feature-card"><span><span class="material-symbols-outlined">child_care</span></span><h3 data-i18n="svc.f9h">Culla</h3><p data-i18n="svc.f9p">Su richiesta, 1 disponibile.</p></article>
+        <article class="feature-card"><span><span class="material-symbols-outlined">vpn_key</span></span><h3 data-i18n="svc.f10h">Privacy</h3><p data-i18n="svc.f10p">Ingresso indipendente.</p></article>
+        <article class="feature-card"><span><span class="material-symbols-outlined">book_online</span></span><h3 data-i18n="svc.f11h">Guida digitale</h3><p data-i18n="svc.f11p">Consigli locali inclusi.</p></article>
+        <article class="feature-card"><span><span class="material-symbols-outlined">bakery_dining</span></span><h3 data-i18n="svc.f12h">Colazione</h3><p data-i18n="svc.f12p">Su richiesta.</p></article>
       </div>
     </section>
 
     <section class="section sleep-section" id="spazi">
       <div class="wrap">
       <div class="section-heading centered">
-        <span class="section-kicker">Spazi</span>
-        <h2>Dove dormirai e vivrai la casa</h2>
-        <p>Camere, bagno e cucina: clicca su ogni spazio per vedere foto e dettagli.</p>
+        <span class="section-kicker" data-i18n="spazi.kicker">Spazi</span>
+        <h2 data-i18n="spazi.h2">Dove dormirai e vivrai la casa</h2>
+        <p data-i18n="spazi.p">Camere, bagno, cucina, veranda e giardino: clicca su ogni spazio per vedere foto e dettagli.</p>
       </div>
 
       <div class="spaces-grid">
-        <button class="space-card" type="button" data-space="camera1" aria-label="Apri dettagli Camera matrimoniale">
+        <button class="space-card" type="button" data-space="camera1" aria-label="Apri dettagli Camera matrimoniale" data-i18n-aria="spazi.a1">
           <img src="assets/camera-matrimoniale-1.jpg" alt="Camera matrimoniale" onerror="this.src='assets/placeholder.svg'">
           <div class="space-card-content">
             <span class="space-icon"><span class="material-symbols-outlined">king_bed</span></span>
-            <h3>Camera matrimoniale</h3>
-            <p><strong>1 letto matrimoniale</strong> · fino a 2 persone.</p>
+            <h3 data-i18n="spazi.t1">Camera matrimoniale</h3>
+            <p data-i18n="spazi.d1"><strong>1 letto matrimoniale</strong> · fino a 2 persone.</p>
             <div class="space-tags">
-              <span>2 posti letto</span>
-              <span>Culla su richiesta</span>
+              <span data-i18n="spazi.g1">2 posti letto</span>
+              <span data-i18n="spazi.g2">Culla su richiesta</span>
             </div>
           </div>
         </button>
 
-        <button class="space-card" type="button" data-space="camera2" aria-label="Apri dettagli Camera 2">
+        <button class="space-card" type="button" data-space="camera2" aria-label="Apri dettagli Camera 2" data-i18n-aria="spazi.a2">
           <img src="assets/camera-2-1.jpg" alt="Seconda camera" onerror="this.src='assets/placeholder.svg'">
           <div class="space-card-content">
             <span class="space-icon"><span class="material-symbols-outlined">single_bed</span></span>
-            <h3>Camera 2</h3>
-            <p><strong>Futon piazza e mezzo</strong>, lettino singolo e letto rialzato.</p>
+            <h3 data-i18n="spazi.t2">Camera 2</h3>
+            <p data-i18n="spazi.d2"><strong>Futon piazza e mezzo</strong>, lettino singolo e letto rialzato.</p>
             <div class="space-tags">
-              <span>4 posti letto</span>
-              <span>Ideale per famiglie</span>
+              <span data-i18n="spazi.g3">4 posti letto</span>
+              <span data-i18n="spazi.g4">Ideale per famiglie</span>
             </div>
           </div>
         </button>
 
-        <button class="space-card" type="button" data-space="bagno" aria-label="Apri dettagli Bagno">
+        <button class="space-card" type="button" data-space="bagno" aria-label="Apri dettagli Bagno" data-i18n-aria="spazi.a3">
           <img src="assets/bagno-1.jpg" alt="Bagno" onerror="this.src='assets/placeholder.svg'">
           <div class="space-card-content">
             <span class="space-icon"><span class="material-symbols-outlined">shower</span></span>
-            <h3>Bagno</h3>
-            <p>Bagno pratico con servizi essenziali e lavatrice nell’alloggio.</p>
+            <h3 data-i18n="spazi.t3">Bagno</h3>
+            <p data-i18n="spazi.d3">Bagno pratico con servizi essenziali e lavatrice nell’alloggio.</p>
             <div class="space-tags">
-              <span>Doccia</span>
-              <span>Lavatrice</span>
+              <span data-i18n="spazi.g5">Doccia</span>
+              <span data-i18n="spazi.g6">Lavatrice</span>
             </div>
           </div>
         </button>
 
-        <button class="space-card" type="button" data-space="cucina" aria-label="Apri dettagli Cucina">
+        <button class="space-card" type="button" data-space="cucina" aria-label="Apri dettagli Cucina" data-i18n-aria="spazi.a4">
           <img src="assets/cucina-1.jpg" alt="Cucina" onerror="this.src='assets/placeholder.svg'">
           <div class="space-card-content">
             <span class="space-icon"><span class="material-symbols-outlined">cooking</span></span>
-            <h3>Cucina</h3>
-            <p>Cucina attrezzata per colazioni, pasti semplici e soggiorni più lunghi.</p>
+            <h3 data-i18n="spazi.t4">Cucina</h3>
+            <p data-i18n="spazi.d4">Cucina attrezzata per colazioni, pasti semplici e soggiorni più lunghi.</p>
             <div class="space-tags">
-              <span>Attrezzata</span>
-              <span>Caffè</span>
+              <span data-i18n="spazi.g7">Attrezzata</span>
+              <span data-i18n="spazi.g8">Caffè</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="space-card" type="button" data-space="veranda" aria-label="Apri dettagli Veranda" data-i18n-aria="spazi.a5">
+          <img src="assets/veranda-1.jpg" alt="Veranda con tavolo da pranzo" onerror="this.src='assets/placeholder.svg'">
+          <div class="space-card-content">
+            <span class="space-icon"><span class="material-symbols-outlined">deck</span></span>
+            <h3 data-i18n="spazi.t5">Veranda</h3>
+            <p data-i18n="spazi.d5"><strong>Sala da pranzo coperta</strong> affacciata sul giardino.</p>
+            <div class="space-tags">
+              <span data-i18n="spazi.g9">Sala da pranzo</span>
+              <span data-i18n="spazi.g10">Vista giardino</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="space-card" type="button" data-space="giardino" aria-label="Apri dettagli Giardino" data-i18n-aria="spazi.a6">
+          <img src="assets/giardino-1.jpg" alt="Giardino con zona relax" onerror="this.src='assets/placeholder.svg'">
+          <div class="space-card-content">
+            <span class="space-icon"><span class="material-symbols-outlined">park</span></span>
+            <h3 data-i18n="spazi.t6">Giardino</h3>
+            <p data-i18n="spazi.d6"><strong>Prato e zona relax</strong> con vista sulle montagne.</p>
+            <div class="space-tags">
+              <span data-i18n="spazi.g11">Zona relax</span>
+              <span data-i18n="spazi.g12">Pranzi all’aperto</span>
             </div>
           </div>
         </button>
@@ -263,16 +295,16 @@
 
     <div class="space-modal" id="spaceModal" aria-hidden="true">
       <div class="space-dialog" role="dialog" aria-modal="true" aria-labelledby="spaceModalTitle">
-        <button class="space-modal-close" type="button" aria-label="Chiudi">&times;</button>
+        <button class="space-modal-close" type="button" aria-label="Chiudi" data-i18n-aria="aria.close">&times;</button>
         <div class="space-modal-gallery">
-          <button class="space-modal-nav prev" type="button" aria-label="Foto precedente">&lsaquo;</button>
+          <button class="space-modal-nav prev" type="button" aria-label="Foto precedente" data-i18n-aria="aria.prevPhoto">&lsaquo;</button>
           <img id="spaceModalImg" src="" alt="">
-          <button class="space-modal-nav next" type="button" aria-label="Foto successiva">&rsaquo;</button>
+          <button class="space-modal-nav next" type="button" aria-label="Foto successiva" data-i18n-aria="aria.nextPhoto">&rsaquo;</button>
           <span class="space-modal-counter" id="spaceModalCounter">1 / 1</span>
         </div>
         <div class="space-modal-content">
-          <span class="section-kicker" id="spaceModalKicker">Spazio</span>
-          <h3 id="spaceModalTitle">Dettagli spazio</h3>
+          <span class="section-kicker" id="spaceModalKicker" data-i18n="modal.kicker">Spazio</span>
+          <h3 id="spaceModalTitle" data-i18n="modal.title">Dettagli spazio</h3>
           <p id="spaceModalDesc"></p>
           <div class="space-modal-list" id="spaceModalList"></div>
         </div>
@@ -281,61 +313,61 @@
 
     <section class="section around-section" id="posizione">
       <div class="section-heading centered">
-        <span class="section-kicker">Dove siamo</span>
-        <h2>Tra città, costa e storia.</h2>
-        <p>Dalla città alla costa, dai templi greci ai borghi della Costiera: a sinistra dove siamo, a destra le distanze in auto dalla casa.</p>
+        <span class="section-kicker" data-i18n="pos.kicker">Dove siamo</span>
+        <h2 data-i18n="pos.h2">Tra città, costa e storia.</h2>
+        <p data-i18n="pos.p">Dalla città alla costa, dai templi greci ai borghi della Costiera: a sinistra dove siamo, a destra le distanze in auto dalla casa.</p>
       </div>
 
       <div class="around-layout">
         <aside class="map-card">
-          <h3>Zona Brignano, Salerno</h3>
-          <div class="map-embed" aria-label="Mappa zona A Casa di Marco">
+          <h3 data-i18n="pos.mapH3">Zona Brignano, Salerno</h3>
+          <div class="map-embed" aria-label="Mappa zona A Casa di Marco" data-i18n-aria="pos.mapAria">
             <iframe
-              title="Mappa zona A Casa di Marco"
+              title="Mappa zona A Casa di Marco" data-i18n-title="pos.mapAria"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps?q=Via%20Brignano%20Inferiore%2069%20Salerno&output=embed"></iframe>
           </div>
-          <p>La posizione precisa viene confermata agli ospiti prima dell’arrivo.</p>
-          <a class="btn secondary full" href="https://www.google.com/maps/search/?api=1&query=Salerno%20Via%20Brignano%20Inferiore%2069" target="_blank" rel="noopener">Apri zona su Google Maps</a>
+          <p data-i18n="pos.mapNote">La posizione precisa viene confermata agli ospiti prima dell’arrivo.</p>
+          <a class="btn secondary full" href="https://www.google.com/maps/search/?api=1&query=Salerno%20Via%20Brignano%20Inferiore%2069" target="_blank" rel="noopener" data-i18n="pos.mapBtn">Apri zona su Google Maps</a>
         </aside>
 
         <div class="around-grid">
           <article class="around-item">
             <span class="around-num">01</span>
-            <h3>Centro storico e lungomare</h3>
-            <p>Il cuore di Salerno: via dei Mercanti, la cattedrale e il lungomare tra caffè, ristoranti e passeggiate.</p>
-            <span class="around-time"><span class="material-symbols-outlined">directions_car</span> 2,7 km · ~10 min in auto</span>
+            <h3 data-i18n="pos.i1h">Centro storico e lungomare</h3>
+            <p data-i18n="pos.i1p">Il cuore di Salerno: via dei Mercanti, la cattedrale e il lungomare tra caffè, ristoranti e passeggiate.</p>
+            <span class="around-time" data-i18n="pos.i1t"><span class="material-symbols-outlined">directions_car</span> 2,7 km · ~10 min in auto</span>
           </article>
           <article class="around-item">
             <span class="around-num">02</span>
             <h3>Vietri sul Mare</h3>
-            <p>La porta della Costiera, famosa per le ceramiche colorate e il centro storico affacciato sul mare.</p>
-            <span class="around-time"><span class="material-symbols-outlined">directions_car</span> 7,9 km · ~15 min in auto</span>
+            <p data-i18n="pos.i2p">La porta della Costiera, famosa per le ceramiche colorate e il centro storico affacciato sul mare.</p>
+            <span class="around-time" data-i18n="pos.i2t"><span class="material-symbols-outlined">directions_car</span> 7,9 km · ~15 min in auto</span>
           </article>
           <article class="around-item">
             <span class="around-num">03</span>
-            <h3>Costiera Amalfitana</h3>
-            <p>Amalfi e Ravello, con i borghi sospesi tra montagna e mare, raggiungibili in auto.</p>
-            <span class="around-time"><span class="material-symbols-outlined">directions_car</span> 27,2 km · ~30 min in auto</span>
+            <h3 data-i18n="pos.i3h">Costiera Amalfitana</h3>
+            <p data-i18n="pos.i3p">Amalfi e Ravello, con i borghi sospesi tra montagna e mare, raggiungibili in auto.</p>
+            <span class="around-time" data-i18n="pos.i3t"><span class="material-symbols-outlined">directions_car</span> 27,2 km · ~30 min in auto</span>
           </article>
           <article class="around-item">
             <span class="around-num">04</span>
             <h3>Paestum</h3>
-            <p>I templi greci meglio conservati d'Italia e il museo archeologico, nella piana del Sele.</p>
-            <span class="around-time"><span class="material-symbols-outlined">directions_car</span> 39,3 km · ~55 min in auto</span>
+            <p data-i18n="pos.i4p">I templi greci meglio conservati d'Italia e il museo archeologico, nella piana del Sele.</p>
+            <span class="around-time" data-i18n="pos.i4t"><span class="material-symbols-outlined">directions_car</span> 39,3 km · ~55 min in auto</span>
           </article>
           <article class="around-item">
             <span class="around-num">05</span>
             <h3>Pompei</h3>
-            <p>L'area archeologica sepolta dall'eruzione del 79 d.C.: case, botteghe e affreschi ancora leggibili.</p>
-            <span class="around-time"><span class="material-symbols-outlined">directions_car</span> 32 km · ~35 min in auto</span>
+            <p data-i18n="pos.i5p">L'area archeologica sepolta dall'eruzione del 79 d.C.: case, botteghe e affreschi ancora leggibili.</p>
+            <span class="around-time" data-i18n="pos.i5t"><span class="material-symbols-outlined">directions_car</span> 32 km · ~35 min in auto</span>
           </article>
           <article class="around-item">
             <span class="around-num">06</span>
             <h3>Cilento</h3>
-            <p>Costa selvatica, paesi in pietra e Parco Nazionale: l'alternativa più tranquilla alla Costiera.</p>
-            <span class="around-time"><span class="material-symbols-outlined">directions_car</span> 67,5 km · ~80 min in auto</span>
+            <p data-i18n="pos.i6p">Costa selvatica, paesi in pietra e Parco Nazionale: l'alternativa più tranquilla alla Costiera.</p>
+            <span class="around-time" data-i18n="pos.i6t"><span class="material-symbols-outlined">directions_car</span> 67,5 km · ~80 min in auto</span>
           </article>
         </div>
       </div>
@@ -343,97 +375,138 @@
 
     <section class="section photo-section" id="foto">
       <div class="section-heading centered">
-        <span class="section-kicker">Galleria</span>
-        <h2>Uno sguardo alla casa</h2>
+        <span class="section-kicker" data-i18n="foto.kicker">Galleria</span>
+        <h2 data-i18n="foto.h2">Uno sguardo alla casa</h2>
       </div>
 
       <div class="gallery-carousel">
         <div class="gallery-track" id="galleryTrack">
-          <button class="gallery-trigger slide active"><img src="assets/giardino-1.jpg" alt="Giardino di A Casa di Marco" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/giardino-2.jpg" alt="Giardino" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/giardino-3.jpg" alt="Giardino" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/giardino-4.jpg" alt="Giardino" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-1.jpg" alt="Camera matrimoniale" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/soggiorno-1.jpg" alt="Soggiorno" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/soggiorno-2.jpg" alt="Soggiorno" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/soggiorno-3.jpg" alt="Soggiorno" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/soggiorno-4.jpg" alt="Soggiorno" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/cucina-1.jpg" alt="Cucina" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide active"><img src="assets/camera-matrimoniale-1.jpg" alt="Camera matrimoniale" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-2.jpg" alt="Camera matrimoniale – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-3.jpg" alt="Camera matrimoniale – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-4.jpg" alt="Camera matrimoniale – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-5.jpg" alt="Camera matrimoniale – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-6.jpg" alt="Camera matrimoniale – foto 6" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-7.jpg" alt="Camera matrimoniale – foto 7" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-8.jpg" alt="Camera matrimoniale – foto 8" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-9.jpg" alt="Camera matrimoniale – foto 9" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-10.jpg" alt="Camera matrimoniale – foto 10" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-11.jpg" alt="Camera matrimoniale – foto 11" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-12.jpg" alt="Camera matrimoniale – foto 12" onerror="this.src='assets/placeholder.svg'"></button>
           <button class="gallery-trigger slide"><img src="assets/camera-2-1.jpg" alt="Seconda camera" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/camera-2-2.jpg" alt="Camera 2 – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/camera-2-3.jpg" alt="Camera 2 – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/camera-2-4.jpg" alt="Camera 2 – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/camera-2-5.jpg" alt="Camera 2 – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
           <button class="gallery-trigger slide"><img src="assets/bagno-1.jpg" alt="Bagno" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/bagno-2.jpg" alt="Bagno – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/bagno-3.jpg" alt="Bagno – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/bagno-4.jpg" alt="Bagno – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/cucina-1.jpg" alt="Cucina" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/cucina-2.jpg" alt="Cucina – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/cucina-3.jpg" alt="Cucina – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/cucina-4.jpg" alt="Cucina – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/cucina-5.jpg" alt="Cucina – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/cucina-6.jpg" alt="Cucina – foto 6" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/cucina-7.jpg" alt="Cucina – foto 7" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/cucina-8.jpg" alt="Cucina – foto 8" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/cucina-9.jpg" alt="Cucina – foto 9" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/veranda-1.jpg" alt="Veranda con tavolo da pranzo" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/veranda-2.jpg" alt="Veranda – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/veranda-3.jpg" alt="Veranda – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/veranda-4.jpg" alt="Veranda – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/veranda-5.jpg" alt="Veranda – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/veranda-6.jpg" alt="Veranda – foto 6" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/veranda-7.jpg" alt="Veranda – foto 7" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/veranda-8.jpg" alt="Veranda – foto 8" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/veranda-9.jpg" alt="Veranda – foto 9" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/veranda-10.jpg" alt="Veranda – foto 10" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/giardino-1.jpg" alt="Giardino di A Casa di Marco" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/giardino-2.jpg" alt="Giardino – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/giardino-3.jpg" alt="Giardino – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/giardino-4.jpg" alt="Giardino – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/giardino-5.jpg" alt="Giardino – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/giardino-6.jpg" alt="Giardino – foto 6" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/giardino-7.jpg" alt="Giardino – foto 7" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/giardino-8.jpg" alt="Giardino – foto 8" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/giardino-9.jpg" alt="Giardino – foto 9" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/giardino-10.jpg" alt="Giardino – foto 10" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/giardino-11.jpg" alt="Giardino – foto 11" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/giardino-12.jpg" alt="Giardino – foto 12" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/giardino-13.jpg" alt="Giardino – foto 13" onerror="this.src='assets/placeholder.svg'"></button>
         </div>
-        <button type="button" class="carousel-btn prev" id="galleryPrev" aria-label="Foto precedente"><span class="material-symbols-outlined">chevron_left</span></button>
-        <button type="button" class="carousel-btn next" id="galleryNext" aria-label="Foto successiva"><span class="material-symbols-outlined">chevron_right</span></button>
-        <span class="carousel-counter" id="galleryCounter">1 / 12</span>
+        <button type="button" class="carousel-btn prev" id="galleryPrev" aria-label="Foto precedente" data-i18n-aria="aria.prevPhoto"><span class="material-symbols-outlined">chevron_left</span></button>
+        <button type="button" class="carousel-btn next" id="galleryNext" aria-label="Foto successiva" data-i18n-aria="aria.nextPhoto"><span class="material-symbols-outlined">chevron_right</span></button>
+        <span class="carousel-counter" id="galleryCounter">1 / 53</span>
       </div>
     </section>
 
     <section class="section availability-section" id="disponibilita">
       <div class="availability-layout">
         <div class="availability-head">
-          <span class="section-kicker">Disponibilità</span>
-          <h2>Quando vorresti venire?</h2>
-          <p>Consulta le date libere e occupate, seleziona una data nel calendario e invia la richiesta.</p>
+          <span class="section-kicker" data-i18n="disp.kicker">Disponibilità</span>
+          <h2 data-i18n="disp.h2">Quando vorresti venire?</h2>
+          <p data-i18n="disp.p">Consulta le date libere e occupate, seleziona una data nel calendario e invia la richiesta.</p>
         </div>
 
         <div class="custom-calendar-card">
         <div class="calendar-head">
-          <button type="button" class="calendar-nav-btn" id="prevMonth" aria-label="Mese precedente">‹</button>
+          <button type="button" class="calendar-nav-btn" id="prevMonth" aria-label="Mese precedente" data-i18n-aria="disp.ariaPrevM">‹</button>
           <div class="calendar-title-wrap">
-            <span class="mini-label">Disponibilità</span>
+            <span class="mini-label" data-i18n="disp.miniLabel">Disponibilità</span>
             <h3 id="calendarTitle">Calendario</h3>
           </div>
-          <button type="button" class="calendar-nav-btn" id="nextMonth" aria-label="Mese successivo">›</button>
+          <button type="button" class="calendar-nav-btn" id="nextMonth" aria-label="Mese successivo" data-i18n-aria="disp.ariaNextM">›</button>
         </div>
 
         <div class="calendar-tools">
-          <button type="button" class="chip-btn" id="todayBtn">Torna a questo mese</button>
-          <div class="calendar-legend" aria-label="Legenda calendario">
-            <span><i class="dot free"></i> Libera</span>
-            <span><i class="dot busy"></i> Occupata</span>
-            <span><i class="dot past"></i> Passata</span>
+          <button type="button" class="chip-btn" id="todayBtn" data-i18n="disp.todayBtn">Torna a questo mese</button>
+          <div class="calendar-legend" aria-label="Legenda calendario" data-i18n-aria="disp.legendAria">
+            <span data-i18n="disp.free"><i class="dot free"></i> Libera</span>
+            <span data-i18n="disp.busy"><i class="dot busy"></i> Occupata</span>
+            <span data-i18n="disp.past"><i class="dot past"></i> Passata</span>
           </div>
         </div>
 
         <div class="calendar-status" id="calendarStatus">Caricamento disponibilità…</div>
 
         <div class="weekday-row" aria-hidden="true">
-          <span>Lun</span><span>Mar</span><span>Mer</span><span>Gio</span><span>Ven</span><span>Sab</span><span>Dom</span>
+          <span data-i18n="disp.w1">Lun</span><span data-i18n="disp.w2">Mar</span><span data-i18n="disp.w3">Mer</span><span data-i18n="disp.w4">Gio</span><span data-i18n="disp.w5">Ven</span><span data-i18n="disp.w6">Sab</span><span data-i18n="disp.w7">Dom</span>
         </div>
-        <div class="calendar-grid" id="calendarGrid" aria-label="Calendario disponibilità"></div>
+        <div class="calendar-grid" id="calendarGrid" aria-label="Calendario disponibilità" data-i18n-aria="disp.gridAria"></div>
 
-        <p class="calendar-note">Le date occupate sono lette dal calendario collegato a Booking e Airbnb. Gli aggiornamenti possono non essere immediati: la disponibilità deve essere sempre confermata prima della prenotazione.</p>
+        <p class="calendar-note" data-i18n="disp.note">Le date occupate sono lette dal calendario collegato a Booking e Airbnb. Gli aggiornamenti possono non essere immediati: la disponibilità deve essere sempre confermata prima della prenotazione.</p>
       </div>
 
       <form class="request-card" id="bookingRequestForm">
-        <label for="guestName">Nome</label>
-        <input id="guestName" type="text" placeholder="Il tuo nome" required>
+        <label for="guestName" data-i18n="disp.lblName">Nome</label>
+        <input id="guestName" type="text" placeholder="Il tuo nome" data-i18n-ph="disp.phName" required>
 
         <div class="form-row">
           <div>
-            <label for="checkin">Arrivo</label>
+            <label for="checkin" data-i18n="disp.lblIn">Arrivo</label>
             <input id="checkin" type="date" required>
           </div>
           <div>
-            <label for="checkout">Partenza</label>
+            <label for="checkout" data-i18n="disp.lblOut">Partenza</label>
             <input id="checkout" type="date" required>
           </div>
         </div>
 
         <div class="form-row">
           <div>
-            <label for="adults">Adulti</label>
+            <label for="adults" data-i18n="disp.lblAdults">Adulti</label>
             <select id="adults" required>
-              <option value="1">1 adulto</option>
-              <option value="2" selected>2 adulti</option>
-              <option value="3">3 adulti</option>
-              <option value="4">4 adulti</option>
-              <option value="5">5 adulti</option>
-              <option value="6">6 adulti</option>
+              <option value="1" data-i18n="disp.ad1">1 adulto</option>
+              <option value="2" selected data-i18n="disp.ad2">2 adulti</option>
+              <option value="3" data-i18n="disp.ad3">3 adulti</option>
+              <option value="4" data-i18n="disp.ad4">4 adulti</option>
+              <option value="5" data-i18n="disp.ad5">5 adulti</option>
+              <option value="6" data-i18n="disp.ad6">6 adulti</option>
             </select>
           </div>
           <div>
-            <label for="childrenCount">Bambini</label>
+            <label for="childrenCount" data-i18n="disp.lblChildren">Bambini</label>
             <select id="childrenCount">
               <option value="0" selected>Nessun bambino</option>
             </select>
@@ -445,87 +518,87 @@
         </p>
 
         <div class="children-box hidden" id="childrenBox">
-          <p class="children-title">Età dei bambini</p>
+          <p class="children-title" data-i18n="disp.agesTitle">Età dei bambini</p>
           <div id="childrenAges" class="children-ages"></div>
           <div class="cot-box hidden" id="cotBox">
             <label class="checkbox-line" for="cotRequest">
               <input type="checkbox" id="cotRequest">
-              <span>Richiedo la culla per bambino fino a 3 anni, se disponibile. È disponibile al massimo 1 culla.</span>
+              <span data-i18n="disp.cot">Richiedo la culla per bambino fino a 3 anni, se disponibile. È disponibile al massimo 1 culla.</span>
             </label>
           </div>
         </div>
 
         <div class="form-row">
           <div>
-            <label for="source">Dove ci hai trovati?</label>
+            <label for="source" data-i18n="disp.lblSource">Dove ci hai trovati?</label>
             <select id="source">
               <option value="Instagram">Instagram</option>
               <option value="Facebook">Facebook</option>
               <option value="Google">Google</option>
               <option value="Booking">Booking</option>
               <option value="Airbnb">Airbnb</option>
-              <option value="Passaparola">Passaparola</option>
-              <option value="Altro">Altro</option>
+              <option value="Passaparola" data-i18n="disp.srcPass">Passaparola</option>
+              <option value="Altro" data-i18n="disp.srcOther">Altro</option>
             </select>
           </div>
           <div>
-            <label for="breakfastInterest">Colazione</label>
+            <label for="breakfastInterest" data-i18n="disp.lblBreakfast">Colazione</label>
             <select id="breakfastInterest">
-              <option value="No">No, grazie</option>
-              <option value="Sì, vorrei informazioni">Sì, vorrei informazioni</option>
+              <option value="No" data-i18n="disp.brkNo">No, grazie</option>
+              <option value="Sì, vorrei informazioni" data-i18n="disp.brkYes">Sì, vorrei informazioni</option>
             </select>
           </div>
         </div>
 
-        <label for="message">Messaggio</label>
-        <textarea id="message" rows="4" placeholder="Scrivi eventuali richieste particolari"></textarea>
+        <label for="message" data-i18n="disp.lblMsg">Messaggio</label>
+        <textarea id="message" rows="4" placeholder="Scrivi eventuali richieste particolari" data-i18n-ph="disp.phMsg"></textarea>
 
-        <button type="submit" class="btn primary full">Invia richiesta su WhatsApp</button>
-        <p class="small-note">La richiesta non è una prenotazione automatica: ti confermeremo noi disponibilità e prezzo. La tassa di soggiorno non è inclusa.</p>
+        <button type="submit" class="btn primary full" data-i18n="disp.submit">Invia richiesta su WhatsApp</button>
+        <p class="small-note" data-i18n="disp.smallNote">La richiesta non è una prenotazione automatica: ti confermeremo noi disponibilità e prezzo. La tassa di soggiorno non è inclusa.</p>
       </form>
       </div>
     </section>
 
     <section class="section info-section">
       <div class="section-heading centered">
-        <span class="section-kicker">Da sapere</span>
-        <h2>Informazioni utili</h2>
+        <span class="section-kicker" data-i18n="info.kicker">Da sapere</span>
+        <h2 data-i18n="info.h2">Informazioni utili</h2>
       </div>
 
       <div class="info-grid">
-        <article class="info-card"><span><span class="material-symbols-outlined">schedule</span></span><h3>Arrivo e partenza</h3><p>Arrivo indicativo dalle 15:00 alle 22:00. Partenza entro le 10:00.</p></article>
-        <article class="info-card"><span><span class="material-symbols-outlined">groups</span></span><h3>Capienza</h3><p>Massimo 6 ospiti. La culla è disponibile su richiesta e secondo disponibilità.</p></article>
-        <article class="info-card"><span><span class="material-symbols-outlined">bakery_dining</span></span><h3>Colazione</h3><p>La colazione non è inclusa nel prezzo, ma può essere richiesta con supplemento tramite bar convenzionato.</p></article>
-        <article class="info-card"><span><span class="material-symbols-outlined">receipt_long</span></span><h3>Tassa di soggiorno</h3><p>Comune di Salerno: 3,00 € a notte per persona. I bambini sotto i 12 anni non pagano.</p></article>
-        <article class="info-card"><span><span class="material-symbols-outlined">badge</span></span><h3>Codice struttura</h3><p>CIN: IT065116C2KBNNPOHQ.</p></article>
-        <article class="info-card"><span><span class="material-symbols-outlined">support_agent</span></span><h3>Guida e assistenza</h3><p>Prima e durante il soggiorno ricevi supporto via WhatsApp e accesso alla guida digitale con consigli locali.</p></article>
+        <article class="info-card"><span><span class="material-symbols-outlined">schedule</span></span><h3 data-i18n="info.t1">Arrivo e partenza</h3><p data-i18n="info.d1">Arrivo indicativo dalle 15:00 alle 22:00. Partenza entro le 10:00.</p></article>
+        <article class="info-card"><span><span class="material-symbols-outlined">groups</span></span><h3 data-i18n="info.t2">Capienza</h3><p data-i18n="info.d2">Massimo 6 ospiti. La culla è disponibile su richiesta e secondo disponibilità.</p></article>
+        <article class="info-card"><span><span class="material-symbols-outlined">bakery_dining</span></span><h3 data-i18n="info.t3">Colazione</h3><p data-i18n="info.d3">La colazione non è inclusa nel prezzo, ma può essere richiesta con supplemento tramite bar convenzionato.</p></article>
+        <article class="info-card"><span><span class="material-symbols-outlined">receipt_long</span></span><h3 data-i18n="info.t4">Tassa di soggiorno</h3><p data-i18n="info.d4">Comune di Salerno: 3,00 € a notte per persona. I bambini sotto i 12 anni non pagano.</p></article>
+        <article class="info-card"><span><span class="material-symbols-outlined">badge</span></span><h3 data-i18n="info.t5">Codice struttura</h3><p>CIN: IT065116C2KBNNPOHQ.</p></article>
+        <article class="info-card"><span><span class="material-symbols-outlined">support_agent</span></span><h3 data-i18n="info.t6">Guida e assistenza</h3><p data-i18n="info.d6">Prima e durante il soggiorno ricevi supporto via WhatsApp e accesso alla guida digitale con consigli locali.</p></article>
       </div>
     </section>
 
     <section class="section reviews-section" id="recensioni">
       <div class="section-heading centered">
-        <span class="section-kicker">Recensioni</span>
-        <h2>Cosa apprezzano gli ospiti</h2>
-        <p>Le recensioni originali pubblicate dagli ospiti su Booking e Airbnb.</p>
+        <span class="section-kicker" data-i18n="rec.kicker">Recensioni</span>
+        <h2 data-i18n="rec.h2">Cosa apprezzano gli ospiti</h2>
+        <p data-i18n="rec.p">Le recensioni originali pubblicate dagli ospiti su Booking e Airbnb.</p>
       </div>
 
       <div class="review-summary-grid">
         <article class="review-score-card airbnb">
           <span class="platform">Airbnb</span>
-          <strong>4,88/5</strong>
-          <p>17 recensioni · Amato dagli ospiti · Superhost</p>
+          <strong data-i18n="rec.s1">4,88/5</strong>
+          <p data-i18n="rec.s1p">17 recensioni · Amato dagli ospiti · Superhost</p>
         </article>
         <article class="review-score-card booking">
           <span class="platform">Booking</span>
-          <strong>9,0/10</strong>
-          <p>15 recensioni · Wonderful</p>
+          <strong data-i18n="rec.s2">9,0/10</strong>
+          <p data-i18n="rec.s2p">15 recensioni · Wonderful</p>
         </article>
       </div>
 
       <div class="reviews-grid">
         <article class="review-card">
           <p>“Very nice hosts, cozy and quiet appartment outside the hustle and bustle of the city”</p>
-          <span>– Tobias, Svizzera · Booking</span>
+          <span data-i18n="rec.attrT">– Tobias, Svizzera · Booking</span>
         </article>
         <article class="review-card">
           <p>“Wonderful and comfortable apartment with super helpful hosts who provide extra attention &amp; quality services”</p>
@@ -537,11 +610,11 @@
         </article>
         <article class="review-card">
           <p>“On peut garer la voiture dans la cour, ce qui est très pratique. Endroit calme, sur les hauteurs de la ville de Salerne, avec vue sur la montagne.”</p>
-          <span>– Maria, Francia · Booking</span>
+          <span data-i18n="rec.attrM">– Maria, Francia · Booking</span>
         </article>
         <article class="review-card">
           <p>“Ci siamo sentiti come a casa, la host è stata gentilissima”</p>
-          <span>– Vincenzo, Italia · Booking</span>
+          <span data-i18n="rec.attrV">– Vincenzo, Italia · Booking</span>
         </article>
         <article class="review-card">
           <p>“Abbiamo trascorso un piacevole soggiorno a casa di Marco. L'alloggio era perfetto, pulito e accogliente. Siamo stati accolti molto bene da Asja, che è stata anche sempre reattiva quando avevo una domanda. Piccolo extra: una guida da scaricare con un sacco di buoni indirizzi e idee. Raccomando questo alloggio. Grazie Asja per aver reso il nostro soggiorno così piacevole.”</p>
@@ -562,16 +635,16 @@
       </div>
 
       <div class="review-links">
-        <a class="btn secondary" href="https://www.booking.com/Share-uQFGj4" target="_blank" rel="noopener">Vedi su Booking</a>
-        <a class="btn secondary" href="https://www.airbnb.it/rooms/1181843855745217150" target="_blank" rel="noopener">Vedi su Airbnb</a>
+        <a class="btn secondary" href="https://www.booking.com/Share-uQFGj4" target="_blank" rel="noopener" data-i18n="rec.seeB">Vedi su Booking</a>
+        <a class="btn secondary" href="https://www.airbnb.it/rooms/1181843855745217150" target="_blank" rel="noopener" data-i18n="rec.seeA">Vedi su Airbnb</a>
       </div>
     </section>
 
     <section class="section contact-section" id="contatti">
       <div class="section-heading centered">
-        <span class="section-kicker">Contatti</span>
-        <h2>Scrivici per il tuo soggiorno</h2>
-        <p>Per una richiesta diretta, il modo più veloce è WhatsApp.</p>
+        <span class="section-kicker" data-i18n="cont.kicker">Contatti</span>
+        <h2 data-i18n="cont.h2">Scrivici per il tuo soggiorno</h2>
+        <p data-i18n="cont.p">Per una richiesta diretta, il modo più veloce è WhatsApp.</p>
       </div>
 
       <div class="contact-actions-main">
@@ -586,12 +659,12 @@
     <p>© <span id="currentYear"></span> A Casa di Marco</p>
   </footer>
 
-  <a class="floating-whatsapp" href="https://wa.me/393923064010?text=Ciao%2C%20vorrei%20informazioni%20per%20un%20soggiorno%20ad%20A%20Casa%20di%20Marco." target="_blank" rel="noopener" aria-label="Scrivi su WhatsApp"><span class="material-symbols-outlined">chat</span></a>
+  <a class="floating-whatsapp" href="https://wa.me/393923064010?text=Ciao%2C%20vorrei%20informazioni%20per%20un%20soggiorno%20ad%20A%20Casa%20di%20Marco." target="_blank" rel="noopener" aria-label="Scrivi su WhatsApp" data-i18n-aria="wa.aria"><span class="material-symbols-outlined">chat</span></a>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" aria-label="Chiudi">&times;</button>
-    <button class="lightbox-prev" aria-label="Precedente">&lsaquo;</button>
-    <button class="lightbox-next" aria-label="Successiva">&rsaquo;</button>
+    <button class="lightbox-close" aria-label="Chiudi" data-i18n-aria="aria.close">&times;</button>
+    <button class="lightbox-prev" aria-label="Precedente" data-i18n-aria="lb.ariaPrev">&lsaquo;</button>
+    <button class="lightbox-next" aria-label="Successiva" data-i18n-aria="lb.ariaNext">&rsaquo;</button>
     <img class="lightbox-img" id="lightboxImg" src="" alt="" />
     <span class="lightbox-counter" id="lightboxCounter"></span>
   </div>
