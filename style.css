@@ -19,7 +19,7 @@ html { scroll-behavior: smooth; }
 body { font-family: 'Poppins', system-ui, sans-serif; background: var(--cream); color: var(--text); line-height: 1.65; }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
-h1, h2, h3 { font-family: 'Poppins', system-ui, sans-serif; font-style: italic; font-weight: 500; color: var(--verde-dark); line-height: 1.16; letter-spacing: -.01em; }
+h1, h2, h3 { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-weight: 500; color: var(--verde-dark); line-height: 1.16; letter-spacing: -.01em; }
 
 .site-header { min-height: auto; background: transparent; position: relative; }
 .nav { position: fixed; top: 14px; left: 50%; transform: translateX(-50%); z-index: 50; width: min(1160px, calc(100% - 28px)); display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 14px; background: rgba(255, 255, 255, .93); border: 1px solid rgba(255, 255, 255, .7); border-radius: 999px; box-shadow: 0 10px 28px rgba(26, 52, 32, .16); backdrop-filter: blur(12px); }
