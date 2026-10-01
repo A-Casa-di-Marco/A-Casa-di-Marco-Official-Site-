@@ -477,6 +477,24 @@ galleryTriggers.forEach(function(img, index) {
   });
 });
 
+const galleryTrack = document.getElementById('galleryTrack');
+if (galleryTrack) {
+  const slides = Array.from(galleryTrack.querySelectorAll('.slide'));
+  const galleryCounter = document.getElementById('galleryCounter');
+  const galleryPrev = document.getElementById('galleryPrev');
+  const galleryNext = document.getElementById('galleryNext');
+  let galleryIndex = 0;
+
+  function showSlide(i) {
+    galleryIndex = (i + slides.length) % slides.length;
+    slides.forEach(function(s, k) { s.classList.toggle('active', k === galleryIndex); });
+    if (galleryCounter) galleryCounter.textContent = (galleryIndex + 1) + ' / ' + slides.length;
+  }
+
+  if (galleryPrev) galleryPrev.addEventListener('click', function() { showSlide(galleryIndex - 1); });
+  if (galleryNext) galleryNext.addEventListener('click', function() { showSlide(galleryIndex + 1); });
+}
+
 if (lightboxClose) {
   lightboxClose.addEventListener('click', closeLightbox);
 }

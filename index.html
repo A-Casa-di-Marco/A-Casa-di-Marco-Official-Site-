@@ -279,25 +279,92 @@
       </div>
     </div>
 
+    <section class="section around-section" id="posizione">
+      <div class="section-heading centered">
+        <span class="section-kicker">Dove siamo</span>
+        <h2>Tra città, costa e storia.</h2>
+        <p>Dalla città alla costa, dai templi greci ai borghi della Costiera: a sinistra dove siamo, a destra le distanze in auto dalla casa.</p>
+      </div>
+
+      <div class="around-layout">
+        <aside class="map-card">
+          <h3>Zona Brignano, Salerno</h3>
+          <div class="map-embed" aria-label="Mappa zona A Casa di Marco">
+            <iframe
+              title="Mappa zona A Casa di Marco"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Via%20Brignano%20Inferiore%2069%20Salerno&output=embed"></iframe>
+          </div>
+          <p>La posizione precisa viene confermata agli ospiti prima dell’arrivo.</p>
+          <a class="btn secondary full" href="https://www.google.com/maps/search/?api=1&query=Salerno%20Via%20Brignano%20Inferiore%2069" target="_blank" rel="noopener">Apri zona su Google Maps</a>
+        </aside>
+
+        <div class="around-grid">
+          <article class="around-item">
+            <span class="around-num">01</span>
+            <h3>Centro storico e lungomare</h3>
+            <p>Il cuore di Salerno: via dei Mercanti, la cattedrale e il lungomare tra caffè, ristoranti e passeggiate.</p>
+            <span class="around-time"><span class="material-symbols-outlined">directions_car</span> 2,7 km · ~10 min in auto</span>
+          </article>
+          <article class="around-item">
+            <span class="around-num">02</span>
+            <h3>Vietri sul Mare</h3>
+            <p>La porta della Costiera, famosa per le ceramiche colorate e il centro storico affacciato sul mare.</p>
+            <span class="around-time"><span class="material-symbols-outlined">directions_car</span> 7,9 km · ~15 min in auto</span>
+          </article>
+          <article class="around-item">
+            <span class="around-num">03</span>
+            <h3>Costiera Amalfitana</h3>
+            <p>Amalfi e Ravello, con i borghi sospesi tra montagna e mare, raggiungibili in auto.</p>
+            <span class="around-time"><span class="material-symbols-outlined">directions_car</span> 27,2 km · ~30 min in auto</span>
+          </article>
+          <article class="around-item">
+            <span class="around-num">04</span>
+            <h3>Paestum</h3>
+            <p>I templi greci meglio conservati d'Italia e il museo archeologico, nella piana del Sele.</p>
+            <span class="around-time"><span class="material-symbols-outlined">directions_car</span> 39,3 km · ~55 min in auto</span>
+          </article>
+          <article class="around-item">
+            <span class="around-num">05</span>
+            <h3>Pompei</h3>
+            <p>L'area archeologica sepolta dall'eruzione del 79 d.C.: case, botteghe e affreschi ancora leggibili.</p>
+            <span class="around-time"><span class="material-symbols-outlined">directions_car</span> 32 km · ~35 min in auto</span>
+          </article>
+          <article class="around-item">
+            <span class="around-num">06</span>
+            <h3>Cilento</h3>
+            <p>Costa selvatica, paesi in pietra e Parco Nazionale: l'alternativa più tranquilla alla Costiera.</p>
+            <span class="around-time"><span class="material-symbols-outlined">directions_car</span> 67,5 km · ~80 min in auto</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section photo-section" id="foto">
       <div class="section-heading centered">
         <span class="section-kicker">Galleria</span>
         <h2>Uno sguardo alla casa</h2>
       </div>
 
-      <div class="gallery-grid">
-        <button class="gallery-trigger"><img src="assets/giardino-1.jpg" alt="Giardino di A Casa di Marco" onerror="this.src='assets/placeholder.svg'"></button>
-        <button class="gallery-trigger"><img src="assets/giardino-2.jpg" alt="Giardino" onerror="this.src='assets/placeholder.svg'"></button>
-        <button class="gallery-trigger"><img src="assets/giardino-3.jpg" alt="Giardino" onerror="this.src='assets/placeholder.svg'"></button>
-        <button class="gallery-trigger"><img src="assets/giardino-4.jpg" alt="Giardino" onerror="this.src='assets/placeholder.svg'"></button>
-        <button class="gallery-trigger"><img src="assets/camera-matrimoniale-1.jpg" alt="Camera matrimoniale" onerror="this.src='assets/placeholder.svg'"></button>
-        <button class="gallery-trigger"><img src="assets/soggiorno-1.jpg" alt="Soggiorno" onerror="this.src='assets/placeholder.svg'"></button>
-        <button class="gallery-trigger"><img src="assets/soggiorno-2.jpg" alt="Soggiorno" onerror="this.src='assets/placeholder.svg'"></button>
-        <button class="gallery-trigger"><img src="assets/soggiorno-3.jpg" alt="Soggiorno" onerror="this.src='assets/placeholder.svg'"></button>
-        <button class="gallery-trigger"><img src="assets/soggiorno-4.jpg" alt="Soggiorno" onerror="this.src='assets/placeholder.svg'"></button>
-        <button class="gallery-trigger"><img src="assets/cucina-1.jpg" alt="Cucina" onerror="this.src='assets/placeholder.svg'"></button>
-        <button class="gallery-trigger"><img src="assets/camera-2-1.jpg" alt="Seconda camera" onerror="this.src='assets/placeholder.svg'"></button>
-        <button class="gallery-trigger"><img src="assets/bagno-1.jpg" alt="Bagno" onerror="this.src='assets/placeholder.svg'"></button>
+      <div class="gallery-carousel">
+        <div class="gallery-track" id="galleryTrack">
+          <button class="gallery-trigger slide active"><img src="assets/giardino-1.jpg" alt="Giardino di A Casa di Marco" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/giardino-2.jpg" alt="Giardino" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/giardino-3.jpg" alt="Giardino" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/giardino-4.jpg" alt="Giardino" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-1.jpg" alt="Camera matrimoniale" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/soggiorno-1.jpg" alt="Soggiorno" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/soggiorno-2.jpg" alt="Soggiorno" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/soggiorno-3.jpg" alt="Soggiorno" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/soggiorno-4.jpg" alt="Soggiorno" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/cucina-1.jpg" alt="Cucina" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/camera-2-1.jpg" alt="Seconda camera" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img src="assets/bagno-1.jpg" alt="Bagno" onerror="this.src='assets/placeholder.svg'"></button>
+        </div>
+        <button type="button" class="carousel-btn prev" id="galleryPrev" aria-label="Foto precedente"><span class="material-symbols-outlined">chevron_left</span></button>
+        <button type="button" class="carousel-btn next" id="galleryNext" aria-label="Foto successiva"><span class="material-symbols-outlined">chevron_right</span></button>
+        <span class="carousel-counter" id="galleryCounter">1 / 12</span>
       </div>
     </section>
 
@@ -435,120 +502,62 @@
       </div>
     </section>
 
-    <section class="section location-section" id="posizione">
-      <div class="section-heading centered">
-        <span class="section-kicker">Dove siamo</span>
-        <h2>Salerno, tra città e Costiera</h2>
-        <p>Una zona tranquilla da cui raggiungere Salerno, Vietri e la Costiera.</p>
-      </div>
-
-      <div class="location-grid">
-        <article>
-          <h3>Nei dintorni</h3>
-          <ul class="clean-list">
-            <li>Centro storico e lungomare di Salerno</li>
-            <li>Vietri sul Mare e Costiera Amalfitana</li>
-            <li>Pompei, Paestum e Reggia di Caserta</li>
-            <li>Napoli e Cilento</li>
-          </ul>
-        </article>
-        <article class="map-card">
-          <h3>Zona Brignano, Salerno</h3>
-          <div class="map-embed" aria-label="Mappa zona A Casa di Marco">
-            <iframe
-              title="Mappa zona A Casa di Marco"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Via%20Brignano%20Inferiore%2069%20Salerno&output=embed"></iframe>
-          </div>
-          <p>La posizione precisa viene confermata agli ospiti prima dell’arrivo.</p>
-          <a class="btn secondary full" href="https://www.google.com/maps/search/?api=1&query=Salerno%20Via%20Brignano%20Inferiore%2069" target="_blank" rel="noopener">Apri zona su Google Maps</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="section around-section" id="intorno">
-      <div class="section-heading centered">
-        <span class="section-kicker">Intorno a Salerno</span>
-        <h2>Tra città, costa e storia.</h2>
-        <p>Dalla città alla costa, dai templi greci ai borghi della Costiera.</p>
-      </div>
-
-      <div class="around-grid">
-        <article class="around-item">
-          <span class="around-num">01</span>
-          <h3>Centro storico e lungomare</h3>
-          <p>Il cuore di Salerno: via dei Mercanti, la cattedrale e il lungomare tra caffè, ristoranti e passeggiate.</p>
-          <span class="around-time"><span class="material-symbols-outlined">directions_car</span> [TEMPO DA CONFERMARE] in auto</span>
-        </article>
-        <article class="around-item">
-          <span class="around-num">02</span>
-          <h3>Vietri sul Mare</h3>
-          <p>La porta della Costiera, famosa per le ceramiche colorate e il centro storico affacciato sul mare.</p>
-          <span class="around-time"><span class="material-symbols-outlined">directions_car</span> [TEMPO DA CONFERMARE] in auto</span>
-        </article>
-        <article class="around-item">
-          <span class="around-num">03</span>
-          <h3>Costiera Amalfitana</h3>
-          <p>Amalfi e Ravello, con i borghi sospesi tra montagna e mare, raggiungibili in auto.</p>
-          <span class="around-time"><span class="material-symbols-outlined">directions_car</span> [TEMPO DA CONFERMARE] in auto</span>
-        </article>
-        <article class="around-item">
-          <span class="around-num">04</span>
-          <h3>Paestum</h3>
-          <p>I templi greci meglio conservati d'Italia e il museo archeologico, nella piana del Sele.</p>
-          <span class="around-time"><span class="material-symbols-outlined">directions_car</span> [TEMPO DA CONFERMARE] in auto</span>
-        </article>
-        <article class="around-item">
-          <span class="around-num">05</span>
-          <h3>Pompei</h3>
-          <p>L'area archeologica sepolta dall'eruzione del 79 d.C.: case, botteghe e affreschi ancora leggibili.</p>
-          <span class="around-time"><span class="material-symbols-outlined">directions_car</span> [TEMPO DA CONFERMARE] in auto</span>
-        </article>
-        <article class="around-item">
-          <span class="around-num">06</span>
-          <h3>Cilento</h3>
-          <p>Costa selvatica, paesi in pietra e Parco Nazionale: l'alternativa più tranquilla alla Costiera.</p>
-          <span class="around-time"><span class="material-symbols-outlined">directions_car</span> [TEMPO DA CONFERMARE] in auto</span>
-        </article>
-      </div>
-    </section>
-
     <section class="section reviews-section" id="recensioni">
       <div class="section-heading centered">
         <span class="section-kicker">Recensioni</span>
         <h2>Cosa apprezzano gli ospiti</h2>
-        <p>Una selezione dei punti più citati dagli ospiti su Airbnb e Booking: tranquillità, pulizia, parcheggio e spazi esterni.</p>
+        <p>Le recensioni originali pubblicate dagli ospiti su Booking e Airbnb.</p>
       </div>
 
       <div class="review-summary-grid">
         <article class="review-score-card airbnb">
           <span class="platform">Airbnb</span>
-          <strong>4,85/5</strong>
-          <p>13 recensioni · Amato dagli ospiti · Superhost</p>
+          <strong>4,88/5</strong>
+          <p>17 recensioni · Amato dagli ospiti · Superhost</p>
         </article>
         <article class="review-score-card booking">
           <span class="platform">Booking</span>
-          <strong>9,2/10</strong>
-          <p>Pulizia e staff tra gli aspetti più apprezzati.</p>
+          <strong>9,0/10</strong>
+          <p>15 recensioni · Wonderful</p>
         </article>
       </div>
 
       <div class="reviews-grid">
         <article class="review-card">
-          <div class="stars">★★★★★</div>
-          <p>Gli ospiti apprezzano l’ambiente tranquillo, il giardino e la possibilità di parcheggiare all’interno, soprattutto dopo giornate calde e piene.</p>
-          <span>Booking · soggiorno verificato</span>
+          <p>“Very nice hosts, cozy and quiet appartment outside the hustle and bustle of the city”</p>
+          <span>– Tobias, Svizzera · Booking</span>
         </article>
         <article class="review-card">
-          <div class="stars">★★★★★</div>
-          <p>Pulizia, accoglienza e comunicazione sono tra i punti più forti evidenziati nelle valutazioni.</p>
-          <span>Airbnb e Booking</span>
+          <p>“Wonderful and comfortable apartment with super helpful hosts who provide extra attention &amp; quality services”</p>
+          <span>– Rowena, Australia · Booking</span>
         </article>
         <article class="review-card">
-          <div class="stars">★★★★★</div>
-          <p>La casa è descritta come confortevole, ben organizzata e adatta sia a soggiorni brevi sia più lunghi, con privacy e spazi utili per rilassarsi.</p>
-          <span>Booking · soggiorno verificato</span>
+          <p>“Very nice house with two bedrooms and lovely garden. There are all facilities that you need. We are feeling like at home.”</p>
+          <span>– Tijana, Serbia · Booking</span>
+        </article>
+        <article class="review-card">
+          <p>“On peut garer la voiture dans la cour, ce qui est très pratique. Endroit calme, sur les hauteurs de la ville de Salerne, avec vue sur la montagne.”</p>
+          <span>– Maria, Francia · Booking</span>
+        </article>
+        <article class="review-card">
+          <p>“Ci siamo sentiti come a casa, la host è stata gentilissima”</p>
+          <span>– Vincenzo, Italia · Booking</span>
+        </article>
+        <article class="review-card">
+          <p>“Abbiamo trascorso un piacevole soggiorno a casa di Marco. L'alloggio era perfetto, pulito e accogliente. Siamo stati accolti molto bene da Asja, che è stata anche sempre reattiva quando avevo una domanda. Piccolo extra: una guida da scaricare con un sacco di buoni indirizzi e idee. Raccomando questo alloggio. Grazie Asja per aver reso il nostro soggiorno così piacevole.”</p>
+          <span>– Laura · Airbnb</span>
+        </article>
+        <article class="review-card">
+          <p>“A Casa di Marco è un posto molto affascinante, lontano dalla trafficata Costiera Amalfitana. Tranquillo, silenzioso, con un bellissimo giardino in cui ci riposavamo ogni sera, caldo, piacevole con il suono dei grilli. La casa è molto ben attrezzata con tutto il necessario. Asja ci ha accolto calorosamente e ci ha fatto dei regali già all'ingresso. Nelle vicinanze ci sono molti negozi e ristoranti. Lo consigliamo a tutti e ne conserveremo un ricordo affettuoso.”</p>
+          <span>– Michal · Airbnb</span>
+        </article>
+        <article class="review-card">
+          <p>“Stefania e Asja sono due host fantastiche. Sempre disponibili. È la seconda volta che soggiorniamo in questa abitazione e sicuramente ci ritorneremo. Casa accogliente e riservata. Stefania è stata anche bravissima ed efficientissima a risolvere un guasto in casa, dimostrandosi anche molto professionale e attenta ai suoi ospiti. Come detto, ritorneremo. Grazie”</p>
+          <span>– Gregory · Airbnb</span>
+        </article>
+        <article class="review-card">
+          <p>“Un luogo dove ci si sente bene, lontano dai rumori della città. Tranquillità circondata da natura e fiori. Un luogo perfetto per visitare la costa. L'host è molto gentile, reattiva e discreta. Lo consigliamo al 100%.”</p>
+          <span>– Prisca · Airbnb</span>
         </article>
       </div>
 
