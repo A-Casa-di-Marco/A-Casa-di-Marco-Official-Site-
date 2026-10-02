@@ -50,6 +50,7 @@ html[data-lang="it"] .lang-opt[data-lang-opt="it"], html[data-lang="en"] .lang-o
 .hero-text { max-width: 760px; margin: 18px 0 26px; font-size: clamp(17px, 2vw, 23px); text-shadow: 0 4px 18px rgba(0,0,0,.35); }
 .hero-actions, .contact-actions-main, .review-links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
 .hero-actions { justify-content: flex-start; }
+.hero-actions .btn { padding: 16px 28px; font-size: 16px; }
 .hero-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
 .hero-badges span { background: rgba(255,255,255,.9); color: var(--verde-dark); border-radius: 999px; padding: 8px 13px; font-size: 13px; font-weight: 800; }
 
@@ -925,9 +926,9 @@ main { width: 100%; margin: 0; padding: 0 0 70px; }
   }
 
   .hero-actions .btn {
-    min-height: 48px;
-    padding: 13px 24px;
-    font-size: 14px;
+    min-height: 52px;
+    padding: 15px 26px;
+    font-size: 15px;
   }
 
   .hero-badges {
@@ -985,9 +986,9 @@ main { width: 100%; margin: 0; padding: 0 0 70px; }
   }
 
   .hero-actions .btn {
-    min-height: 46px;
-    padding: 12px 20px;
-    font-size: 13px;
+    min-height: 50px;
+    padding: 13px 22px;
+    font-size: 14px;
   }
 
   .hero-badges {
