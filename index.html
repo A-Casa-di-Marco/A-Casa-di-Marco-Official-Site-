@@ -237,43 +237,16 @@
 
           <div class="guide-actions">
             <a class="btn primary" href="#disponibilita" data-i18n="guide.cta">Richiedi disponibilità</a>
-            <span data-i18n="guide.note">Anteprima riservata: la guida completa viene inviata agli ospiti.</span>
+            <button class="btn secondary" id="guideExplore" type="button" data-i18n="guide.explore">Esplora l’anteprima</button>
+            <span data-i18n="guide.note">Prova la demo. La guida completa viene inviata agli ospiti.</span>
           </div>
         </div>
 
         <div class="guide-preview" aria-label="Anteprima della guida digitale" data-i18n-aria="guide.previewAria">
           <div class="phone-mockup">
             <div class="phone-top"></div>
-            <div class="guide-app">
-              <span class="guide-label">A Casa di Marco</span>
-              <h3 data-i18n="guide.h3">Guida di Salerno</h3>
-              <div class="guide-search" data-i18n="guide.search">Cerca: ristoranti, spiagge, itinerari...</div>
-              <div class="guide-preview-grid">
-                <article>
-                  <span><span class="material-symbols-outlined">restaurant</span></span>
-                  <strong data-i18n="guide.a1h">Dove mangiare</strong>
-                  <p data-i18n="guide.a1p">Consigli selezionati</p>
-                </article>
-                <article>
-                  <span><span class="material-symbols-outlined">account_balance</span></span>
-                  <strong data-i18n="guide.a2h">Cosa vedere</strong>
-                  <p data-i18n="guide.a2p">Angoli speciali</p>
-                </article>
-                <article>
-                  <span><span class="material-symbols-outlined">beach_access</span></span>
-                  <strong data-i18n="guide.a3h">Mare e dintorni</strong>
-                  <p data-i18n="guide.a3p">Idee per la giornata</p>
-                </article>
-                <article>
-                  <span><span class="material-symbols-outlined">directions_bus</span></span>
-                  <strong data-i18n="guide.a4h">Muoversi</strong>
-                  <p data-i18n="guide.a4p">Info pratiche</p>
-                </article>
-              </div>
-              <div class="locked-tip">
-                <span><span class="material-symbols-outlined">lock</span></span>
-                <p data-i18n="guide.locked">La lista completa con mappe, consigli e itinerari viene condivisa dopo la prenotazione.</p>
-              </div>
+            <div class="guide-app guide-demo" id="guideDemo">
+              <noscript>Abilita JavaScript per esplorare la demo. La guida completa viene inviata agli ospiti.</noscript>
             </div>
           </div>
         </div>
@@ -677,5 +650,6 @@
   </div>
 
   <script src="script.js"></script>
+  <script src="guide-demo.js"></script>
 </body>
 </html>

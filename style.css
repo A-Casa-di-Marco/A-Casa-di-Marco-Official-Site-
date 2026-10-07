@@ -1584,3 +1584,25 @@ main { width: 100%; margin: 0; padding: 0 0 70px; }
     padding: 10px;
   }
 }
+
+/* Interactive public guide preview */
+.guide-demo { height: 560px; overflow-y: auto; overscroll-behavior-y: contain; scrollbar-width: thin; }
+.guide-demo .guide-demo-notice { font-size: 11px; line-height: 1.5; color: var(--verde-dark); background: var(--verde-soft); padding: 10px; border-radius: 12px; margin: 12px 0; }
+.guide-demo .guide-demo-title { font-size: 30px; line-height: 1.15; margin: 16px 0 10px; }
+.guide-demo .guide-demo-intro { font-size: 12px; color: var(--muted); line-height: 1.6; }
+.guide-demo-category { font: inherit; text-align: left; background: #fff; color: var(--verde-dark); border: 1px solid rgba(58,90,64,.18); border-radius: 16px; padding: 14px; min-height: 112px; cursor: pointer; }
+.guide-demo-category:hover { background: var(--verde-soft); border-color: var(--verde); }
+.guide-demo-category small { display: flex; justify-content: space-between; font-size: 11px; margin-top: 8px; color: var(--muted); }
+.guide-demo-category small span { font-size: 15px; margin: 0; }
+.guide-demo-back { display: inline-flex; gap: 6px; align-items: center; font: inherit; font-size: 12px; color: var(--verde-dark); background: var(--verde-soft); border: 0; border-radius: 20px; padding: 9px 12px; cursor: pointer; }
+.guide-demo-back .material-symbols-outlined { font-size: 18px; }
+.guide-demo-cards { display: grid; gap: 10px; margin-top: 14px; }
+.guide-demo-card { background: #fff; border: 1px solid rgba(58,90,64,.14); border-radius: 16px; padding: 14px; }
+.guide-demo-meta { font-size: 10px; color: var(--muted); }
+.guide-demo-card h4 { font-size: 16px; line-height: 1.4; color: var(--verde-dark); margin: 6px 0; }
+.guide-demo-card p { font-size: 12px; line-height: 1.6; color: var(--muted); }
+.guide-demo button:focus-visible, #guideExplore:focus-visible { outline: 3px solid var(--verde-dark); outline-offset: 3px; }
+@media (max-width: 480px) {
+  .guide-demo { padding: 14px; height: 530px; }
+  .guide-demo-category { padding: 12px; min-height: 100px; }
+}

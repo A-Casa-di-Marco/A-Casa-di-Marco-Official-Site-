@@ -1,0 +1,179 @@
+From ff767e330d1b7524023e80dca146e0063bce013d Mon Sep 17 00:00:00 2001
+From: AsjaAntonucci <150835061+AsjaAntonucci@users.noreply.github.com>
+Date: Wed, 7 Oct 2026 16:07:32 +0200
+Subject: [PATCH] Add fictional interactive guest guide preview
+
+---
+ guide-demo.js | 69 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ index.html    | 36 ++++-----------------------
+ style.css     | 22 ++++++++++++++++
+ 3 files changed, 96 insertions(+), 31 deletions(-)
+ create mode 100644 guide-demo.js
+
+diff --git a/guide-demo.js b/guide-demo.js
+new file mode 100644
+index 0000000..a53ef9f
+--- /dev/null
++++ b/guide-demo.js
+@@ -0,0 +1,69 @@
++
++/* Self-contained fictional public demo: no requests to the guest guide. */
++(() => {
++  const root = document.getElementById('guideDemo');
++  if (!root) return;
++  const categories = [
++    ['food', 'restaurant', 'Dove mangiare', 'Where to eat', [
++      ['Trattoria delle Nuvole', 'Cucina di terra · €€', 'Traditional cooking · €€', 'Una trattoria immaginaria con pasta fatta in casa e sapori di stagione.', 'An imaginary trattoria with homemade pasta and seasonal flavours.'],
++      ['Osteria del Sole Blu', 'Cucina di mare · €€', 'Seafood · €€', 'Un locale inventato per mostrarti come presentiamo i consigli di mare.', 'A fictional restaurant showing how we present our seafood tips.']]],
++    ['places', 'explore', 'Da scoprire', 'Places to explore', [
++      ['Giardino dei Venti', 'Natura · demo', 'Nature · demo', 'Un giardino immaginario per una passeggiata tra verde e panorami.', 'An imaginary garden for a walk among greenery and views.'],
++      ['Borgo delle Lanterne', 'Cultura · demo', 'Culture · demo', 'Un borgo di fantasia per illustrare le schede dei luoghi da visitare.', 'A fictional village illustrating our cards for places to visit.']]],
++    ['shops', 'shopping_basket', 'La spesa', 'Groceries', [
++      ['Market delle Nuvole', 'Supermercato · demo', 'Supermarket · demo', 'Un supermercato inventato per rappresentare le informazioni per la spesa.', 'A fictional supermarket illustrating grocery information.'],
++      ['Bottega del Sole Blu', 'Bottega · demo', 'Local shop · demo', 'Una bottega immaginaria con pane, frutta e prodotti per la giornata.', 'An imaginary shop with bread, fruit and everyday groceries.']]],
++    ['pharmacy', 'local_pharmacy', 'Farmacie', 'Pharmacies', [
++      ['Farmacia delle Nuvole', 'Farmacia · demo', 'Pharmacy · demo', 'Nome inventato. La guida ospiti contiene le informazioni sulle farmacie reali.', 'Fictional name. The guest guide contains information about real pharmacies.'],
++      ['Farmacia del Sole Blu', 'Farmacia · demo', 'Pharmacy · demo', 'Scheda dimostrativa, senza indirizzi, recapiti o orari reali.', 'Demo card without real addresses, contact details or opening hours.']]]
++  ];
++  let active = null;
++  const en = () => document.documentElement.lang === 'en';
++  const t = (it, english) => en() ? english : it;
++  function render(focus) {
++    const item = categories.find(c => c[0] === active);
++    root.innerHTML = `
++      <span class="guide-label">A Casa di Marco · DEMO</span>
++      <p class="guide-demo-notice">${t('Anteprima dimostrativa · Luoghi e informazioni inventati', 'Demo preview · Fictional places and information')}</p>
++      ${item ? `
++        <button class="guide-demo-back" type="button"><span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>${t('Torna al menu', 'Back to menu')}</button>
++        <h3 class="guide-demo-title" tabindex="-1">${item[en() ? 3 : 2]}</h3>
++        <p class="guide-demo-intro">${t('Due esempi per provare la guida.', 'Two examples to try the guide.')}</p>
++        <div class="guide-demo-cards">${item[4].map(c => `
++          <article class="guide-demo-card"><span class="guide-demo-meta">${c[en() ? 2 : 1]}</span><h4>${c[0]}</h4><p>${c[en() ? 4 : 3]}</p></article>
++        `).join('')}</div>
++      ` : `
++        <h3 class="guide-demo-title" tabindex="-1">${t('Il tuo soggiorno', 'Your stay')}</h3>
++        <p class="guide-demo-intro">${t('Tocca una sezione e prova la guida.', 'Tap a section and try the guide.')}</p>
++        <div class="guide-preview-grid">${categories.map(c => `
++          <button class="guide-demo-category" type="button" data-guide-category="${c[0]}"><span class="material-symbols-outlined" aria-hidden="true">${c[1]}</span><strong>${c[en() ? 3 : 2]}</strong><small>${t('2 esempi', '2 examples')} <span aria-hidden="true">↗</span></small></button>
++        `).join('')}</div>
++      `}
++      <div class="locked-tip"><span class="material-symbols-outlined" aria-hidden="true">lock</span><p>${t('La guida completa con i nostri consigli viene inviata agli ospiti.', 'The full guide with our tips is sent to guests.')}</p></div>`;
++    root.scrollTop = 0;
++    if (focus === 'title') root.querySelector('h3').focus({ preventScroll: true });
++    else if (focus) root.querySelector('[data-guide-category="' + focus + '"]')?.focus({ preventScroll: true });
++    const explore = document.getElementById('guideExplore');
++    if (explore) explore.textContent = t('Esplora l’anteprima', 'Explore the preview');
++    const note = document.querySelector('[data-i18n="guide.note"]');
++    if (note) note.textContent = t('Prova la demo. La guida completa viene inviata agli ospiti.', 'Try the demo. The full guide is sent to guests.');
++  }
++  root.addEventListener('click', event => {
++    const button = event.target.closest('[data-guide-category], .guide-demo-back');
++    if (!button) return;
++    const previous = active;
++    active = button.dataset.guideCategory || null;
++    render(active ? 'title' : previous);
++  });
++  root.addEventListener('keydown', event => {
++    if (event.key === 'Escape' && active) {
++      const previous = active; active = null; render(previous);
++    }
++  });
++  document.getElementById('guideExplore')?.addEventListener('click', () => {
++    active = null; render('food');
++    root.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
++  });
++  new MutationObserver(() => render()).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
++  render();
++})();
+diff --git a/index.html b/index.html
+index 2c5cdac..0986e9a 100644
+--- a/index.html
++++ b/index.html
+@@ -237,43 +237,16 @@
+ 
+           <div class="guide-actions">
+             <a class="btn primary" href="#disponibilita" data-i18n="guide.cta">Richiedi disponibilità</a>
+-            <span data-i18n="guide.note">Anteprima riservata: la guida completa viene inviata agli ospiti.</span>
++            <button class="btn secondary" id="guideExplore" type="button" data-i18n="guide.explore">Esplora l’anteprima</button>
++            <span data-i18n="guide.note">Prova la demo. La guida completa viene inviata agli ospiti.</span>
+           </div>
+         </div>
+ 
+         <div class="guide-preview" aria-label="Anteprima della guida digitale" data-i18n-aria="guide.previewAria">
+           <div class="phone-mockup">
+             <div class="phone-top"></div>
+-            <div class="guide-app">
+-              <span class="guide-label">A Casa di Marco</span>
+-              <h3 data-i18n="guide.h3">Guida di Salerno</h3>
+-              <div class="guide-search" data-i18n="guide.search">Cerca: ristoranti, spiagge, itinerari...</div>
+-              <div class="guide-preview-grid">
+-                <article>
+-                  <span><span class="material-symbols-outlined">restaurant</span></span>
+-                  <strong data-i18n="guide.a1h">Dove mangiare</strong>
+-                  <p data-i18n="guide.a1p">Consigli selezionati</p>
+-                </article>
+-                <article>
+-                  <span><span class="material-symbols-outlined">account_balance</span></span>
+-                  <strong data-i18n="guide.a2h">Cosa vedere</strong>
+-                  <p data-i18n="guide.a2p">Angoli speciali</p>
+-                </article>
+-                <article>
+-                  <span><span class="material-symbols-outlined">beach_access</span></span>
+-                  <strong data-i18n="guide.a3h">Mare e dintorni</strong>
+-                  <p data-i18n="guide.a3p">Idee per la giornata</p>
+-                </article>
+-                <article>
+-                  <span><span class="material-symbols-outlined">directions_bus</span></span>
+-                  <strong data-i18n="guide.a4h">Muoversi</strong>
+-                  <p data-i18n="guide.a4p">Info pratiche</p>
+-                </article>
+-              </div>
+-              <div class="locked-tip">
+-                <span><span class="material-symbols-outlined">lock</span></span>
+-                <p data-i18n="guide.locked">La lista completa con mappe, consigli e itinerari viene condivisa dopo la prenotazione.</p>
+-              </div>
++            <div class="guide-app guide-demo" id="guideDemo">
++              <noscript>Abilita JavaScript per esplorare la demo. La guida completa viene inviata agli ospiti.</noscript>
+             </div>
+           </div>
+         </div>
+@@ -677,5 +650,6 @@
+   </div>
+ 
+   <script src="script.js"></script>
++  <script src="guide-demo.js"></script>
+ </body>
+ </html>
+diff --git a/style.css b/style.css
+index 2a895f9..db4cc2f 100644
+--- a/style.css
++++ b/style.css
+@@ -1584,3 +1584,25 @@ main { width: 100%; margin: 0; padding: 0 0 70px; }
+     padding: 10px;
+   }
+ }
++
++/* Interactive public guide preview */
++.guide-demo { height: 560px; overflow-y: auto; overscroll-behavior-y: contain; scrollbar-width: thin; }
++.guide-demo .guide-demo-notice { font-size: 11px; line-height: 1.5; color: var(--verde-dark); background: var(--verde-soft); padding: 10px; border-radius: 12px; margin: 12px 0; }
++.guide-demo .guide-demo-title { font-size: 30px; line-height: 1.15; margin: 16px 0 10px; }
++.guide-demo .guide-demo-intro { font-size: 12px; color: var(--muted); line-height: 1.6; }
++.guide-demo-category { font: inherit; text-align: left; background: #fff; color: var(--verde-dark); border: 1px solid rgba(58,90,64,.18); border-radius: 16px; padding: 14px; min-height: 112px; cursor: pointer; }
++.guide-demo-category:hover { background: var(--verde-soft); border-color: var(--verde); }
++.guide-demo-category small { display: flex; justify-content: space-between; font-size: 11px; margin-top: 8px; color: var(--muted); }
++.guide-demo-category small span { font-size: 15px; margin: 0; }
++.guide-demo-back { display: inline-flex; gap: 6px; align-items: center; font: inherit; font-size: 12px; color: var(--verde-dark); background: var(--verde-soft); border: 0; border-radius: 20px; padding: 9px 12px; cursor: pointer; }
++.guide-demo-back .material-symbols-outlined { font-size: 18px; }
++.guide-demo-cards { display: grid; gap: 10px; margin-top: 14px; }
++.guide-demo-card { background: #fff; border: 1px solid rgba(58,90,64,.14); border-radius: 16px; padding: 14px; }
++.guide-demo-meta { font-size: 10px; color: var(--muted); }
++.guide-demo-card h4 { font-size: 16px; line-height: 1.4; color: var(--verde-dark); margin: 6px 0; }
++.guide-demo-card p { font-size: 12px; line-height: 1.6; color: var(--muted); }
++.guide-demo button:focus-visible, #guideExplore:focus-visible { outline: 3px solid var(--verde-dark); outline-offset: 3px; }
++@media (max-width: 480px) {
++  .guide-demo { padding: 14px; height: 530px; }
++  .guide-demo-category { padding: 12px; min-height: 100px; }
++}
+-- 
+2.50.0.windows.1
+
