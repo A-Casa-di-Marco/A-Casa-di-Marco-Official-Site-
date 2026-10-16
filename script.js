@@ -50,6 +50,7 @@ const checkinInput = document.getElementById('checkin');
 const checkoutInput = document.getElementById('checkout');
 
 let occupiedDates = new Set(FALLBACK_OCCUPIED_DATES);
+let availabilityLoaded = false;
 let selectedStart = '';
 let selectedEnd = '';
 
@@ -131,7 +132,7 @@ function renderCalendar() {
     cell.disabled = isPast || isBusy;
     cell.innerHTML = `
       <span class="day-number">${day}</span>
-      <span class="day-state">${isPast ? tt('Passata', 'Past') : isBusy ? tt('Occupata', 'Busy') : tt('Libera', 'Free')}</span>
+      <span class="day-state">${isPast ? tt('Passata', 'Past') : isBusy ? tt('Occupata', 'Busy') : availabilityLoaded ? tt('Libera', 'Free') : tt('Da verificare', 'Unconfirmed')}</span>
     `;
 
     cell.addEventListener('click', () => selectDate(ymd));
@@ -189,13 +190,17 @@ function loadAvailability() {
 
   const callbackName = 'calendarCallback_' + Date.now();
   const script = document.createElement('script');
+  const timeout = setTimeout(() => script.onerror(), 12000);
 
   window[callbackName] = function(data) {
+    if (!data || !Array.isArray(data.occupied)) { script.onerror(); return; }
+    clearTimeout(timeout);
     const list = Array.isArray(data.occupied) ? data.occupied : [];
     occupiedDates = new Set(list);
+    availabilityLoaded = true;
 
     if (calendarStatus) {
-      calendarStatus.textContent = tt(`Disponibilità aggiornata. Date occupate caricate: ${list.length}.`, `Availability updated. Busy dates loaded: ${list.length}.`);
+      calendarStatus.textContent = tt('Calendario aggiornato. Confermeremo disponibilità e prezzo alla richiesta.', 'Calendar updated. Availability and price are confirmed when you enquire.');
     }
 
     renderCalendar();
@@ -205,6 +210,10 @@ function loadAvailability() {
 
   script.src = CALENDAR_FEED_URL + (CALENDAR_FEED_URL.includes('?') ? '&' : '?') + 'callback=' + callbackName;
   script.onerror = function() {
+    clearTimeout(timeout);
+    availabilityLoaded = false;
+    script.remove();
+    window[callbackName] = () => {};
     if (calendarStatus) {
       calendarStatus.textContent = tt('Non riesco a caricare il calendario. Riprova più tardi o scrivici su WhatsApp.', "Couldn't load the calendar. Try again later or message us on WhatsApp.");
     }
@@ -557,7 +566,7 @@ const spaceData = {
     kicker: 'Camera matrimoniale',
     title: 'Camera matrimoniale',
     desc: 'Una camera pensata per due persone, semplice e confortevole. Su richiesta è possibile aggiungere una culla per bambini piccoli, se disponibile.',
-    photos: ['assets/camera-matrimoniale-1.jpg', 'assets/camera-matrimoniale-2.jpg', 'assets/camera-matrimoniale-3.jpg', 'assets/camera-matrimoniale-4.jpg', 'assets/camera-matrimoniale-5.jpg', 'assets/camera-matrimoniale-6.jpg', 'assets/camera-matrimoniale-7.jpg', 'assets/camera-matrimoniale-8.jpg', 'assets/camera-matrimoniale-9.jpg', 'assets/camera-matrimoniale-10.jpg', 'assets/camera-matrimoniale-11.jpg', 'assets/camera-matrimoniale-12.jpg'],
+    photos: ['assets/camera-matrimoniale-1.webp', 'assets/camera-matrimoniale-2.webp', 'assets/camera-matrimoniale-3.webp', 'assets/camera-matrimoniale-4.webp', 'assets/camera-matrimoniale-5.webp', 'assets/camera-matrimoniale-6.webp', 'assets/camera-matrimoniale-7.webp', 'assets/camera-matrimoniale-8.webp', 'assets/camera-matrimoniale-9.webp', 'assets/camera-matrimoniale-10.webp', 'assets/camera-matrimoniale-11.webp', 'assets/camera-matrimoniale-12.webp'],
     items: [
       ['king_bed', '1 letto matrimoniale: può ospitare 2 persone.'],
       ['child_care', 'Culla su richiesta: 1 disponibile, ideale per bambini piccoli.'],
@@ -578,7 +587,7 @@ const spaceData = {
     kicker: 'Seconda camera',
     title: 'Seconda camera · fino a 4 posti letto',
     desc: 'La seconda camera è più flessibile ed è adatta a bambini, ragazzi o piccoli gruppi. I posti letto sono distribuiti tra futon, lettino singolo e letto rialzato.',
-    photos: ['assets/camera-2-1.jpg', 'assets/camera-2-2.jpg', 'assets/camera-2-3.jpg', 'assets/camera-2-4.jpg', 'assets/camera-2-5.jpg'],
+    photos: ['assets/camera-2-1.webp', 'assets/camera-2-2.webp', 'assets/camera-2-3.webp', 'assets/camera-2-4.webp', 'assets/camera-2-5.webp'],
     items: [
       ['bed', 'Futon piazza e mezzo: può ospitare fino a 2 persone.'],
       ['single_bed', 'Lettino singolo: 1 posto letto.'],
@@ -601,7 +610,7 @@ const spaceData = {
     kicker: 'Bagno',
     title: 'Bagno funzionale',
     desc: 'Bagno pratico e organizzato, con i servizi utili per il soggiorno e la lavatrice a disposizione degli ospiti.',
-    photos: ['assets/bagno-1.jpg', 'assets/bagno-2.jpg', 'assets/bagno-3.jpg', 'assets/bagno-4.jpg'],
+    photos: ['assets/bagno-1.webp', 'assets/bagno-2.webp', 'assets/bagno-3.webp', 'assets/bagno-4.webp'],
     items: [
       ['shower', 'Doccia e servizi essenziali.'],
       ['local_laundry_service', 'Lavatrice disponibile nell’alloggio.'],
@@ -622,7 +631,7 @@ const spaceData = {
     kicker: 'Cucina',
     title: 'Cucina attrezzata',
     desc: 'Una cucina utile per colazioni, pasti semplici e soggiorni più lunghi. Perfetta se preferite avere autonomia durante la vacanza.',
-    photos: ['assets/cucina-1.jpg', 'assets/cucina-2.jpg', 'assets/cucina-3.jpg', 'assets/cucina-4.jpg', 'assets/cucina-5.jpg', 'assets/cucina-6.jpg', 'assets/cucina-7.jpg', 'assets/cucina-8.jpg', 'assets/cucina-9.jpg'],
+    photos: ['assets/cucina-1.webp', 'assets/cucina-2.webp', 'assets/cucina-3.webp', 'assets/cucina-4.webp', 'assets/cucina-5.webp', 'assets/cucina-6.webp', 'assets/cucina-7.webp', 'assets/cucina-8.webp', 'assets/cucina-9.webp'],
     items: [
       ['cooking', 'Cucina attrezzata per preparare pasti e colazioni.'],
       ['coffee', 'Macchina caffè e moka.'],
@@ -645,7 +654,7 @@ const spaceData = {
     kicker: 'Veranda',
     title: 'Veranda · sala da pranzo coperta',
     desc: 'La veranda in legno è la sala da pranzo della casa: tavolo, sedie e divanetto in uno spazio coperto, con portoni scorrevoli aperti sul giardino e vista sulle montagne. Qui trovi anche il punto WiFi.',
-    photos: ['assets/veranda-1.jpg', 'assets/veranda-2.jpg', 'assets/veranda-3.jpg', 'assets/veranda-4.jpg', 'assets/veranda-5.jpg', 'assets/veranda-6.jpg', 'assets/veranda-7.jpg', 'assets/veranda-8.jpg', 'assets/veranda-9.jpg', 'assets/veranda-10.jpg'],
+    photos: ['assets/veranda-1.webp', 'assets/veranda-2.webp', 'assets/veranda-3.webp', 'assets/veranda-4.webp', 'assets/veranda-5.webp', 'assets/veranda-6.webp', 'assets/veranda-7.webp', 'assets/veranda-8.webp', 'assets/veranda-9.webp', 'assets/veranda-10.webp'],
     items: [
       ['table_restaurant', 'Tavolo da pranzo con sedie per colazioni e pasti in veranda.'],
       ['ac_unit', 'Climatizzatore: la veranda resta comoda anche nelle giornate calde.'],
@@ -668,7 +677,7 @@ const spaceData = {
     kicker: 'Giardino',
     title: 'Giardino privato',
     desc: 'Il giardino è l’ingresso della casa: cancello con insegna, prato, sedie lounge sotto l’ombrellone e un tavolo per i pasti all’aperto, con vista sulle montagne.',
-    photos: ['assets/giardino-1.jpg', 'assets/giardino-2.jpg', 'assets/giardino-3.jpg', 'assets/giardino-4.jpg', 'assets/giardino-5.jpg', 'assets/giardino-6.jpg', 'assets/giardino-7.jpg', 'assets/giardino-8.jpg', 'assets/giardino-9.jpg', 'assets/giardino-10.jpg', 'assets/giardino-11.jpg', 'assets/giardino-12.jpg', 'assets/giardino-13.jpg'],
+    photos: ['assets/giardino-1.webp', 'assets/giardino-2.webp', 'assets/giardino-3.webp', 'assets/giardino-4.webp', 'assets/giardino-5.webp', 'assets/giardino-6.webp', 'assets/giardino-7.webp', 'assets/giardino-8.webp', 'assets/giardino-9.webp', 'assets/giardino-10.webp', 'assets/giardino-11.webp', 'assets/giardino-12.webp', 'assets/giardino-13.webp'],
     items: [
       ['chair', 'Sedie lounge e ombrellone per rilassarsi sul prato.'],
       ['table_restaurant', 'Tavolo esterno per colazioni e cene all’aperto.'],

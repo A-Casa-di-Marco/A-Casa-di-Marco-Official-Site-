@@ -9,34 +9,33 @@
   <meta property="og:title" content="A Casa di Marco · Garden Cottage Escape a Salerno" />
   <meta property="og:description" content="Casa vacanze a Salerno con giardino privato, parcheggio gratuito e ambienti accoglienti per famiglie, coppie e gruppi." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/giardino-1.jpg" />
+  <meta property="og:image" content="assets/giardino-1.webp" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="cinematic.css" />
 </head>
 
 <body>
+  <a class="skip-link" href="#casa">Salta al contenuto</a>
   <header class="site-header" id="home">
     <nav class="nav">
       <a class="brand" href="#home" aria-label="A Casa di Marco home">
         <span class="brand-mark"><span class="material-symbols-outlined">cottage</span></span>
-        <span>A Casa di Marco</span>
+        <span class="brand-type">A Casa di Marco<small>GARDEN COTTAGE · SALERNO</small></span>
       </a>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Apri menu" data-i18n-aria="nav.menu"><span class="material-symbols-outlined">menu</span></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Apri menu" data-i18n-aria="nav.menu" aria-expanded="false" aria-controls="navLinks"><span class="material-symbols-outlined">menu</span></button>
 
       <div class="nav-links" id="navLinks">
         <a href="#casa" data-i18n="nav.casa">La casa</a>
-        <a href="#guida" data-i18n="nav.guida">Guida digitale</a>
-        <a href="#servizi" data-i18n="nav.servizi">Servizi</a>
+        <a href="#spazi" data-i18n="nav.spaces">Gli spazi</a>
         <a href="#foto" data-i18n="nav.foto">Foto</a>
-        <a href="#disponibilita" data-i18n="nav.disp">Disponibilità</a>
         <a href="#posizione" data-i18n="nav.dove">Dove siamo</a>
-        <a href="#recensioni" data-i18n="nav.rec">Recensioni</a>
-        <a href="#contatti" class="nav-cta" data-i18n="nav.prenota">Prenota</a>
+        <a href="#disponibilita" class="nav-cta" data-i18n="nav.reserve">Il tuo soggiorno ↗</a>
       </div>
 
       <button class="lang-switch" id="langSwitch" type="button" aria-label="Passa all’inglese" aria-pressed="false">
@@ -47,29 +46,19 @@
     </nav>
 
     <section class="hero">
-      <div class="hero-carousel" aria-hidden="true">
-        <img class="hero-slide active" src="assets/giardino-1.jpg" alt="">
-        <img class="hero-slide" src="assets/giardino-2.jpg" alt="">
-        <img class="hero-slide" src="assets/giardino-3.jpg" alt="">
-        <img class="hero-slide" src="assets/giardino-4.jpg" alt="">
-        <img class="hero-slide" src="assets/camera-matrimoniale-1.jpg" alt="">
-        <img class="hero-slide" src="assets/veranda-9.jpg" alt="">
-        <img class="hero-slide" src="assets/giardino-1.jpg" alt="">
-        <img class="hero-slide" src="assets/veranda-1.jpg" alt="">
-        <img class="hero-slide" src="assets/veranda-10.jpg" alt="">
-        <img class="hero-slide" src="assets/cucina-1.jpg" alt="">
-        <img class="hero-slide" src="assets/camera-2-1.jpg" alt="">
+      <div class="hero-media" aria-hidden="true">
+        <picture><source media="(max-width: 700px)" srcset="assets/video/poster-mobile.jpg"><img src="assets/video/poster-desktop.jpg" alt="" fetchpriority="high"></picture>
+        <video id="heroVideo" muted loop playsinline preload="none" tabindex="-1"></video>
       </div>
       <div class="hero-content">
-        <p class="eyebrow">Garden Cottage Escape · Salerno</p>
-        <h1>A Casa di Marco</h1>
-
+        <h1 data-i18n="cinema.title">A Casa <span class="hero-name">di Marco</span></h1>
+        <p class="hero-text" data-i18n="cinema.subtitle"><em>Il tuo angolo di quiete a Salerno.</em></p>
         <div class="hero-actions">
-          <a class="btn primary" href="#disponibilita" data-i18n="hero.cta1">Prenota ora</a>
-          <a class="btn secondary" href="https://wa.me/393923064010?text=Ciao%2C%20vorrei%20informazioni%20per%20un%20soggiorno%20ad%20A%20Casa%20di%20Marco." target="_blank" rel="noopener" data-i18n="hero.cta2">Scrivici su WhatsApp</a>
+          <a class="btn primary" href="#disponibilita"><span data-i18n="cinema.reserve">Scegli le tue date</span><span aria-hidden="true">↗</span></a>
+          <button class="tour-trigger" type="button"><span class="play-circle" aria-hidden="true">▷</span><span data-i18n="cinema.tour">Entra, sei a casa</span></button>
         </div>
       </div>
-
+      <div class="hero-footer"><span data-i18n="cinema.location">SALERNO, CAMPANIA · ITALIA</span><button id="videoToggle" type="button" aria-label="Riproduci video" aria-pressed="false"><span aria-hidden="true">▷</span> <span data-video-label>Riproduci</span></button></div>
       <a class="scroll-hint" href="#casa" aria-label="Scorri per continuare" data-i18n-aria="hero.scrollAria">
         <span class="material-symbols-outlined">keyboard_arrow_down</span>
       </a>
@@ -77,11 +66,17 @@
   </header>
 
   <main>
+    <div class="stay-strip" aria-label="La casa in breve">
+      <div><span class="material-symbols-outlined" aria-hidden="true">cottage</span><span data-i18n="cinema.entire">Una casa tutta tua</span></div>
+      <div><span class="material-symbols-outlined" aria-hidden="true">groups</span><span data-i18n="cinema.guests">Fino a 6 ospiti</span></div>
+      <div><span class="material-symbols-outlined" aria-hidden="true">park</span><span data-i18n="cinema.garden">Giardino privato</span></div>
+      <div><span class="material-symbols-outlined" aria-hidden="true">local_parking</span><span data-i18n="cinema.parking">Parcheggio gratuito</span></div>
+    </div>
     <section class="section calm-section refuge-section" id="casa">
       <div class="calm-layout refuge-layout">
         <div class="calm-copy">
-          <span class="section-kicker" data-i18n="home.kicker">Benvenuti</span>
-          <h2 data-i18n="home.h2">Freschi, tranquilli, lontani dal caos</h2>
+          <span class="section-kicker" data-i18n="home.kicker">01 / Il piacere di rallentare</span>
+          <h2 data-i18n="home.h2">Fuori, la scoperta.<br>Qui, la tua tranquillità.</h2>
           <p data-i18n="home.p1"><strong>A Casa di Marco</strong> è il vostro rifugio a Salerno: un intero alloggio con giardino privato, parcheggio interno e spazi comodi fino a 6 persone.</p>
           <p data-i18n="home.p2">Dopo mare, centro e Costiera, qui si rientra in un posto più calmo, fresco e riservato: ideale per respirare, dormire bene e ripartire con più energia.</p>
 
@@ -113,7 +108,8 @@
         </div>
 
         <figure class="calm-photo">
-          <img src="assets/giardino-2.jpg" alt="Il giardino privato di A Casa di Marco" onerror="this.src='assets/placeholder.svg'">
+          <img loading="lazy" decoding="async" src="assets/giardino-12.webp" alt="Il giardino privato di A Casa di Marco" onerror="this.src='assets/placeholder.svg'">
+          <figcaption data-i18n="cinema.caption">Un piccolo angolo verde. Solo per te.</figcaption>
         </figure>
       </div>
     </section>
@@ -121,14 +117,14 @@
     <section class="section sleep-section" id="spazi">
       <div class="wrap">
       <div class="section-heading centered">
-        <span class="section-kicker" data-i18n="spazi.kicker">Spazi</span>
-        <h2 data-i18n="spazi.h2">Dove dormirai e vivrai la casa</h2>
+        <span class="section-kicker" data-i18n="spazi.kicker">02 / Spazi da vivere</span>
+        <h2 data-i18n="spazi.h2">Fai spazio ai bei momenti.</h2>
         <p data-i18n="spazi.p">Camere, bagno, cucina, veranda e giardino: clicca su ogni spazio per vedere foto e dettagli.</p>
       </div>
 
       <div class="spaces-grid">
         <button class="space-card" type="button" data-space="camera1" aria-label="Apri dettagli Camera matrimoniale" data-i18n-aria="spazi.a1">
-          <img src="assets/camera-matrimoniale-1.jpg" alt="Camera matrimoniale" onerror="this.src='assets/placeholder.svg'">
+          <img loading="lazy" decoding="async" src="assets/camera-matrimoniale-1.webp" alt="Camera matrimoniale" onerror="this.src='assets/placeholder.svg'">
           <div class="space-card-content">
             <span class="space-icon"><span class="material-symbols-outlined">king_bed</span></span>
             <h3 data-i18n="spazi.t1">Camera matrimoniale</h3>
@@ -141,7 +137,7 @@
         </button>
 
         <button class="space-card" type="button" data-space="camera2" aria-label="Apri dettagli Seconda camera" data-i18n-aria="spazi.a2">
-          <img src="assets/camera-2-1.jpg" alt="Seconda camera" onerror="this.src='assets/placeholder.svg'">
+          <img loading="lazy" decoding="async" src="assets/camera-2-1.webp" alt="Seconda camera" onerror="this.src='assets/placeholder.svg'">
           <div class="space-card-content">
             <span class="space-icon"><span class="material-symbols-outlined">single_bed</span></span>
             <h3 data-i18n="spazi.t2">Seconda camera</h3>
@@ -154,7 +150,7 @@
         </button>
 
         <button class="space-card" type="button" data-space="bagno" aria-label="Apri dettagli Bagno" data-i18n-aria="spazi.a3">
-          <img src="assets/bagno-1.jpg" alt="Bagno" onerror="this.src='assets/placeholder.svg'">
+          <img loading="lazy" decoding="async" src="assets/bagno-1.webp" alt="Bagno" onerror="this.src='assets/placeholder.svg'">
           <div class="space-card-content">
             <span class="space-icon"><span class="material-symbols-outlined">shower</span></span>
             <h3 data-i18n="spazi.t3">Bagno</h3>
@@ -167,7 +163,7 @@
         </button>
 
         <button class="space-card" type="button" data-space="cucina" aria-label="Apri dettagli Cucina" data-i18n-aria="spazi.a4">
-          <img src="assets/cucina-1.jpg" alt="Cucina" onerror="this.src='assets/placeholder.svg'">
+          <img loading="lazy" decoding="async" src="assets/cucina-1.webp" alt="Cucina" onerror="this.src='assets/placeholder.svg'">
           <div class="space-card-content">
             <span class="space-icon"><span class="material-symbols-outlined">cooking</span></span>
             <h3 data-i18n="spazi.t4">Cucina</h3>
@@ -180,7 +176,7 @@
         </button>
 
         <button class="space-card" type="button" data-space="veranda" aria-label="Apri dettagli Veranda" data-i18n-aria="spazi.a5">
-          <img src="assets/veranda-1.jpg" alt="Veranda con tavolo da pranzo" onerror="this.src='assets/placeholder.svg'">
+          <img loading="lazy" decoding="async" src="assets/veranda-1.webp" alt="Veranda con tavolo da pranzo" onerror="this.src='assets/placeholder.svg'">
           <div class="space-card-content">
             <span class="space-icon"><span class="material-symbols-outlined">deck</span></span>
             <h3 data-i18n="spazi.t5">Veranda</h3>
@@ -193,7 +189,7 @@
         </button>
 
         <button class="space-card" type="button" data-space="giardino" aria-label="Apri dettagli Giardino" data-i18n-aria="spazi.a6">
-          <img src="assets/giardino-1.jpg" alt="Giardino con zona relax" onerror="this.src='assets/placeholder.svg'">
+          <img loading="lazy" decoding="async" src="assets/giardino-1.webp" alt="Giardino con zona relax" onerror="this.src='assets/placeholder.svg'">
           <div class="space-card-content">
             <span class="space-icon"><span class="material-symbols-outlined">park</span></span>
             <h3 data-i18n="spazi.t6">Giardino</h3>
@@ -361,59 +357,59 @@
 
       <div class="gallery-carousel">
         <div class="gallery-track" id="galleryTrack">
-          <button class="gallery-trigger slide active"><img src="assets/camera-matrimoniale-1.jpg" alt="Camera matrimoniale" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-2.jpg" alt="Camera matrimoniale – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-3.jpg" alt="Camera matrimoniale – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-4.jpg" alt="Camera matrimoniale – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-5.jpg" alt="Camera matrimoniale – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-6.jpg" alt="Camera matrimoniale – foto 6" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-7.jpg" alt="Camera matrimoniale – foto 7" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-8.jpg" alt="Camera matrimoniale – foto 8" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-9.jpg" alt="Camera matrimoniale – foto 9" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-10.jpg" alt="Camera matrimoniale – foto 10" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-11.jpg" alt="Camera matrimoniale – foto 11" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/camera-matrimoniale-12.jpg" alt="Camera matrimoniale – foto 12" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/camera-2-1.jpg" alt="Seconda camera" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/camera-2-2.jpg" alt="Seconda camera – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/camera-2-3.jpg" alt="Seconda camera – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/camera-2-4.jpg" alt="Seconda camera – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/camera-2-5.jpg" alt="Seconda camera – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/bagno-1.jpg" alt="Bagno" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/bagno-2.jpg" alt="Bagno – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/bagno-3.jpg" alt="Bagno – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/bagno-4.jpg" alt="Bagno – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/cucina-1.jpg" alt="Cucina" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/cucina-2.jpg" alt="Cucina – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/cucina-3.jpg" alt="Cucina – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/cucina-4.jpg" alt="Cucina – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/cucina-5.jpg" alt="Cucina – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/cucina-6.jpg" alt="Cucina – foto 6" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/cucina-7.jpg" alt="Cucina – foto 7" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/cucina-8.jpg" alt="Cucina – foto 8" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/cucina-9.jpg" alt="Cucina – foto 9" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/veranda-1.jpg" alt="Veranda con tavolo da pranzo" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/veranda-2.jpg" alt="Veranda – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/veranda-3.jpg" alt="Veranda – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/veranda-4.jpg" alt="Veranda – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/veranda-5.jpg" alt="Veranda – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/veranda-6.jpg" alt="Veranda – foto 6" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/veranda-7.jpg" alt="Veranda – foto 7" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/veranda-8.jpg" alt="Veranda – foto 8" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/veranda-9.jpg" alt="Veranda – foto 9" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/veranda-10.jpg" alt="Veranda – foto 10" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/giardino-1.jpg" alt="Giardino di A Casa di Marco" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/giardino-2.jpg" alt="Giardino – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/giardino-3.jpg" alt="Giardino – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/giardino-4.jpg" alt="Giardino – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/giardino-5.jpg" alt="Giardino – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/giardino-6.jpg" alt="Giardino – foto 6" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/giardino-7.jpg" alt="Giardino – foto 7" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/giardino-8.jpg" alt="Giardino – foto 8" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/giardino-9.jpg" alt="Giardino – foto 9" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/giardino-10.jpg" alt="Giardino – foto 10" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/giardino-11.jpg" alt="Giardino – foto 11" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/giardino-12.jpg" alt="Giardino – foto 12" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img src="assets/giardino-13.jpg" alt="Giardino – foto 13" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide active"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-1.webp" alt="Camera matrimoniale" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-2.webp" alt="Camera matrimoniale – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-3.webp" alt="Camera matrimoniale – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-4.webp" alt="Camera matrimoniale – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-5.webp" alt="Camera matrimoniale – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-6.webp" alt="Camera matrimoniale – foto 6" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-7.webp" alt="Camera matrimoniale – foto 7" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-8.webp" alt="Camera matrimoniale – foto 8" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-9.webp" alt="Camera matrimoniale – foto 9" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-10.webp" alt="Camera matrimoniale – foto 10" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-11.webp" alt="Camera matrimoniale – foto 11" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-12.webp" alt="Camera matrimoniale – foto 12" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-2-1.webp" alt="Seconda camera" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-2-2.webp" alt="Seconda camera – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-2-3.webp" alt="Seconda camera – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-2-4.webp" alt="Seconda camera – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-2-5.webp" alt="Seconda camera – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/bagno-1.webp" alt="Bagno" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/bagno-2.webp" alt="Bagno – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/bagno-3.webp" alt="Bagno – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/bagno-4.webp" alt="Bagno – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-1.webp" alt="Cucina" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-2.webp" alt="Cucina – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-3.webp" alt="Cucina – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-4.webp" alt="Cucina – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-5.webp" alt="Cucina – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-6.webp" alt="Cucina – foto 6" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-7.webp" alt="Cucina – foto 7" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-8.webp" alt="Cucina – foto 8" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-9.webp" alt="Cucina – foto 9" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-1.webp" alt="Veranda con tavolo da pranzo" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-2.webp" alt="Veranda – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-3.webp" alt="Veranda – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-4.webp" alt="Veranda – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-5.webp" alt="Veranda – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-6.webp" alt="Veranda – foto 6" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-7.webp" alt="Veranda – foto 7" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-8.webp" alt="Veranda – foto 8" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-9.webp" alt="Veranda – foto 9" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-10.webp" alt="Veranda – foto 10" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-1.webp" alt="Giardino di A Casa di Marco" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-2.webp" alt="Giardino – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-3.webp" alt="Giardino – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-4.webp" alt="Giardino – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-5.webp" alt="Giardino – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-6.webp" alt="Giardino – foto 6" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-7.webp" alt="Giardino – foto 7" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-8.webp" alt="Giardino – foto 8" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-9.webp" alt="Giardino – foto 9" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-10.webp" alt="Giardino – foto 10" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-11.webp" alt="Giardino – foto 11" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-12.webp" alt="Giardino – foto 12" onerror="this.src='assets/placeholder.svg'"></button>
+          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-13.webp" alt="Giardino – foto 13" onerror="this.src='assets/placeholder.svg'"></button>
         </div>
         <button type="button" class="carousel-btn prev" id="galleryPrev" aria-label="Foto precedente" data-i18n-aria="aria.prevPhoto"><span class="material-symbols-outlined">chevron_left</span></button>
         <button type="button" class="carousel-btn next" id="galleryNext" aria-label="Foto successiva" data-i18n-aria="aria.nextPhoto"><span class="material-symbols-outlined">chevron_right</span></button>
@@ -649,7 +645,13 @@
     <span class="lightbox-counter" id="lightboxCounter"></span>
   </div>
 
+  <dialog id="tourDialog" aria-labelledby="tourTitle">
+    <div class="tour-dialog-head"><h2 id="tourTitle" data-i18n="cinema.tourTitle">Un giro a Casa di Marco</h2><button id="tourClose" type="button" aria-label="Chiudi tour" data-i18n-aria="cinema.close">×</button></div>
+    <video id="fullTour" controls playsinline preload="none" aria-label="Tour degli ambienti della casa"></video>
+    <p data-i18n="cinema.tourNote">Il tour completo, al tuo ritmo.</p>
+  </dialog>
   <script src="script.js"></script>
   <script src="guide-demo.js"></script>
+  <script src="cinematic.js"></script>
 </body>
 </html>
