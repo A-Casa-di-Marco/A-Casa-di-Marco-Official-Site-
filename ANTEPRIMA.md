@@ -34,3 +34,9 @@ Per rigenerare le foto: `python scripts/prepare-photos.py`.
 ## Verifiche
 
 Verificati nel browser: video desktop/mobile, tour interi, menu mobile, cambio lingua, date invertite, capienza massima e calendario collegato. Nessuna richiesta WhatsApp inviata durante i controlli.
+
+## Selezione foto e guida
+
+Controllate visivamente le 53 foto originali. La galleria principale usa una selezione di 18 scatti; i sei ambienti hanno gallerie dedicate con 26 foto complessive. La matrimoniale n. 9, capovolta e priva di orientamento EXIF, è stata esclusa in favore della n. 10, che mostra correttamente la stessa zona. Esclusi dalla presentazione gli scatti più scuri e diversi doppioni; nessun originale eliminato o alterato. Galleria e dettagli mostrano le immagini intere con `object-fit: contain`.
+
+La guida è presentata come un taccuino con quattro categorie. Il contenuto dimostrativo si apre in un dialog accessibile su richiesta e rimane esplicitamente identificato come fittizio. La guida completa riservata agli ospiti non è stata pubblicata.

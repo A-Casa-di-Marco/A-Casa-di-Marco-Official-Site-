@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="cinematic.css" />
+  <link rel="stylesheet" href="cinematic.css?v=photos-guide-1" />
 </head>
 
 <body>
@@ -51,7 +51,8 @@
         <video id="heroVideo" muted loop playsinline preload="none" tabindex="-1"></video>
       </div>
       <div class="hero-content">
-        <h1 data-i18n="cinema.title">A Casa <span class="hero-name">di Marco</span></h1>
+        <p class="eyebrow" data-i18n="cinema.eyebrow">Giardino privato · Tra città e Costiera</p>
+        <h1 data-i18n="cinema.title">A Casa <span class="hero-name">di <em>Marco</em></span></h1>
         <p class="hero-text" data-i18n="cinema.subtitle"><em>Il tuo angolo di quiete a Salerno.</em></p>
         <div class="hero-actions">
           <a class="btn primary" href="#disponibilita"><span data-i18n="cinema.reserve">Scegli le tue date</span><span aria-hidden="true">↗</span></a>
@@ -163,7 +164,7 @@
         </button>
 
         <button class="space-card" type="button" data-space="cucina" aria-label="Apri dettagli Cucina" data-i18n-aria="spazi.a4">
-          <img loading="lazy" decoding="async" src="assets/cucina-1.webp" alt="Cucina" onerror="this.src='assets/placeholder.svg'">
+          <img loading="lazy" decoding="async" src="assets/cucina-2.webp" alt="Cucina" onerror="this.src='assets/placeholder.svg'">
           <div class="space-card-content">
             <span class="space-icon"><span class="material-symbols-outlined">cooking</span></span>
             <h3 data-i18n="spazi.t4">Cucina</h3>
@@ -176,7 +177,7 @@
         </button>
 
         <button class="space-card" type="button" data-space="veranda" aria-label="Apri dettagli Veranda" data-i18n-aria="spazi.a5">
-          <img loading="lazy" decoding="async" src="assets/veranda-1.webp" alt="Veranda con tavolo da pranzo" onerror="this.src='assets/placeholder.svg'">
+          <img loading="lazy" decoding="async" src="assets/veranda-4.webp" alt="Veranda con tavolo da pranzo" onerror="this.src='assets/placeholder.svg'">
           <div class="space-card-content">
             <span class="space-icon"><span class="material-symbols-outlined">deck</span></span>
             <h3 data-i18n="spazi.t5">Veranda</h3>
@@ -189,7 +190,7 @@
         </button>
 
         <button class="space-card" type="button" data-space="giardino" aria-label="Apri dettagli Giardino" data-i18n-aria="spazi.a6">
-          <img loading="lazy" decoding="async" src="assets/giardino-1.webp" alt="Giardino con zona relax" onerror="this.src='assets/placeholder.svg'">
+          <img loading="lazy" decoding="async" src="assets/giardino-6.webp" alt="Giardino con zona relax" onerror="this.src='assets/placeholder.svg'">
           <div class="space-card-content">
             <span class="space-icon"><span class="material-symbols-outlined">park</span></span>
             <h3 data-i18n="spazi.t6">Giardino</h3>
@@ -227,28 +228,35 @@
       <div class="guide-layout">
         <div class="guide-copy">
           <span class="section-kicker" data-i18n="guide.kicker">Inclusa nel soggiorno</span>
-          <h2 data-i18n="guide.h2">La tua guida digitale per vivere Salerno</h2>
-          <p data-i18n="guide.p1">Una guida digitale con consigli locali, luoghi da vedere, ristoranti, spiagge e info pratiche.</p>
-          <p data-i18n="guide.p2">Tutto a portata di telefono, senza perdere tempo tra mille ricerche.</p>
+          <h2 data-i18n="guide.h2">Salerno, come<br>la viviamo noi.</h2>
+          <p data-i18n="guide.p1">Dove fermarsi a mangiare, cosa scoprire e le piccole informazioni che rendono tutto più semplice.</p>
+          <p data-i18n="guide.p2">Abbiamo raccolto i nostri consigli in una guida digitale da portare con te, inclusa nel soggiorno.</p>
 
           <div class="guide-actions">
-            <a class="btn primary" href="#disponibilita" data-i18n="guide.cta">Richiedi disponibilità</a>
-            <button class="btn secondary" id="guideExplore" type="button" data-i18n="guide.explore">Esplora l’anteprima</button>
-            <span data-i18n="guide.note">Prova la demo. La guida completa viene inviata agli ospiti.</span>
+            <button class="btn primary" id="guideExplore" type="button" data-i18n="guide.explore" aria-haspopup="dialog" aria-controls="guideDialog">Sfoglia un esempio ↗</button>
+            <span data-i18n="guide.note">La guida completa viene inviata agli ospiti.</span>
           </div>
         </div>
 
-        <div class="guide-preview" aria-label="Anteprima della guida digitale" data-i18n-aria="guide.previewAria">
-          <div class="phone-mockup">
-            <div class="phone-top"></div>
-            <div class="guide-app guide-demo" id="guideDemo">
-              <noscript>Abilita JavaScript per esplorare la demo. La guida completa viene inviata agli ospiti.</noscript>
-            </div>
+        <div class="guide-notebook">
+          <div class="notebook-heading"><span class="material-symbols-outlined" aria-hidden="true">explore</span><span data-i18n="guide.notebook">Il tuo taccuino di soggiorno</span></div>
+          <h3 data-i18n="guide.cover">Il bello,<br>qui intorno.</h3>
+          <div class="guide-topics">
+            <button type="button" data-guide-open="food" aria-haspopup="dialog" aria-controls="guideDialog"><span class="material-symbols-outlined" aria-hidden="true">restaurant</span><span><strong data-i18n="guide.food">A tavola</strong><small data-i18n="guide.foodDesc">Ristoranti e sapori locali</small></span><span aria-hidden="true">↗</span></button>
+            <button type="button" data-guide-open="places" aria-haspopup="dialog" aria-controls="guideDialog"><span class="material-symbols-outlined" aria-hidden="true">landscape</span><span><strong data-i18n="guide.places">Da scoprire</strong><small data-i18n="guide.placesDesc">Mare, borghi e passeggiate</small></span><span aria-hidden="true">↗</span></button>
+            <button type="button" data-guide-open="shops" aria-haspopup="dialog" aria-controls="guideDialog"><span class="material-symbols-outlined" aria-hidden="true">shopping_basket</span><span><strong data-i18n="guide.shops">Ogni giorno</strong><small data-i18n="guide.shopsDesc">Spesa e negozi utili</small></span><span aria-hidden="true">↗</span></button>
+            <button type="button" data-guide-open="pharmacy" aria-haspopup="dialog" aria-controls="guideDialog"><span class="material-symbols-outlined" aria-hidden="true">local_pharmacy</span><span><strong data-i18n="guide.practical">Info pratiche</strong><small data-i18n="guide.practicalDesc">Farmacie nei dintorni</small></span><span aria-hidden="true">↗</span></button>
           </div>
+          <p class="notebook-footer" data-i18n="guide.signature">A Casa di Marco · Consigli di casa</p>
         </div>
       </div>
       </div>
     </section>
+
+    <dialog id="guideDialog" aria-labelledby="guideDialogTitle">
+      <div class="guide-dialog-head"><h2 id="guideDialogTitle" data-i18n="guide.dialogTitle">Un assaggio della guida</h2><button id="guideClose" type="button" aria-label="Chiudi anteprima guida" data-i18n-aria="guide.close">×</button></div>
+      <div class="guide-app guide-demo" id="guideDemo"><noscript>Abilita JavaScript per esplorare l’esempio.</noscript></div>
+    </dialog>
 
     <section class="section" id="servizi">
       <div class="section-heading centered">
@@ -296,51 +304,51 @@
 
         <div class="around-grid">
           <article class="around-item">
-            <span class="around-num">01</span>
+            <span class="around-num material-symbols-outlined" aria-hidden="true">beach_access</span>
             <span class="around-season" data-i18n="pos.i7s">Estate</span>
             <h3 data-i18n="pos.i7h">Il mare</h3>
             <p data-i18n="pos.i7p">In estate il mare è vicino: spiagge e lungomare di Salerno, a un breve tragitto in auto.</p>
             <span class="around-time" data-i18n="pos.i7t"><span class="material-symbols-outlined">directions_car</span> 4,1 km · ~10 min in auto</span>
           </article>
           <article class="around-item">
-            <span class="around-num">02</span>
+            <span class="around-num material-symbols-outlined" aria-hidden="true">auto_awesome</span>
             <span class="around-season" data-i18n="pos.i8s">Inverno</span>
             <h3 data-i18n="pos.i8h">Luci d’Artista</h3>
             <p data-i18n="pos.i8p">In inverno il centro si accende con le Luci d’Artista: il percorso lungo Via Roma e il lungomare, da novembre a gennaio.</p>
             <span class="around-time" data-i18n="pos.i8t"><span class="material-symbols-outlined">directions_car</span> 4,1 km · ~9 min in auto</span>
           </article>
           <article class="around-item">
-            <span class="around-num">03</span>
+            <span class="around-num material-symbols-outlined" aria-hidden="true">location_city</span>
             <h3 data-i18n="pos.i1h">Centro storico e lungomare</h3>
             <p data-i18n="pos.i1p">Il cuore di Salerno: via dei Mercanti, la cattedrale e il lungomare tra caffè, ristoranti e passeggiate.</p>
             <span class="around-time" data-i18n="pos.i1t"><span class="material-symbols-outlined">directions_car</span> 2,7 km · ~10 min in auto</span>
           </article>
           <article class="around-item">
-            <span class="around-num">04</span>
+            <span class="around-num material-symbols-outlined" aria-hidden="true">palette</span>
             <h3>Vietri sul Mare</h3>
             <p data-i18n="pos.i2p">La porta della Costiera, famosa per le ceramiche colorate e il centro storico affacciato sul mare.</p>
             <span class="around-time" data-i18n="pos.i2t"><span class="material-symbols-outlined">directions_car</span> 7,9 km · ~15 min in auto</span>
           </article>
           <article class="around-item">
-            <span class="around-num">05</span>
+            <span class="around-num material-symbols-outlined" aria-hidden="true">landscape</span>
             <h3 data-i18n="pos.i3h">Costiera Amalfitana</h3>
             <p data-i18n="pos.i3p">Amalfi e Ravello, con i borghi sospesi tra montagna e mare, raggiungibili in auto.</p>
             <span class="around-time" data-i18n="pos.i3t"><span class="material-symbols-outlined">directions_car</span> 27,2 km · ~30 min in auto</span>
           </article>
           <article class="around-item">
-            <span class="around-num">06</span>
+            <span class="around-num material-symbols-outlined" aria-hidden="true">account_balance</span>
             <h3>Paestum</h3>
             <p data-i18n="pos.i4p">I templi greci meglio conservati d'Italia e il museo archeologico, nella piana del Sele.</p>
             <span class="around-time" data-i18n="pos.i4t"><span class="material-symbols-outlined">directions_car</span> 39,3 km · ~55 min in auto</span>
           </article>
           <article class="around-item">
-            <span class="around-num">07</span>
+            <span class="around-num material-symbols-outlined" aria-hidden="true">museum</span>
             <h3>Pompei</h3>
             <p data-i18n="pos.i5p">L'area archeologica sepolta dall'eruzione del 79 d.C.: case, botteghe e affreschi ancora leggibili.</p>
             <span class="around-time" data-i18n="pos.i5t"><span class="material-symbols-outlined">directions_car</span> 32 km · ~35 min in auto</span>
           </article>
           <article class="around-item">
-            <span class="around-num">08</span>
+            <span class="around-num material-symbols-outlined" aria-hidden="true">forest</span>
             <h3>Cilento</h3>
             <p data-i18n="pos.i6p">Costa selvatica, paesi in pietra e Parco Nazionale: l'alternativa più tranquilla alla Costiera.</p>
             <span class="around-time" data-i18n="pos.i6t"><span class="material-symbols-outlined">directions_car</span> 67,5 km · ~80 min in auto</span>
@@ -357,63 +365,28 @@
 
       <div class="gallery-carousel">
         <div class="gallery-track" id="galleryTrack">
-          <button class="gallery-trigger slide active"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-1.webp" alt="Camera matrimoniale" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-2.webp" alt="Camera matrimoniale – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-3.webp" alt="Camera matrimoniale – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-4.webp" alt="Camera matrimoniale – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-5.webp" alt="Camera matrimoniale – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-6.webp" alt="Camera matrimoniale – foto 6" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-7.webp" alt="Camera matrimoniale – foto 7" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-8.webp" alt="Camera matrimoniale – foto 8" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-9.webp" alt="Camera matrimoniale – foto 9" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-10.webp" alt="Camera matrimoniale – foto 10" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-11.webp" alt="Camera matrimoniale – foto 11" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-12.webp" alt="Camera matrimoniale – foto 12" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-2-1.webp" alt="Seconda camera" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-2-2.webp" alt="Seconda camera – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-2-3.webp" alt="Seconda camera – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-2-4.webp" alt="Seconda camera – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-2-5.webp" alt="Seconda camera – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/bagno-1.webp" alt="Bagno" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/bagno-2.webp" alt="Bagno – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/bagno-3.webp" alt="Bagno – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/bagno-4.webp" alt="Bagno – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-1.webp" alt="Cucina" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-2.webp" alt="Cucina – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-3.webp" alt="Cucina – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-4.webp" alt="Cucina – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-5.webp" alt="Cucina – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-6.webp" alt="Cucina – foto 6" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-7.webp" alt="Cucina – foto 7" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-8.webp" alt="Cucina – foto 8" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-9.webp" alt="Cucina – foto 9" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-1.webp" alt="Veranda con tavolo da pranzo" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-2.webp" alt="Veranda – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-3.webp" alt="Veranda – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-4.webp" alt="Veranda – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-5.webp" alt="Veranda – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-6.webp" alt="Veranda – foto 6" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-7.webp" alt="Veranda – foto 7" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-8.webp" alt="Veranda – foto 8" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-9.webp" alt="Veranda – foto 9" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-10.webp" alt="Veranda – foto 10" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-1.webp" alt="Giardino di A Casa di Marco" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-2.webp" alt="Giardino – foto 2" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-3.webp" alt="Giardino – foto 3" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-4.webp" alt="Giardino – foto 4" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-5.webp" alt="Giardino – foto 5" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-6.webp" alt="Giardino – foto 6" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-7.webp" alt="Giardino – foto 7" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-8.webp" alt="Giardino – foto 8" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-9.webp" alt="Giardino – foto 9" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-10.webp" alt="Giardino – foto 10" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-11.webp" alt="Giardino – foto 11" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-12.webp" alt="Giardino – foto 12" onerror="this.src='assets/placeholder.svg'"></button>
-          <button class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-13.webp" alt="Giardino – foto 13" onerror="this.src='assets/placeholder.svg'"></button>
+          <button type="button" class="gallery-trigger slide active"><img loading="lazy" decoding="async" src="assets/giardino-6.webp" alt="Giardino e veranda"></button>
+          <button type="button" class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-4.webp" alt="Veranda e tavolo da pranzo"></button>
+          <button type="button" class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-2.webp" alt="Cucina attrezzata"></button>
+          <button type="button" class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-1.webp" alt="Camera matrimoniale"></button>
+          <button type="button" class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-2-1.webp" alt="Seconda camera"></button>
+          <button type="button" class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/bagno-1.webp" alt="Bagno"></button>
+          <button type="button" class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-1.webp" alt="Giardino e vista sulle montagne"></button>
+          <button type="button" class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-4.webp" alt="Camera matrimoniale: vista sul letto"></button>
+          <button type="button" class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-matrimoniale-10.webp" alt="Camera matrimoniale: armadio e TV"></button>
+          <button type="button" class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/camera-2-4.webp" alt="Seconda camera: posti letto"></button>
+          <button type="button" class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/bagno-4.webp" alt="Bagno: lavabo e servizi"></button>
+          <button type="button" class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-3.webp" alt="Angolo del caffè"></button>
+          <button type="button" class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/cucina-4.webp" alt="Dettagli della cucina"></button>
+          <button type="button" class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-6.webp" alt="Veranda affacciata sul giardino"></button>
+          <button type="button" class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-9.webp" alt="Veranda: zona relax"></button>
+          <button type="button" class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/veranda-10.webp" alt="Un benvenuto a Casa di Marco"></button>
+          <button type="button" class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-10.webp" alt="Zona relax in giardino"></button>
+          <button type="button" class="gallery-trigger slide"><img loading="lazy" decoding="async" src="assets/giardino-12.webp" alt="Giardino e panorama"></button>
         </div>
         <button type="button" class="carousel-btn prev" id="galleryPrev" aria-label="Foto precedente" data-i18n-aria="aria.prevPhoto"><span class="material-symbols-outlined">chevron_left</span></button>
         <button type="button" class="carousel-btn next" id="galleryNext" aria-label="Foto successiva" data-i18n-aria="aria.nextPhoto"><span class="material-symbols-outlined">chevron_right</span></button>
-        <span class="carousel-counter" id="galleryCounter">1 / 53</span>
+        <span class="carousel-counter" id="galleryCounter">1 / 18</span>
       </div>
     </section>
 
@@ -571,7 +544,7 @@
         </article>
       </div>
 
-      <div class="reviews-grid">
+      <div class="reviews-grid" id="reviewsGrid">
         <article class="review-card">
           <p>“Very nice hosts, cozy and quiet appartment outside the hustle and bustle of the city”</p>
           <span data-i18n="rec.attrT">– Tobias, Svizzera · Booking</span>
@@ -610,6 +583,11 @@
         </article>
       </div>
 
+      <button class="reviews-toggle" id="reviewsToggle" type="button" aria-expanded="false" aria-controls="reviewsGrid" hidden>
+        <span class="reviews-show" data-i18n="rec.showAll">Leggi tutte le recensioni</span>
+        <span class="reviews-hide" data-i18n="rec.showLess">Mostra meno</span>
+        <span class="material-symbols-outlined" aria-hidden="true">expand_more</span>
+      </button>
       <div class="review-links">
         <a class="btn secondary" href="https://www.booking.com/Share-uQFGj4" target="_blank" rel="noopener" data-i18n="rec.seeB">Vedi su Booking</a>
         <a class="btn secondary" href="https://www.airbnb.it/rooms/1181843855745217150" target="_blank" rel="noopener" data-i18n="rec.seeA">Vedi su Airbnb</a>
@@ -650,8 +628,8 @@
     <video id="fullTour" controls playsinline preload="none" aria-label="Tour degli ambienti della casa"></video>
     <p data-i18n="cinema.tourNote">Il tour completo, al tuo ritmo.</p>
   </dialog>
-  <script src="script.js"></script>
-  <script src="guide-demo.js"></script>
-  <script src="cinematic.js"></script>
+  <script src="script.js?v=photos-guide-1"></script>
+  <script src="guide-demo.js?v=photos-guide-1"></script>
+  <script src="cinematic.js?v=photos-guide-1"></script>
 </body>
 </html>

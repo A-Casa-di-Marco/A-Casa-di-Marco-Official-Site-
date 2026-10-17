@@ -2,7 +2,8 @@
 (() => {
   Object.assign(T_EN, {
     'nav.spaces': 'The spaces', 'nav.reserve': 'Your stay ↗',
-    'cinema.title': 'A Casa <span class="hero-name">di Marco</span>',
+    'cinema.eyebrow': 'Private garden · Between city and coast',
+    'cinema.title': 'A Casa <span class="hero-name">di <em>Marco</em></span>',
     'cinema.subtitle': '<em>Your quiet corner in Salerno.</em>',
     'cinema.reserve': 'Choose your dates', 'cinema.tour': 'Come on in',
     'cinema.location': 'SALERNO, CAMPANIA · ITALY', 'cinema.entire': 'A home of your own',
@@ -11,9 +12,30 @@
     'cinema.tourTitle': 'A look around Casa di Marco', 'cinema.tourNote': 'The full tour, at your own pace.',
     'cinema.close': 'Close tour', 'home.kicker': '01 / The pleasure of slowing down',
     'home.h2': 'Out there, discovery.<br>In here, tranquillity.',
-    'spazi.kicker': '02 / Spaces to enjoy', 'spazi.h2': 'Make room for good moments.'
+    'spazi.kicker': '02 / Spaces to enjoy', 'spazi.h2': 'Make room for good moments.',
+    'rec.showAll': 'Read all reviews', 'rec.showLess': 'Show less',
+    'guide.h2': 'Salerno, through<br>our eyes.',
+    'guide.p1': 'Where to stop for a meal, what to explore and the little details that make everything easier.',
+    'guide.p2': 'We have gathered our tips in a digital guide to take with you, included in your stay.',
+    'guide.explore': 'Browse an example ↗', 'guide.note': 'The full guide is sent to our guests.',
+    'guide.notebook': 'Your stay notebook', 'guide.cover': 'Good things,<br>just around here.',
+    'guide.food': 'At the table', 'guide.foodDesc': 'Restaurants and local flavours',
+    'guide.places': 'Explore', 'guide.placesDesc': 'Seaside, villages and walks',
+    'guide.shops': 'Everyday essentials', 'guide.shopsDesc': 'Groceries and useful shops',
+    'guide.practical': 'Practical info', 'guide.practicalDesc': 'Nearby pharmacies',
+    'guide.signature': 'A Casa di Marco · Tips from home',
+    'guide.dialogTitle': 'A taste of the guide', 'guide.close': 'Close guide preview'
   });
   applyLang();
+  const reviewsGrid = document.getElementById('reviewsGrid');
+  const reviewsToggle = document.getElementById('reviewsToggle');
+  reviewsGrid.classList.add('is-collapsed');
+  reviewsToggle.hidden = false;
+  reviewsToggle.addEventListener('click', () => {
+    const collapsed = reviewsGrid.classList.toggle('is-collapsed');
+    reviewsToggle.setAttribute('aria-expanded', String(!collapsed));
+  });
+  document.querySelectorAll('.space-icon').forEach(icon => icon.setAttribute('aria-hidden', 'true'));
   const hero = document.getElementById('heroVideo');
   const toggle = document.getElementById('videoToggle');
   const dialog = document.getElementById('tourDialog');

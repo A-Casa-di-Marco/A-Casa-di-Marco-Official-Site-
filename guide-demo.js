@@ -43,10 +43,6 @@
     root.scrollTop = 0;
     if (focus === 'title') root.querySelector('h3').focus({ preventScroll: true });
     else if (focus) root.querySelector('[data-guide-category="' + focus + '"]')?.focus({ preventScroll: true });
-    const explore = document.getElementById('guideExplore');
-    if (explore) explore.textContent = t('Esplora l’anteprima', 'Explore the preview');
-    const note = document.querySelector('[data-i18n="guide.note"]');
-    if (note) note.textContent = t('Prova la demo. La guida completa viene inviata agli ospiti.', 'Try the demo. The full guide is sent to guests.');
   }
   root.addEventListener('click', event => {
     const button = event.target.closest('[data-guide-category], .guide-demo-back');
@@ -57,13 +53,19 @@
   });
   root.addEventListener('keydown', event => {
     if (event.key === 'Escape' && active) {
+      event.preventDefault(); event.stopPropagation();
       const previous = active; active = null; render(previous);
     }
   });
-  document.getElementById('guideExplore')?.addEventListener('click', () => {
-    active = null; render('food');
-    root.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
-  });
+  const dialog = document.getElementById('guideDialog');
+  const openGuide = category => {
+    active = category;
+    dialog.showModal();
+    render('title');
+  };
+  document.getElementById('guideExplore')?.addEventListener('click', () => openGuide(null));
+  document.querySelectorAll('[data-guide-open]').forEach(button => button.addEventListener('click', () => openGuide(button.dataset.guideOpen)));
+  document.getElementById('guideClose')?.addEventListener('click', () => dialog.close());
   new MutationObserver(() => render()).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
   render();
 })();
