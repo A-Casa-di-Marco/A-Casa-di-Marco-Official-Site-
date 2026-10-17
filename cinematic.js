@@ -24,6 +24,8 @@
     'guide.shops': 'Everyday essentials', 'guide.shopsDesc': 'Groceries and useful shops',
     'guide.practical': 'Practical info', 'guide.practicalDesc': 'Nearby pharmacies',
     'guide.signature': 'A Casa di Marco · Tips from home',
+    'guide.phoneNote': 'Your guide, wherever you go.',
+    'guide.phoneLabel': 'Digital guide preview',
     'guide.dialogTitle': 'A taste of the guide', 'guide.close': 'Close guide preview'
   });
   applyLang();
@@ -42,6 +44,39 @@
   const full = document.getElementById('fullTour');
   const mobile = matchMedia('(max-width: 700px)');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const guideSection = document.querySelector('.guide-section');
+  const phoneStage = guideSection.querySelector('.phone-stage');
+  const phoneFront = phoneStage.querySelector('.phone-front');
+  let guideFrame = 0;
+  function updateGuidePhone() {
+    guideFrame = 0;
+    if (reduced.matches) {
+      guideSection.classList.remove('is-motion-ready');
+      phoneFront.inert = false;
+      phoneFront.removeAttribute('aria-hidden');
+      return;
+    }
+    guideSection.classList.add('is-motion-ready');
+    const start = innerHeight * .86;
+    const end = innerHeight * .18;
+    const position = phoneStage.getBoundingClientRect().top;
+    const progress = Math.max(0,Math.min(1,(start-position)/(start-end)));
+    const eased = progress * progress * (3-2*progress);
+    phoneStage.style.setProperty('--guide-angle',`${-180*eased}deg`);
+    phoneStage.style.setProperty('--guide-tilt',`${-(innerWidth <= 600 ? 3 : 7)*(1-eased)}deg`);
+    phoneStage.style.setProperty('--guide-lift',`${24*(1-eased)}px`);
+    const interactive = progress > .8;
+    phoneFront.inert = !interactive;
+    if (interactive) phoneFront.removeAttribute('aria-hidden');
+    else phoneFront.setAttribute('aria-hidden','true');
+  }
+  function queueGuidePhone() {
+    if (!guideFrame) guideFrame = requestAnimationFrame(updateGuidePhone);
+  }
+  addEventListener('scroll',queueGuidePhone,{passive:true});
+  addEventListener('resize',queueGuidePhone);
+  reduced.addEventListener('change',queueGuidePhone);
+  queueGuidePhone();
   let wantsPlayback = !reduced.matches && !navigator.connection?.saveData;
   let inView = true;
   let returnFocus;

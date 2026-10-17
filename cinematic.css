@@ -267,6 +267,40 @@ body:has(dialog[open]) { overflow: hidden; }
   .info-card h3 { font-size: 23px; }.info-card p { font-size: 13px; }
   #tourDialog { padding: 12px; }.tour-dialog-head h2 { font-size: 20px; }#fullTour { height: 68svh; }
 }
+.phone-stage { display: grid; place-items: center; min-height: 690px; perspective: 1400px; overflow: visible; }
+.phone-turn { position: relative; width: min(320px,100%); aspect-ratio: 9 / 18; transform-style: preserve-3d; transform: rotateY(-180deg); will-change: transform; }
+.guide-section.is-motion-ready .phone-turn { transform: translateY(var(--guide-lift,24px)) rotateZ(var(--guide-tilt,-7deg)) rotateY(var(--guide-angle,0deg)); }
+.phone-back,.phone-front { position: absolute; inset: 0; border: 9px solid #263a30; border-radius: 42px; overflow: hidden; backface-visibility: hidden; -webkit-backface-visibility: hidden; box-shadow: inset 0 0 0 1px #ffffff30,0 24px 48px #172a2038; }
+.phone-back { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; color: #f9f5e8; background: radial-gradient(circle at 78% 17%,#9cb99a50,transparent 32%), linear-gradient(145deg,#436b56,#203d32 75%); text-align: center; }
+.phone-back::after { content: ''; position: absolute; inset: 20px; border: 1px solid #f9f5e83d; border-radius: 26px; pointer-events: none; }
+.phone-back-mark { display: grid; place-items: center; width: 68px; height: 68px; border: 1px solid #f9f5e885; border-radius: 50%; font-size: 35px; font-weight: 200; }
+.phone-back-name { font: 400 31px/1.15 'Fraunces',Georgia,serif; max-width: 200px; }
+.phone-back-rule { width: 34px; height: 1px; background: #f9f5e899; }
+.phone-back-note { max-width: 170px; font: italic 14px/1.55 'Fraunces',Georgia,serif; color: #ecf0e4; }
+.phone-front { transform: rotateY(180deg); background: #f9f8f1; }
+.phone-front::before { content: ''; position: absolute; z-index: 2; top: 0; left: 50%; width: 92px; height: 19px; border-radius: 0 0 14px 14px; background: #263a30; transform: translateX(-50%); }
+.phone-front .guide-notebook { display: flex; flex-direction: column; width: 100%; height: 100%; padding: 43px 21px 20px; border: 0; border-radius: 0; background: #f9f8f1; }
+.phone-front .notebook-heading { gap: 7px; font-size: 8px; letter-spacing: .8px; }
+.phone-front .notebook-heading .material-symbols-outlined { font-size: 20px; }
+.phone-front .guide-notebook h3 { font-size: 36px; line-height: 1.08; margin: 18px 0 23px; }
+.phone-front .guide-topics { grid-template-columns: 1fr; gap: 0; }
+.phone-front .guide-topics>button { grid-template-columns: 25px minmax(0,1fr) 14px; align-content: center; gap: 10px; min-height: 66px; padding: 10px 0; }
+.phone-front .guide-topics>button>span:last-child { display: block; }
+.phone-front .guide-topics .material-symbols-outlined { font-size: 22px; }
+.phone-front .guide-topics strong { font-size: 13px; }
+.phone-front .guide-topics small { font-size: 11px; line-height: 1.35; }
+.phone-front .notebook-footer { margin-top: auto; padding-top: 15px; font-size: 11px; }
+@media(max-width:600px) {
+  .phone-stage { min-height: 645px; }
+  .phone-turn { width: min(310px,calc(100vw - 64px)); }
+}
+@media(max-width:360px) {
+  .phone-front .guide-notebook { padding: 38px 16px 14px; }
+  .phone-front .guide-notebook h3 { font-size: 32px; margin: 13px 0 16px; }
+  .phone-front .guide-topics>button { min-height: 57px; padding: 8px 0; }
+  .phone-front .notebook-footer { padding-top: 10px; font-size: 10px; }
+}
 @media(prefers-reduced-motion:reduce) {
   html { scroll-behavior: auto; }*,*::before,*::after { animation: none !important; transition: none !important; }
+  .guide-section .phone-turn { transform: rotateY(-180deg) !important; will-change: auto; }
 }

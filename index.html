@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="cinematic.css?v=photos-guide-1" />
+  <link rel="stylesheet" href="cinematic.css?v=phone-reveal-2" />
 </head>
 
 <body>
@@ -238,16 +238,28 @@
           </div>
         </div>
 
-        <div class="guide-notebook">
-          <div class="notebook-heading"><span class="material-symbols-outlined" aria-hidden="true">explore</span><span data-i18n="guide.notebook">Il tuo taccuino di soggiorno</span></div>
-          <h3 data-i18n="guide.cover">Il bello,<br>qui intorno.</h3>
-          <div class="guide-topics">
-            <button type="button" data-guide-open="food" aria-haspopup="dialog" aria-controls="guideDialog"><span class="material-symbols-outlined" aria-hidden="true">restaurant</span><span><strong data-i18n="guide.food">A tavola</strong><small data-i18n="guide.foodDesc">Ristoranti e sapori locali</small></span><span aria-hidden="true">↗</span></button>
-            <button type="button" data-guide-open="places" aria-haspopup="dialog" aria-controls="guideDialog"><span class="material-symbols-outlined" aria-hidden="true">landscape</span><span><strong data-i18n="guide.places">Da scoprire</strong><small data-i18n="guide.placesDesc">Mare, borghi e passeggiate</small></span><span aria-hidden="true">↗</span></button>
-            <button type="button" data-guide-open="shops" aria-haspopup="dialog" aria-controls="guideDialog"><span class="material-symbols-outlined" aria-hidden="true">shopping_basket</span><span><strong data-i18n="guide.shops">Ogni giorno</strong><small data-i18n="guide.shopsDesc">Spesa e negozi utili</small></span><span aria-hidden="true">↗</span></button>
-            <button type="button" data-guide-open="pharmacy" aria-haspopup="dialog" aria-controls="guideDialog"><span class="material-symbols-outlined" aria-hidden="true">local_pharmacy</span><span><strong data-i18n="guide.practical">Info pratiche</strong><small data-i18n="guide.practicalDesc">Farmacie nei dintorni</small></span><span aria-hidden="true">↗</span></button>
+        <div class="phone-stage" role="group" aria-label="Anteprima della guida digitale" data-i18n-aria="guide.phoneLabel">
+          <div class="phone-turn">
+            <div class="phone-back" aria-hidden="true">
+              <span class="phone-back-mark material-symbols-outlined">cottage</span>
+              <span class="phone-back-name">A Casa di Marco</span>
+              <span class="phone-back-rule"></span>
+              <span class="phone-back-note" data-i18n="guide.phoneNote">La tua guida, sempre con te.</span>
+            </div>
+            <div class="phone-front">
+              <div class="guide-notebook">
+                <div class="notebook-heading"><span class="material-symbols-outlined" aria-hidden="true">explore</span><span data-i18n="guide.notebook">Il tuo taccuino di soggiorno</span></div>
+                <h3 data-i18n="guide.cover">Il bello,<br>qui intorno.</h3>
+                <div class="guide-topics">
+                  <button type="button" data-guide-open="food" aria-haspopup="dialog" aria-controls="guideDialog"><span class="material-symbols-outlined" aria-hidden="true">restaurant</span><span><strong data-i18n="guide.food">A tavola</strong><small data-i18n="guide.foodDesc">Ristoranti e sapori locali</small></span><span aria-hidden="true">↗</span></button>
+                  <button type="button" data-guide-open="places" aria-haspopup="dialog" aria-controls="guideDialog"><span class="material-symbols-outlined" aria-hidden="true">landscape</span><span><strong data-i18n="guide.places">Da scoprire</strong><small data-i18n="guide.placesDesc">Mare, borghi e passeggiate</small></span><span aria-hidden="true">↗</span></button>
+                  <button type="button" data-guide-open="shops" aria-haspopup="dialog" aria-controls="guideDialog"><span class="material-symbols-outlined" aria-hidden="true">shopping_basket</span><span><strong data-i18n="guide.shops">Ogni giorno</strong><small data-i18n="guide.shopsDesc">Spesa e negozi utili</small></span><span aria-hidden="true">↗</span></button>
+                  <button type="button" data-guide-open="pharmacy" aria-haspopup="dialog" aria-controls="guideDialog"><span class="material-symbols-outlined" aria-hidden="true">local_pharmacy</span><span><strong data-i18n="guide.practical">Info pratiche</strong><small data-i18n="guide.practicalDesc">Farmacie nei dintorni</small></span><span aria-hidden="true">↗</span></button>
+                </div>
+                <p class="notebook-footer" data-i18n="guide.signature">A Casa di Marco · Consigli di casa</p>
+              </div>
+            </div>
           </div>
-          <p class="notebook-footer" data-i18n="guide.signature">A Casa di Marco · Consigli di casa</p>
         </div>
       </div>
       </div>
@@ -630,6 +642,6 @@
   </dialog>
   <script src="script.js?v=photos-guide-1"></script>
   <script src="guide-demo.js?v=photos-guide-1"></script>
-  <script src="cinematic.js?v=photos-guide-1"></script>
+  <script src="cinematic.js?v=phone-reveal-1"></script>
 </body>
 </html>
